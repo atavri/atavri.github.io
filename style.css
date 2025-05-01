@@ -20,9 +20,10 @@ a:hover {
 
 /* Top banner */
 .top-banner {
-  position: relative;
+  position: sticky;
+  top: 0;
   background-color: #cce6ff;
-  padding: 2rem 2rem 4.5rem; /* extra space for wave shape */
+  padding: 0.75rem 2rem 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +31,10 @@ a:hover {
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   overflow: visible;
-  margin-top: 0;
+}
+
+.top-banner::after {
+  height: 40px;
 }
 
 
@@ -64,6 +68,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.hero-image {
+  margin-top: 80px;
 }
 
 
