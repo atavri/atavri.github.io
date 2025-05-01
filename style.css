@@ -72,6 +72,7 @@ a:hover {
 
 .content h2 {
   color: #003366;
+  text-align: center;
 }
 
 .content h3 {
@@ -83,17 +84,15 @@ ul {
   padding-left: 1.2rem;
 }
 
-/* Profile image */
-.profile-pic {
-  width: 160px;
-  height: 160px;
+/* Profile image specifically under About Me */
+#about .profile-pic {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin: 2rem auto 1rem;
+  margin: 1rem auto 2rem;
   border: 3px solid #004080;
-  position: relative;
-  z-index: 2;
 }
 
 /* Wave dividers */
