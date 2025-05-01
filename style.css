@@ -20,22 +20,19 @@ a:hover {
 
 /* Top banner */
 .top-banner {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: #cce6ff;
-  padding: 0.75rem 2rem 2.5rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* translucent white */
+  backdrop-filter: blur(4px); /* optional: gives frosted glass effect */
+  padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  overflow: visible;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.top-banner::after {
-  height: 40px;
-}
 
 
 .left-title {
@@ -49,7 +46,9 @@ a:hover {
   font-size: 0.95rem;
   color: #004080;
 }
-
+.hero-image {
+  margin-top: 60px; /* or adjust depending on how tall your banner is */
+}
 .nav-links a:hover {
   color: #0066cc;
 }
@@ -70,9 +69,8 @@ a:hover {
   justify-content: center;
 }
 .hero-image {
-  margin-top: 80px;
+  margin-top: 60px; /* or adjust depending on how tall your banner is */
 }
-
 
 /* Section content */
 .content {
