@@ -49,10 +49,15 @@ a:hover {
 
 /* Hero image section */
 .hero-image {
-  background: url('20200806_225625.jpg') no-repeat center center/cover;
+  background-image: url('20200806_225625.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   height: 300px;
   width: 100%;
   margin-top: 60px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Section content */
@@ -60,6 +65,9 @@ a:hover {
   max-width: 850px;
   margin: 5rem auto;
   padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
 }
 
 .content h2 {
@@ -82,8 +90,10 @@ ul {
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin: 1rem auto;
+  margin: 2rem auto 1rem;
   border: 3px solid #004080;
+  position: relative;
+  z-index: 2;
 }
 
 /* Wave dividers */
