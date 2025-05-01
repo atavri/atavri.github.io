@@ -59,18 +59,16 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 600px;
+  height: calc(100vh - 60px); /* fills full viewport height minus banner */
   width: 100%;
-  margin-top: 120px;  /* Increase this to clear the banner */
+  margin-top: 60px; /* same height as the fixed banner */
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.hero-image {
-  margin-top: 90px; /* or adjust depending on how tall your banner is */
-}
+
 
 /* Section content */
 .content {
