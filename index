@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aikaterini Tavri | Arctic Research</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<!-- Full-page Hero with Background -->
+<section class="hero">
+
+  <!-- Top Banner -->
+  <header class="top-banner">
+    <div class="name-title">
+      <strong>Aikaterini Tavri</strong> | Postdoctoral Researcher, Brown University
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About Me</a>
+      <a href="#projects">Research Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#fieldwork">Fieldwork</a>
+      <a href="CV_Aikaterini_Tavri.pdf" target="_blank">CV</a>
+      <a href="#connect">Let's Connect!</a>
+    </nav>
+  </header>
+
+  <!-- Centered Theme -->
+  <div class="center-text">
+    <h1>
+      <a href="sea-ice.html">Sea Ice</a> – 
+      <a href="waves.html">Waves</a> – 
+      <a href="remote-sensing.html">Remote Sensing</a>
+    </h1>
+  </div>
+
+</section>
+
+</body>
+</html>
