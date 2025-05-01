@@ -1,76 +1,71 @@
-/* Reset & Font */
-body, html {
+/* Base styles */
+body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  height: 100%;
   scroll-behavior: smooth;
+  line-height: 1.6;
+  color: #1a1a1a;
 }
 
-/* Hero Section */
-.hero {
-  background: url('20200806_225625.jpg') no-repeat center center/cover;
-  height: 100vh;
-  position: relative;
-  color: white;
+a {
+  color: #003366;
+  text-decoration: none;
 }
 
-/* Top Banner */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Top banner */
 .top-banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.85);
   padding: 1rem 2rem;
-  position: absolute;
-  top: 0;
+  position: fixed;
   width: 100%;
-  box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.name-title {
-  font-size: 1rem;
+.left-title {
   font-weight: bold;
-  color: #fff;
+  font-size: 0.95rem;
 }
 
 .nav-links a {
-  color: #fff;
-  text-decoration: none;
   margin-left: 1.5rem;
-  font-weight: 500;
-  transition: color 0.3s;
+  font-size: 0.95rem;
 }
 
-.nav-links a:hover {
-  color: #ffcc00;
+/* Hero image */
+.hero-image {
+  background: url('20200806_225625.jpg') no-repeat center center/cover;
+  height: 300px;
+  width: 100%;
+  margin-top: 60px;
 }
 
-/* Centered Theme Text */
-.center-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem 3rem;
-  border-radius: 10px;
+/* Section content */
+.content {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+footer {
   text-align: center;
-}
-
-.center-text h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.center-text a {
-  color: white;
-  text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-
-.center-text a:hover {
-  color: #ffcc00;
-  text-shadow: 0 0 5px #ffcc00;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  background: #f7f7f7;
 }
