@@ -21,14 +21,16 @@ a:hover {
   top: 0;
   width: 100%;
   padding: 0.6rem 2rem;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
+
 
 .left-title {
   font-weight: bold;
@@ -48,12 +50,20 @@ a:hover {
   height: 100vh;
   margin-top: 50px;
 }
+.hero-image {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 
 /* Content layout */
 .content {
   max-width: 850px;
   margin: 5rem auto;
   padding: 0 1.5rem;
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .content h2 {
@@ -64,10 +74,13 @@ a:hover {
 /* About section layout */
 .about-section {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  text-align: left;
 }
+
 
 .profile-pic {
   width: 200px;
