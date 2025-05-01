@@ -23,7 +23,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
+  background-color: cornflowerblue;
   padding: 1rem 2rem;
   position: fixed;
   width: 100%;
@@ -34,17 +34,17 @@ a:hover {
 .left-title {
   font-weight: bold;
   font-size: 0.95rem;
-  color: #004080;
+  color: #fff;
 }
 
 .nav-links a {
   margin-left: 1.5rem;
   font-size: 0.95rem;
-  color: #004080;
+  color: #fff;
 }
 
 .nav-links a:hover {
-  color: #0066cc;
+  color: #ffdd88;
 }
 
 /* Hero image section */
@@ -53,7 +53,7 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 300px;
+  height: 600px;
   width: 100%;
   margin-top: 60px;
   position: relative;
