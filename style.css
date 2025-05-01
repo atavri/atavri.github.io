@@ -58,6 +58,9 @@ a:hover {
   margin-top: 60px;
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Section content */
@@ -85,7 +88,7 @@ ul {
 }
 
 /* Profile image specifically under About Me */
-#about .profile-pic {
+#about img.profile-pic {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -126,4 +129,19 @@ footer {
   padding: 2rem 1rem;
   background: #f7f7f7;
   color: #666;
+}
+
+/* About Me section fix */
+#about {
+  text-align: center;
+}
+
+#about .profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 1.5rem auto;
+  display: block;
+  object-fit: cover;
+  border: 3px solid #004080;
 }
