@@ -137,22 +137,24 @@ a:hover {
 }
 
 /* -----------------------------
-   Static Banner (grid of 4 images)
------------------------------ */
 /* -----------------------------
-   Static Horizontal Banner
+   Static Horizontal Banner (divider style)
 ----------------------------- */
 .image-banner {
   display: flex;                /* put images in a row */
   justify-content: center;      /* center them horizontally */
   align-items: center;
-  gap: 0;                       /* no space between images (set >0 for spacing) */
+  gap: 0;                       /* no space between images */
   overflow: hidden;
+
+  margin: 3rem 0;               /* separation from hero and about sections */
+  border-top: 4px solid #f2f7ff; /* optional subtle divider line */
+  border-bottom: 4px solid #f2f7ff;
 }
 
 .image-banner img {
   flex: 1;                      /* each image takes equal space */
-  width: 100%;                  /* responsive width */
+  width: 100%;
   height: 250px;                /* fixed banner height */
   object-fit: cover;            /* crop nicely without distortion */
   display: block;
