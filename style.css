@@ -35,11 +35,11 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+/* Left: profile pic + name/tagline */
 .left-title {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  color: #003366;
+  gap: 0.6rem;
   flex-shrink: 0;
 }
 
@@ -51,14 +51,21 @@ a:hover {
   border: 2px solid #004080;
 }
 
-.left-title .subtitle {
-  font-size: 0.85rem;
-  color: #555;
+.site-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #003366;
 }
 
+.tagline-small {
+  font-size: 0.9rem;
+  color: #004080;
+  border-bottom: 2px solid #004080;
+}
+
+/* Right: nav links */
 .nav-links {
   display: flex;
-  flex-wrap: nowrap;
   gap: 1rem;
   margin-left: auto;
 }
@@ -110,8 +117,8 @@ a:hover {
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 800px;
-  background: rgba(255,255,255,0.85);
+  max-width: 850px;
+  background: rgba(255,255,255,0.9);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -123,6 +130,13 @@ a:hover {
   color: #003366;
 }
 
+.subtitle-hero {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #003366;
+  margin: 0.5rem 0 1.5rem;
+}
+
 .hero-blurb p {
   margin-top: 1rem;
   font-size: 1rem;
@@ -130,34 +144,38 @@ a:hover {
   color: #333;
 }
 
-.tagline {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #004080;
-  border-bottom: 4px solid #004080;
-  display: inline-block;
-  margin: 0.8rem 0 1rem;
-}
-
 /* -----------------------------
-   Image Banner
+   Rotating Banner
 ----------------------------- */
 .image-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem 1rem;
+  width: 100%;
+  overflow: hidden;
   background: #f7f7f7;
-  flex-wrap: wrap; /* responsive */
 }
 
-.image-banner img {
-  width: 22%;
-  min-width: 200px;
-  border-radius: 8px;
+.banner-slider {
+  display: flex;
+  width: 400%; /* for 4 images */
+  animation: slide 20s infinite;
+}
+
+.banner-slider img {
+  width: 100%;
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  flex: 1;
+}
+
+/* Keyframes for sliding effect */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+  25%  { transform: translateX(-100%); }
+  45%  { transform: translateX(-100%); }
+  50%  { transform: translateX(-200%); }
+  70%  { transform: translateX(-200%); }
+  75%  { transform: translateX(-300%); }
+  95%  { transform: translateX(-300%); }
+  100% { transform: translateX(0%); }
 }
 
 /* -----------------------------
@@ -168,12 +186,12 @@ a:hover {
   gap: 2rem;
   align-items: flex-start;
   max-width: 1000px;
-  margin: 3rem auto;     /* reduced margin so it doesn't get pushed too far down */
-  padding: 2rem 1.5rem;  /* balanced padding */
+  margin: 4rem auto;
+  padding: 0 1.5rem;
 }
 
 .about-pic {
-  width: 280px;
+  width: 300px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -190,21 +208,7 @@ a:hover {
   color: #333;
 }
 
-/* Responsive: stack image + text on small screens */
-@media (max-width: 768px) {
-  .about-flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about-pic {
-    width: 80%;
-    max-width: 400px;
-  }
-}
-
-
-/* Responsive: stack image + text on small screens */
+/* Responsive: stack About section on mobile */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
