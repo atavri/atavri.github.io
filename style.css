@@ -63,20 +63,23 @@ a:hover {
 }
 
 /* Nav links */
+
 .nav-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;        /* allow wrapping instead of cutting off */
+  gap: 0.8rem;            /* smaller gaps so more links fit */
   margin-left: auto;
+  justify-content: flex-end;
+  max-width: 100%;        /* make sure nav can use full width */
 }
 
 .nav-links a {
   color: #003366;
   font-weight: 500;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap;
-}
+  font-size: 0.95rem;     /* slightly smaller font to fit more */
+  padding: 0.3rem 0.5rem;
+  border-radius: 6
+
 
 .nav-links a:hover {
   background-color: #003366;
