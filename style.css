@@ -1,221 +1,60 @@
-/* -----------------------------
-   Global defaults
------------------------------ */
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  color: #1a1a1a;
-  background-color: #fff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aikaterini Tavri | Arctic Research</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
 
-a {
-  color: #004080;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+<body>
 
-/* -----------------------------
-   Top Navigation Bar
------------------------------ */
-.top-banner {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 0.6rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(6px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
+  <!-- Top Navigation Bar -->
+  <header class="top-banner">
+    <div class="left-title">
+      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
+      <div>
+        <strong>Aikaterini Tavri</strong><br />
+        <span class="subtitle">Postdoctoral Researcher, Brown University</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Current Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="blog.html">Research Blog</a>
+      <a href="fieldwork.html">Fieldwork</a>
+      <a href="cv.html">CV</a>
+      <a href="Poetry.html"> Poetry</a>
+    </nav>
+  </header>
 
-/* Left side: pic + name/title */
-.left-title {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: #003366;
-  flex-shrink: 0; /* prevent shrinking */
-}
+  <!-- Hero with About Me Overlay -->
+  <section id="home" class="hero-image">
+    <div class="hero-overlay hero-row">
+      <img src="meandLband.jpg" alt="Portrait of Aikaterini Tavri" class="hero-pic" />
+      <div class="bio-text">
+        <h1>Aikaterini Tavri</h1>
+        <h2 class="tagline">Sea Ice · Waves · Remote Sensing</h2>
+        <p>
+          As a scientist and educator, I am fascinated by the physical processes that shape the polar oceans – especially the dynamic marginal ice zone where sea ice meets open water. Satellite remote sensing and machine learning allow me to investigate how waves, ice, and the upper ocean interact across scales. Through the lens of microwave sensors, I work to improve our understanding of sea-ice variability and to advance the way these processes are represented in climate models.
+        </p>
+      </div>
+    </div>
+  </section>
 
-.nav-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #004080;
-}
+  <!-- About Me (extra details) -->
+  <section id="about" class="content blue-bg">
+    <h2>About Me</h2>
+    <p>
+      I have always been fascinated by how the ocean works and how its surface processes can be studied from space. My research brings together radar remote sensing, fieldwork, and modeling to explore the polar regions and their rapidly changing environments. Over the years, I have expanded my work into climate models, seeking to connect physical processes observed by satellites with large-scale climate system representations. I am passionate about advancing our understanding of sea-ice variability, wave–ice interactions, and their broader implications for the Earth system.
+    </p>
+  </section>
 
-.left-title .subtitle {
-  font-size: 0.85rem;
-  color: #555;
-}
+  <footer>
+    &copy; 2025 Aikaterini Tavri
+  </footer>
 
-/* Right side: nav links */
-.nav-links {
-  display: flex;
-  flex-wrap: nowrap;   /* keep in one row */
-  gap: 1rem;
-  margin-left: auto;   /* push to far right */
-}
-
-.nav-links a {
-  color: #003366;
-  font-weight: 500;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap; /* prevent breaking long names */
-}
-
-.nav-links a:hover {
-  background-color: #003366;
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-links a.active {
-  background-color: #004080;
-  color: #fff;
-}
-
-/* -----------------------------
-   Hero Section
------------------------------ */
-.hero-image {
-  background-image: url('20200806_225625.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin-top: 60px; /* offset for sticky nav */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Dark overlay gradient */
-.hero-image::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
-  z-index: 0;
-}
-
-/* Overlay card */
-.hero-overlay {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  background: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  padding: 2rem;
-  max-width: 900px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-/* Profile pic inside hero */
-.hero-overlay .profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid #004080;
-  object-fit: cover;
-}
-/* Hero layout: image + text side by side */
-.hero-row {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1100px;
-  width: 100%;
-}
-
-/* Larger hero image */
-.hero-pic {
-  width: 300px;        /* adjust size */
-  height: auto;
-  border-radius: 12px; /* keeps it playful */
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* Bio text next to hero image */
-.hero-row .bio-text {
-  flex: 1;             /* take remaining space */
-  color: #003366;
-  background: rgba(255,255,255,0.85);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-
-/* Bio text inside hero */
-.hero-overlay .bio-text {
-  max-width: 600px;
-  color: #003366;
-}
-
-.hero-overlay h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-.hero-overlay h3 {
-  margin: 0.5rem 0 1rem;
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: #444;
-}
-
-/* Tagline */
-.tagline {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #004080;
-  border-bottom: 4px solid #004080;
-  display: inline-block;
-  margin: 0.8rem 0 1rem;
-}
-
-/* -----------------------------
-   Content Sections
------------------------------ */
-.content {
-  max-width: 850px;
-  margin: 5rem auto;
-  padding: 0 1.5rem;
-  overflow-wrap: break-word;
-}
-
-.content h2 {
-  color: #003366;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.blue-bg {
-  background-color: #f2f7ff;
-  padding: 3rem 1.5rem;
-}
-
-/* -----------------------------
-   Footer
------------------------------ */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 2rem 1rem;
-  background: #f7f7f7;
-  color: #666;
-}
+</body>
+</html>
