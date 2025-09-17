@@ -161,6 +161,7 @@ a:hover {
 /* -----------------------------
    About Me Section
 ----------------------------- */
+/* About Me Section */
 .about-flex {
   display: flex;
   gap: 2rem;
@@ -171,9 +172,12 @@ a:hover {
 }
 
 .about-pic {
-  width: 300px;
-  border-radius: 12px;
+  width: 220px;        /* fixed size */
+  max-width: 220px;    /* never grow larger */
+  height: auto;
+  flex-shrink: 0;      /* don’t let flexbox resize it */
   object-fit: cover;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
@@ -188,7 +192,7 @@ a:hover {
   color: #333;
 }
 
-/* Responsive: stack About section on mobile */
+/* Responsive layout */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
@@ -197,7 +201,7 @@ a:hover {
   }
   .about-pic {
     width: 80%;
-    max-width: 400px;
+    max-width: 300px;
   }
 }
 
