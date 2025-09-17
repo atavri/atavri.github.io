@@ -27,7 +27,7 @@ a:hover {
   width: 100%;
   padding: 0.6rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.8); /* 80% transparent */
-  backdrop-filter: blur(8px); /* subtle blur behind */
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,23 +35,7 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* -----------------------------
-   Hero Blurb (transparent)
------------------------------ */
-.hero-blurb {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 850px;
-  background: rgba(255,255,255,0.8); /* 80% transparent */
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-
-/* -----------------------------
-   Nav links
------------------------------ */
+/* Nav links */
 .nav-links {
   display: flex;
   gap: 1rem;
@@ -101,6 +85,17 @@ a:hover {
   z-index: 0;
 }
 
+.hero-blurb {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 850px;
+  background: rgba(255,255,255,0.8); /* 80% transparent */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
 .hero-blurb h1 {
   margin: 0;
   font-size: 2.2rem;
@@ -118,23 +113,22 @@ a:hover {
    Static Horizontal Banner (divider)
 ----------------------------- */
 section.image-banner {
-  display: flex;                 
-  flex-wrap: nowrap;             
-  justify-content: center;       
+  display: flex;
+  justify-content: center;
   align-items: stretch;
-  gap: 0;                        
+  gap: 0;
   overflow: hidden;
 
-  margin: 3rem 0;                /* separation */
+  margin: 3rem 0;
   border-top: 4px solid #f2f7ff;
   border-bottom: 4px solid #f2f7ff;
 }
 
 section.image-banner > img {
-  flex: 1 1 0;                   
-  max-width: 25%;                
-  height: 260px;                 
-  object-fit: cover;             
+  flex: 1 1 0;
+  max-width: 25%; /* 4 images in a row */
+  height: 260px;
+  object-fit: cover;
   display: block;
 }
 
@@ -149,7 +143,7 @@ section.image-banner > img {
 }
 
 /* -----------------------------
-   About Me Section (Polaroid effect)
+   About Me Section
 ----------------------------- */
 .about-flex {
   display: flex;
@@ -163,7 +157,7 @@ section.image-banner > img {
 .about-pic {
   width: 300px;
   object-fit: cover;
-  border: 6px solid #fff;                 /* white polaroid frame */
+  border: 6px solid #fff;                 /* white frame */
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   transform: rotate(-3deg);               /* playful tilt */
@@ -185,7 +179,6 @@ section.image-banner > img {
   color: #333;
 }
 
-/* Responsive: stack About section on mobile */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
@@ -195,7 +188,7 @@ section.image-banner > img {
   .about-pic {
     width: 80%;
     max-width: 400px;
-    transform: rotate(0deg); /* remove tilt on mobile for readability */
+    transform: rotate(0deg);
   }
 }
 
