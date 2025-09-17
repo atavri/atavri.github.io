@@ -6,29 +6,6 @@
   <title>Aikaterini Tavri | Arctic Research</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  
-<script>
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-links a");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80; // adjust offset for sticky nav
-      const sectionHeight = section.clientHeight;
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
-  });
-</script>
 
 <body>
 
@@ -47,17 +24,18 @@
     </nav>
   </header>
 
-  <!-- Fullscreen Hero Image / Home -->
-  <section id="home" class="hero-image"></section>
-
-  <!-- About Me Section -->
-  <section id="about" class="content about-section">
-    <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="profile-pic" />
-    <div class="bio-text">
-      <h2>About Me</h2>
-      <p>
-        I am a Postdoctoral Research Associate at Brown University, with background in physical and satellite oceanography and specialization in radar remote sensing. My research focuses on the interactions between sea ice, waves, and the upper ocean, especially in the marginal ice zone (MIZ), where fragmented, drifting ice meets open water. This region is a hotspot of dynamic processes like wave-induced ice breakup and atmosphere–ocean heat and momentum exchange. These interactions are critical for sea ice evolution but remain poorly represented in most climate models. I am particularly interested in how sea ice breakup and melt influence the coupling between the ocean, atmosphere, and ice systems, and how satellite observations can reveal and quantify these complex interactions across scales.
-      </p>
+  <!-- Hero with About Me Overlay -->
+  <section id="home" class="hero-image">
+    <div class="hero-overlay">
+      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="profile-pic" />
+      <div class="bio-text">
+        <h1>Aikaterini Tavri</h1>
+        <h3>Postdoctoral Researcher | Brown University</h3>
+        <h2 class="tagline">Sea Ice · Waves · Remote Sensing</h2>
+        <p>
+          I am a Postdoctoral Research Associate at Brown University, with a background in physical and satellite oceanography and specialization in radar remote sensing. My research focuses on the interactions between sea ice, waves, and the upper ocean, especially in the marginal ice zone (MIZ). I study how satellite observations reveal these dynamic processes and their role in climate models.
+        </p>
+      </div>
     </div>
   </section>
 
