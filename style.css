@@ -136,28 +136,38 @@ a:hover {
   color: #333;
 }
 
-/* -----------------------------
-/* -----------------------------
-   Static Horizontal Banner (divider style)
------------------------------ */
-.image-banner {
-  display: flex;                /* put images in a row */
-  justify-content: center;      /* center them horizontally */
-  align-items: center;
-  gap: 0;                       /* no space between images */
+/* ----- Static Horizontal Banner (divider) ----- */
+section.image-banner {
+  display: flex;                 /* put images in a single row */
+  flex-wrap: nowrap;             /* never wrap to a new line */
+  justify-content: center;       /* center the row */
+  align-items: stretch;
+  gap: 0;                        /* no gaps between images */
   overflow: hidden;
 
-  margin: 3rem 0;               /* separation from hero and about sections */
-  border-top: 4px solid #f2f7ff; /* optional subtle divider line */
+  /* act as a divider between hero and about */
+  margin: 3rem 0;
+  border-top: 4px solid #f2f7ff;
   border-bottom: 4px solid #f2f7ff;
 }
 
-.image-banner img {
-  flex: 1;                      /* each image takes equal space */
-  width: 100%;
-  height: 250px;                /* fixed banner height */
-  object-fit: cover;            /* crop nicely without distortion */
+section.image-banner > img {
+  flex: 1 1 0;                   /* each image takes equal width */
+  max-width: 25%;                /* four images = 25% each */
+  height: 260px;                 /* consistent banner height */
+  object-fit: cover;             /* crop nicely without distortion */
   display: block;
+}
+
+/* Optional: keep it usable on very small screens */
+@media (max-width: 700px) {
+  section.image-banner {
+    overflow-x: auto;            /* allow horizontal scroll if needed */
+  }
+  section.image-banner > img {
+    min-width: 75vw;             /* show large “cards” you can swipe */
+    max-width: none;
+  }
 }
 
 /* -----------------------------
