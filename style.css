@@ -137,6 +137,28 @@ a:hover {
   display: inline-block;
   margin: 0.8rem 0 1rem;
 }
+/* Small profile pic in nav */
+.nav-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.8rem;
+  border: 2px solid #004080;
+}
+
+.left-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #003366;
+}
+
+.left-title .subtitle {
+  font-size: 0.85rem;
+  color: #555;
+}
+
 
 /* -----------------------------
    Content Sections
