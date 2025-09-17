@@ -1,4 +1,24 @@
-/* Keep nav fixed and styled */
+/* Global defaults */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: #1a1a1a;
+  background-color: #fff;
+}
+
+a {
+  color: #004080;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   Top Navigation Bar
+----------------------------- */
 .top-banner {
   position: fixed;
   top: 0;
@@ -7,7 +27,6 @@
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
@@ -39,32 +58,27 @@
   text-decoration: none;
 }
 
-/* Active section highlight */
 .nav-links a.active {
   background-color: #004080;
   color: #fff;
 }
 
-/* Smooth scroll already set in body */
-html {
-  scroll-behavior: smooth;
-}
-/* Hero image with overlay */
+/* -----------------------------
+   Hero Section
+----------------------------- */
 .hero-image {
   background-image: url('20200806_225625.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: 60px; /* account for nav */
+  margin-top: 60px; /* account for sticky nav */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: left;
-  color: #fff;
 }
 
-/* Dark gradient overlay for readability */
+/* Dark overlay gradient for readability */
 .hero-image::before {
   content: "";
   position: absolute;
@@ -73,18 +87,18 @@ html {
   z-index: 0;
 }
 
+/* Overlay card */
 .hero-overlay {
   position: relative;
   z-index: 1;
-  max-width: 850px;
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
-  padding: 2rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.85);
   border-radius: 12px;
-  backdrop-filter: blur(6px);
+  padding: 2rem;
+  max-width: 900px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 /* Profile pic inside hero */
@@ -92,14 +106,14 @@ html {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid #004080;
   object-fit: cover;
 }
 
-/* Bio text in hero */
+/* Bio text inside hero */
 .hero-overlay .bio-text {
   max-width: 600px;
-  color: #fff;
+  color: #003366;
 }
 
 .hero-overlay h1 {
@@ -111,17 +125,47 @@ html {
   margin: 0.5rem 0 1rem;
   font-weight: 400;
   font-size: 1.2rem;
-  color: #e0e0e0;
+  color: #444;
 }
 
-/* Tagline style */
+/* Tagline */
 .tagline {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #004080;
   border-bottom: 4px solid #004080;
   display: inline-block;
-  margin: 1rem 0;
+  margin: 0.8rem 0 1rem;
 }
 
+/* -----------------------------
+   Content Sections
+----------------------------- */
+.content {
+  max-width: 850px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+  overflow-wrap: break-word;
+}
 
+.content h2 {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.blue-bg {
+  background-color: #f2f7ff;
+  padding: 3rem 1.5rem;
+}
+
+/* -----------------------------
+   Footer
+----------------------------- */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  background: #f7f7f7;
+  color: #666;
+}
