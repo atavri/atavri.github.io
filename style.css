@@ -49,3 +49,68 @@
 html {
   scroll-behavior: smooth;
 }
+/* Hero image with overlay */
+.hero-image {
+  background-image: url('20200806_225625.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: 60px; /* account for nav */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  color: #fff;
+}
+
+/* Dark gradient overlay for readability */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+/* Profile pic inside hero */
+.hero-overlay .profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+}
+
+/* Bio text in hero */
+.hero-overlay .bio-text {
+  max-width: 600px;
+  color: #fff;
+}
+
+.hero-overlay h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.hero-overlay h3 {
+  margin: 0.5rem 0 1rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
