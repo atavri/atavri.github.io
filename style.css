@@ -1,26 +1,9 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  color: #1a1a1a;
-  background-color: #fff;
-}
-
-a {
-  color: #004080;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Top nav bar */
+/* Keep nav fixed and styled */
 .top-banner {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.6rem 2rem;
+  padding: 0.8rem 2rem;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   display: flex;
@@ -28,82 +11,41 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
-
 
 .left-title {
   font-weight: bold;
   color: #003366;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
 }
 
 .nav-links a {
-  margin-left: 1.2rem;
   color: #003366;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Hero image */
-.hero-image {
-  background-image: url('20200806_225625.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  margin-top: 50px;
-}
-.hero-image {
-  min-height: 100vh;
-  overflow: hidden;
+.nav-links a:hover {
+  background-color: #003366;
+  color: #fff;
+  text-decoration: none;
 }
 
-
-/* Content layout */
-.content {
-  max-width: 850px;
-  margin: 5rem auto;
-  padding: 0 1.5rem;
-  overflow: visible;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+/* Active section highlight */
+.nav-links a.active {
+  background-color: #004080;
+  color: #fff;
 }
 
-.content h2 {
-  color: #003366;
-  text-align: center;
-}
-
-/* About section layout */
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: left;
-}
-
-
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #004080;
-}
-
-.bio-text {
-  max-width: 600px;
-}
-
-/* Alternating background color for sections */
-.blue-bg {
-  background-color: #f2f7ff;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 2rem 1rem;
-  background: #f7f7f7;
-  color: #666;
+/* Smooth scroll already set in body */
+html {
+  scroll-behavior: smooth;
 }
