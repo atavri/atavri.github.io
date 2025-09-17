@@ -27,7 +27,7 @@ a:hover {
   width: 100%;
   padding: 0.6rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.8); /* 80% transparent */
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); /* subtle blur behind */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,10 +113,11 @@ a:hover {
    Static Horizontal Banner (divider)
 ----------------------------- */
 section.image-banner {
-  display: flex;
-  justify-content: center;
+  display: flex;                 
+  flex-wrap: nowrap;             
+  justify-content: center;       
   align-items: stretch;
-  gap: 0;
+  gap: 0;                        
   overflow: hidden;
 
   margin: 3rem 0;
@@ -125,8 +126,8 @@ section.image-banner {
 }
 
 section.image-banner > img {
-  flex: 1 1 0;
-  max-width: 25%; /* 4 images in a row */
+  flex: 1 1 0;                   
+  max-width: 25%; /* four images */
   height: 260px;
   object-fit: cover;
   display: block;
@@ -143,7 +144,7 @@ section.image-banner > img {
 }
 
 /* -----------------------------
-   About Me Section
+   About Me Section (artistic blob)
 ----------------------------- */
 .about-flex {
   display: flex;
@@ -156,16 +157,15 @@ section.image-banner > img {
 
 .about-pic {
   width: 300px;
+  height: auto;
   object-fit: cover;
-  border: 6px solid #fff;                 /* white frame */
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  transform: rotate(-3deg);               /* playful tilt */
-  transition: transform 0.3s ease;
+  clip-path: circle(46% at 50% 50%);      /* blob-like circle */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: clip-path 0.5s ease-in-out;
 }
 
 .about-pic:hover {
-  transform: rotate(0deg) scale(1.05);    /* straighten + zoom */
+  clip-path: ellipse(50% 40% at 50% 50%); /* morph on hover */
 }
 
 .about-flex h2 {
@@ -179,6 +179,7 @@ section.image-banner > img {
   color: #333;
 }
 
+/* Responsive: stack About section on mobile */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
@@ -188,7 +189,6 @@ section.image-banner > img {
   .about-pic {
     width: 80%;
     max-width: 400px;
-    transform: rotate(0deg);
   }
 }
 
