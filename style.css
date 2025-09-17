@@ -48,20 +48,17 @@ a:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-/* -----------------------------
-   About Me Photo - playful style
------------------------------ */
 .about-pic {
   width: 300px;
   object-fit: cover;
-  border-radius: 16px;               /* rounded corners */
-  transform: rotate(-2deg);          /* playful tilt */
+  border: 6px solid #fff;                 /* white frame */
+  border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  border: 6px solid #fff;            /* white frame (polaroid effect) */
+  transform: rotate(-3deg);               /* playful tilt */
   transition: transform 0.3s ease;
 }
 .about-pic:hover {
-  transform: rotate(0deg) scale(1.03); /* straighten and zoom slightly on hover */
+  transform: rotate(0deg) scale(1.05);    /* straighten + zoom */
 }
 
 /* -----------------------------
