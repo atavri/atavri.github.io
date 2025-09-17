@@ -1,4 +1,6 @@
-/* Global defaults */
+/* -----------------------------
+   Global defaults
+----------------------------- */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -23,7 +25,7 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.8rem 2rem;
+  padding: 0.6rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   display: flex;
@@ -33,15 +35,34 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+/* Left side: pic + name/title */
 .left-title {
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   color: #003366;
-  font-size: 1.05rem;
+  flex-shrink: 0; /* prevent shrinking */
 }
 
+.nav-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #004080;
+}
+
+.left-title .subtitle {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Right side: nav links */
 .nav-links {
   display: flex;
-  gap: 1.2rem;
+  flex-wrap: nowrap;   /* keep in one row */
+  gap: 1rem;
+  margin-left: auto;   /* push to far right */
 }
 
 .nav-links a {
@@ -50,6 +71,7 @@ a:hover {
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap; /* prevent breaking long names */
 }
 
 .nav-links a:hover {
@@ -71,14 +93,14 @@ a:hover {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: 60px; /* account for sticky nav */
+  margin-top: 60px; /* offset for sticky nav */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Dark overlay gradient for readability */
+/* Dark overlay gradient */
 .hero-image::before {
   content: "";
   position: absolute;
@@ -137,28 +159,6 @@ a:hover {
   display: inline-block;
   margin: 0.8rem 0 1rem;
 }
-/* Small profile pic in nav */
-.nav-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 0.8rem;
-  border: 2px solid #004080;
-}
-
-.left-title {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: #003366;
-}
-
-.left-title .subtitle {
-  font-size: 0.85rem;
-  color: #555;
-}
-
 
 /* -----------------------------
    Content Sections
