@@ -17,6 +17,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 /* -----------------------------
    Top Navigation Bar (transparent)
 ----------------------------- */
@@ -48,42 +49,9 @@ a:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-.about-pic {
-  width: 300px;
-  object-fit: cover;
-  border: 6px solid #fff;                 /* white frame */
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  transform: rotate(-3deg);               /* playful tilt */
-  transition: transform 0.3s ease;
-}
-.about-pic:hover {
-  transform: rotate(0deg) scale(1.05);    /* straighten + zoom */
-}
-
 /* -----------------------------
-   Footer with socials
+   Nav links
 ----------------------------- */
-footer {
-  text-align: center;
-  font-size: 0.95rem;
-  padding: 2rem 1rem;
-  background: #f7f7f7;
-  color: #444;
-}
-
-footer a {
-  color: #004080;
-  margin: 0 0.5rem;
-  font-weight: 500;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-
-
-/* Nav links */
 .nav-links {
   display: flex;
   gap: 1rem;
@@ -133,17 +101,6 @@ footer a:hover {
   z-index: 0;
 }
 
-.hero-blurb {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  max-width: 850px;
-  background: rgba(255,255,255,0.9);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
 .hero-blurb h1 {
   margin: 0;
   font-size: 2.2rem;
@@ -157,42 +114,42 @@ footer a:hover {
   color: #333;
 }
 
-/* ----- Static Horizontal Banner (divider) ----- */
+/* -----------------------------
+   Static Horizontal Banner (divider)
+----------------------------- */
 section.image-banner {
-  display: flex;                 /* put images in a single row */
-  flex-wrap: nowrap;             /* never wrap to a new line */
-  justify-content: center;       /* center the row */
+  display: flex;                 
+  flex-wrap: nowrap;             
+  justify-content: center;       
   align-items: stretch;
-  gap: 0;                        /* no gaps between images */
+  gap: 0;                        
   overflow: hidden;
 
-  /* act as a divider between hero and about */
-  margin: 3rem 0;
+  margin: 3rem 0;                /* separation */
   border-top: 4px solid #f2f7ff;
   border-bottom: 4px solid #f2f7ff;
 }
 
 section.image-banner > img {
-  flex: 1 1 0;                   /* each image takes equal width */
-  max-width: 25%;                /* four images = 25% each */
-  height: 260px;                 /* consistent banner height */
-  object-fit: cover;             /* crop nicely without distortion */
+  flex: 1 1 0;                   
+  max-width: 25%;                
+  height: 260px;                 
+  object-fit: cover;             
   display: block;
 }
 
-/* Optional: keep it usable on very small screens */
 @media (max-width: 700px) {
   section.image-banner {
-    overflow-x: auto;            /* allow horizontal scroll if needed */
+    overflow-x: auto;
   }
   section.image-banner > img {
-    min-width: 75vw;             /* show large “cards” you can swipe */
+    min-width: 75vw;
     max-width: none;
   }
 }
 
 /* -----------------------------
-   About Me Section
+   About Me Section (Polaroid effect)
 ----------------------------- */
 .about-flex {
   display: flex;
@@ -205,16 +162,28 @@ section.image-banner > img {
 
 .about-pic {
   width: 300px;
-  height: auto;
   object-fit: cover;
-  clip-path: circle(46% at 50% 50%);      /* blob-like circle */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transition: clip-path 0.5s ease-in-out;
-}
-.about-pic:hover {
-  clip-path: ellipse(50% 40% at 50% 50%); /* morph on hover */
+  border: 6px solid #fff;                 /* white polaroid frame */
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transform: rotate(-3deg);               /* playful tilt */
+  transition: transform 0.3s ease;
 }
 
+.about-pic:hover {
+  transform: rotate(0deg) scale(1.05);    /* straighten + zoom */
+}
+
+.about-flex h2 {
+  margin-top: 0;
+  color: #003366;
+}
+
+.about-flex p {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #333;
+}
 
 /* Responsive: stack About section on mobile */
 @media (max-width: 768px) {
@@ -226,16 +195,27 @@ section.image-banner > img {
   .about-pic {
     width: 80%;
     max-width: 400px;
+    transform: rotate(0deg); /* remove tilt on mobile for readability */
   }
 }
 
 /* -----------------------------
-   Footer
+   Footer with socials
 ----------------------------- */
 footer {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   padding: 2rem 1rem;
   background: #f7f7f7;
-  color: #666;
+  color: #444;
+}
+
+footer a {
+  color: #004080;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
