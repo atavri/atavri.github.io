@@ -26,7 +26,7 @@ a:hover {
   top: 0;
   width: 100%;
   padding: 0.6rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.8); /* 80% transparent */
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
@@ -110,7 +110,7 @@ a:hover {
 }
 
 /* -----------------------------
-   Static Horizontal Banner (divider)
+   Static Horizontal Banner
 ----------------------------- */
 section.image-banner {
   display: flex;
@@ -143,7 +143,7 @@ section.image-banner > img {
 }
 
 /* -----------------------------
-   About Me Section (simple photo)
+   About Me Section (simple)
 ----------------------------- */
 .about-flex {
   display: flex;
@@ -155,11 +155,11 @@ section.image-banner > img {
 }
 
 .about-pic {
-  width: 250px;            /* keep image small */
+  width: 220px;         /* small fixed size */
   height: auto;
   object-fit: cover;
-  border-radius: 8px;      /* subtle rounded corners */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .about-flex h2 {
@@ -173,7 +173,6 @@ section.image-banner > img {
   color: #333;
 }
 
-/* Responsive: stack About section on mobile */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
@@ -182,12 +181,12 @@ section.image-banner > img {
   }
   .about-pic {
     width: 80%;
-    max-width: 350px;
+    max-width: 300px;
   }
 }
 
 /* -----------------------------
-   Footer with socials
+   Footer
 ----------------------------- */
 footer {
   text-align: center;
