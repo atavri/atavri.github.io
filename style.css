@@ -17,7 +17,7 @@ a:hover { text-decoration: underline; }
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.35rem 0.8rem;          /* tighter */
+  padding: 0.15rem 0.7rem;          /* tighter */
   background-color: rgba(255,255,255,0.95);
   backdrop-filter: blur(6px);
   display: flex;
