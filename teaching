@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teaching | Aikaterini Tavri</title>
+  <link rel="stylesheet" href="style.css?v=20" />
+</head>
+<body>
+  <header class="top-banner">
+    <div class="left-title">
+      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
+      <div class="left-text">
+        <strong class="site-name">Aikaterini (Katia) Tavri</strong>
+        <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Current Research</a>
+      <a href="teaching.html" class="active">Teaching</a>
+      <a href="blog.html">Research Blog</a>
+      <a href="fieldwork.html">Fieldwork</a>
+      <a href="cv.html">CV</a>
+      <a href="poetry.html">Poetry</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Teaching</h1>
+      <p class="lede">Courses, mentoring, and materials focused on sea ice, remote sensing, and polar processes.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2>Courses & Workshops</h2>
+    <ul>
+      <li><strong>Remote Sensing of the Cryosphere</strong> — syllabus, labs, and datasets (upload links later)</li>
+      <li><strong>Radar Fundamentals for Earth Observation</strong> — classroom notes & code notebooks</li>
+      <li><strong>Sea Ice Physics</strong> — problem sets & reading list</li>
+    </ul>
+
+    <h2>Mentoring</h2>
+    <p>Short blurb on mentoring undergraduates/graduate students and cross-disciplinary collaboration.</p>
+
+    <h2>Lecture Materials</h2>
+    <p>Point this to <a href="lectures.html">Lecture Materials</a> for downloadable slides and notebooks.</p>
+  </section>
+
+  <footer>&copy; 2025 Aikaterini Tavri</footer>
+</body>
+</html>
