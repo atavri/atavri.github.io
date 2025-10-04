@@ -95,11 +95,7 @@ a:hover { text-decoration: underline; }
   .about-pic { width: 80%; max-width: 340px; }
 }
 
-/* Footer */
-footer {
-  text-align: center; font-size: 0.9rem;
-  padding: 2rem 1rem; background: #f7f7f7; color: #666;
-}
+
 
 /* Page header for research.html */
 .page-hero {
@@ -179,4 +175,10 @@ footer {
   max-width: 900px;
   margin: 0 auto;
   line-height: 1.7;
+}
+
+/* Footer */
+footer {
+  text-align: center; font-size: 0.9rem;
+  padding: 2rem 1rem; background: #f7f7f7; color: #666;
 }
