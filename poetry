@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Poetry | Aikaterini Tavri</title>
+  <link rel="stylesheet" href="style.css?v=20" />
+</head>
+<body>
+  <header class="top-banner">
+    <div class="left-title">
+      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
+      <div class="left-text">
+        <strong class="site-name">Aikaterini (Katia) Tavri</strong>
+        <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Current Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="blog.html">Research Blog</a>
+      <a href="fieldwork.html">Fieldwork</a>
+      <a href="cv.html">CV</a>
+      <a href="poetry.html" class="active">Poetry</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Poetry</h1>
+      <p class="lede">Words from ice, sea, and wind.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="research-grid">
+      <article class="research-card">
+        <h2>Title of Poem</h2>
+        <p>First few lines or a short excerpt…</p>
+      </article>
+      <article class="research-card">
+        <h2>Another Piece</h2>
+        <p>Excerpt or a reflection that pairs with your polar work…</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Aikaterini Tavri</footer>
+</body>
+</html>
