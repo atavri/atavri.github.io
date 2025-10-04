@@ -21,9 +21,6 @@ a:hover {
 /* -----------------------------
    Top Navigation Bar
 ----------------------------- */
-/* -----------------------------
-   Top Navigation Bar (Fixed & Compact)
------------------------------ */
 .top-banner {
   position: fixed;
   top: 0;
@@ -109,6 +106,38 @@ a:hover {
   }
 }
 
+/* --- Left block: put affiliation under name --- */
+.left-title .left-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.site-name { display: block; }
+.tagline-small { display: block; margin-top: 2px; }
+
+/* --- Right nav: allow wrapping + slightly tighter spacing --- */
+.nav-links {
+  flex-wrap: wrap;                 /* if needed, use a 2nd line instead of hiding */
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1280px) {
+  .nav-links a {                   /* slightly smaller links on medium screens */
+    font-size: 0.88rem;
+    padding: 0.22rem 0.36rem;
+  }
+  .nav-links { gap: 0.4rem; }
+}
+
+/* --- Hero: keep title on ONE line --- */
+.hero-blurb {
+  max-width: 1100px;               /* wider box so the line fits */
+}
+.hero-title {
+  white-space: nowrap;             /* force a single line */
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem); /* slightly smaller so it fits */
+}
 
 /* -----------------------------
    Hero Section
