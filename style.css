@@ -12,55 +12,54 @@ a:hover { text-decoration: underline; }
 /* -----------------------------
    Top Navigation Bar (Fixed & Compact)
 ----------------------------- */
-/* ======= Compact, single-line top nav ======= */
-/* ===== ULTRA-COMPACT NAV OVERRIDE (put at end of style.css) ===== */
-
+/* ===== Balanced Compact Header (OVERRIDE) ===== */
 header.top-banner {
-  padding: 0.25rem 0.6rem !important;
-  gap: 0.4rem !important;
+  padding: 0.45rem 0.9rem !important;   /* modest padding */
+  gap: 0.6rem !important;
   flex-wrap: nowrap !important;
 }
 
-/* Left block: shrink everything */
-header.top-banner .left-title { gap: 0.3rem !important; min-width: 0 !important; }
-header.top-banner .nav-pic { width: 30px !important; height: 30px !important; border-width: 1px !important; }
-header.top-banner .site-name { font-size: 0.88rem !important; line-height: 1.05 !important; }
-
-/* Hide the affiliation earlier to free width */
-@media (max-width: 1500px) {
-  header.top-banner .tagline-small { display: none !important; }
+header.top-banner .left-title {
+  gap: 0.5rem !important;
+  min-width: 0 !important;
+  align-items: center !important;
 }
 
-/* Right nav: slash gap, padding, font size */
+header.top-banner .nav-pic {
+  width: 36px !important;
+  height: 36px !important;
+  border-width: 1.5px !important;
+}
+
+header.top-banner .site-name {
+  font-size: 0.95rem !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+}
+header.top-banner .tagline-small {
+  font-size: 0.85rem !important;
+  line-height: 1.1 !important;
+  color: #004080 !important;
+}
+
+/* Right-side nav: moderately compact, still comfy to click */
 header.top-banner .nav-links {
   display: flex !important;
-  flex-wrap: nowrap !important;          /* keep one line */
-  gap: 0.24rem !important;               /* tighter spacing */
+  flex-wrap: nowrap !important;         /* stay on one line */
+  gap: 0.55rem !important;              /* reasonable spacing */
   margin-left: auto !important;
   justify-content: flex-end !important;
   max-width: 100% !important;
 }
 
 header.top-banner .nav-links a {
-  font-size: 0.82rem !important;
-  padding: 0.12rem 0.22rem !important;
-  border-radius: 4px !important;
+  font-size: 0.9rem !important;
+  padding: 0.22rem 0.36rem !important;  /* not too tiny */
+  border-radius: 5px !important;
   white-space: nowrap !important;
-  letter-spacing: -0.1px !important;     /* tiny tighten */
 }
 
-/* If it’s STILL tight, hide the avatar on mid-size screens */
-@media (max-width: 1180px) {
-  header.top-banner .nav-pic { display: none !important; }
-}
-
-/* And as a last resort, squeeze the link text further */
-@media (max-width: 1080px) {
-  header.top-banner .nav-links a {
-    font-size: 0.78rem !important;
-    padding: 0.1rem 0.18rem !important;
-  }
-}
+/* Only hide the subtitle on medium screens to free*
 
 /* --- Progressive tightening on narrower screens --- */
 
