@@ -26,8 +26,8 @@ a:hover {
   top: 0;
   width: 100%;
   padding: 0.6rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,21 +37,13 @@ a:hover {
 
 .left-title {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex-shrink: 0;
-}
-
-.nav-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #004080;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #003366;
 }
 
 .site-name {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #003366;
 }
@@ -59,14 +51,12 @@ a:hover {
 .tagline-small {
   font-size: 0.9rem;
   color: #004080;
-  border-bottom: 2px solid #004080;
 }
 
 /* Nav links */
 .nav-links {
   display: flex;
   gap: 1rem;
-  margin-left: auto;
 }
 
 .nav-links a {
@@ -81,12 +71,6 @@ a:hover {
 .nav-links a:hover {
   background-color: #003366;
   color: #fff;
-  text-decoration: none;
-}
-
-.nav-links a.active {
-  background-color: #004080;
-  color: #fff;
 }
 
 /* -----------------------------
@@ -97,77 +81,60 @@ a:hover {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: 60px; /* offset for sticky nav */
-  position: relative;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .hero-image::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
-  z-index: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-blurb {
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 850px;
-  background: rgba(255,255,255,0.9);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .hero-blurb h1 {
-  margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: #003366;
+  margin-bottom: 1rem;
 }
 
 .hero-blurb p {
-  margin-top: 1rem;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
   color: #333;
+  line-height: 1.6;
 }
 
 /* -----------------------------
-   Rotating Banner
+   Image Banner Divider
 ----------------------------- */
 .image-banner {
-  width: 100%;
-  overflow: hidden;
-  background: #f7f7f7;
-}
-
-.banner-slider {
   display: flex;
-  width: 400%; /* for 4 images */
-  animation: slide 20s infinite;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  border-top: 4px solid #f0f5ff;
+  border-bottom: 4px solid #f0f5ff;
 }
 
-.banner-slider img {
-  width: 100%;
-  object-fit: cover;
+.image-banner img {
   flex: 1;
-}
-
-/* Keyframes for sliding effect */
-@keyframes slide {
-  0%   { transform: translateX(0%); }
-  20%  { transform: translateX(0%); }
-  25%  { transform: translateX(-100%); }
-  45%  { transform: translateX(-100%); }
-  50%  { transform: translateX(-200%); }
-  70%  { transform: translateX(-200%); }
-  75%  { transform: translateX(-300%); }
-  95%  { transform: translateX(-300%); }
-  100% { transform: translateX(0%); }
+  max-width: 25%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* -----------------------------
@@ -183,15 +150,15 @@ a:hover {
 }
 
 .about-pic {
-  width: 300px;
-  border-radius: 12px;
+  width: 250px;
+  border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .about-flex h2 {
-  margin-top: 0;
   color: #003366;
+  margin-top: 0;
 }
 
 .about-flex p {
@@ -200,7 +167,7 @@ a:hover {
   color: #333;
 }
 
-/* Responsive: stack About section on mobile */
+/* Responsive layout */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
@@ -209,7 +176,7 @@ a:hover {
   }
   .about-pic {
     width: 80%;
-    max-width: 400px;
+    max-width: 350px;
   }
 }
 
