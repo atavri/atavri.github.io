@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fieldwork | Aikaterini Tavri</title>
+  <link rel="stylesheet" href="style.css?v=20" />
+</head>
+<body>
+  <header class="top-banner">
+    <div class="left-title">
+      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
+      <div class="left-text">
+        <strong class="site-name">Aikaterini (Katia) Tavri</strong>
+        <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Current Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="blog.html">Research Blog</a>
+      <a href="fieldwork.html" class="active">Fieldwork</a>
+      <a href="cv.html">CV</a>
+      <a href="poetry.html">Poetry</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Expeditions & Fieldwork</h1>
+      <p class="lede">Snapshots from research cruises, ice camps, and instrument deployments.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="research-grid">
+      <article class="research-card">
+        <h2>MOSAiC Expedition</h2>
+        <p>Highlights, roles, and key datasets collected.</p>
+      </article>
+      <article class="research-card">
+        <h2>Antarctic MIZ Campaign</h2>
+        <p>Wave–ice observations, snow surveys, and satellite coincidences.</p>
+      </article>
+      <article class="research-card">
+        <h2>Arctic Sea-Ice Transects</h2>
+        <p>Drift segments, pond mapping, and roughness characterization.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Aikaterini Tavri</footer>
+</body>
+</html>
