@@ -21,11 +21,14 @@ a:hover {
 /* -----------------------------
    Top Navigation Bar
 ----------------------------- */
+/* -----------------------------
+   Top Navigation Bar
+----------------------------- */
 .top-banner {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.4rem 1rem;          /* slightly smaller padding */
+  padding: 0.3rem 0.7rem;        /* tighter left/right padding */
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   display: flex;
@@ -33,35 +36,42 @@ a:hover {
   align-items: center;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  flex-wrap: nowrap;             /* prevent wrapping */
+  flex-wrap: nowrap;
+  gap: 0.2rem;                   /* reduces spacing between left and right */
 }
 
 .left-title {
   display: flex;
   align-items: center;
-  gap: 0.5rem;                   /* tighter spacing between photo & text */
+  gap: 0.3rem;                   /* smaller gap between photo & text */
   flex-shrink: 0;
 }
 
-.nav-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #004080;
+.nav-links {
+  display: flex;
+  gap: 0.4rem;                   /* smaller gap between links */
+  margin-left: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  max-width: 100%;
 }
-
-.site-name {
-  font-size: 0.95rem;
-  font-weight: bold;
+.nav-links a {
   color: #003366;
-  line-height: 1.1;
+  font-weight: 500;
+  font-size: 0.88rem;            /* slightly smaller text */
+  padding: 0.2rem 0.35rem;       /* compact padding */
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
 }
-
-.tagline-small {
-  font-size: 0.85rem;
-  color: #004080;
-  line-height: 1.1;
+.nav-links a:hover {
+  background-color: #003366;
+  color: #fff;
+  text-decoration: none;
+}
+.nav-links a.active {
+  background-color: #004080;
+  color: #fff;
 }
 
 /* Compact navigation links */
