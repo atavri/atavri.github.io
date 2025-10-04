@@ -21,14 +21,12 @@ a:hover {
 /* -----------------------------
    Top Navigation Bar
 ----------------------------- */
-/* -----------------------------
-   Top Navigation Bar
------------------------------ */
+
 .top-banner {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.3rem 0.7rem;        /* tighter left/right padding */
+  padding: 0.1rem 0.9rem;        /* tighter left/right padding */
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   display: flex;
