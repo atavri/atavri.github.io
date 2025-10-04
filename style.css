@@ -242,6 +242,36 @@ a:hover {
     max-width: 400px;
   }
 }
+/* ===== HEADER GAP FIX (put at END of style.css) ===== */
+header.top-banner {
+  /* remove the forced big gap */
+  justify-content: flex-start !important;
+  padding: 0.35rem 0.8rem !important;
+  gap: 0 !important;                    /* no extra gap between left & right */
+}
+
+header.top-banner .left-title {
+  gap: 0.4rem !important;               /* small space between photo and text */
+  margin-right: 0.6rem !important;      /* minimal space before the nav */
+}
+
+header.top-banner .nav-links {
+  margin-left: auto !important;         /* push links to the right edge */
+  gap: 0.4rem !important;               /* tighter space between links */
+  flex-wrap: nowrap !important;         /* keep single line */
+}
+
+header.top-banner .nav-links a {
+  font-size: 0.88rem !important;
+  padding: 0.18rem 0.34rem !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+}
+
+/* optional: if it STILL barely overflows on some laptops, hide subtitle <1280px */
+@media (max-width: 1280px) {
+  header.top-banner .tagline-small { display: none !important; }
+}
 
 /* -----------------------------
    Footer
