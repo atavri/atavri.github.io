@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aikaterini Tavri | Polar Research</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=8" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -12,15 +12,14 @@
 
   <!-- Top Navigation Bar -->
   <header class="top-banner">
-    <div class="left-title">
+    <!-- Left: small profile pic -->
+    <div class="left-thumb">
       <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
-      <div>
-        <strong class="site-name">Aikaterini (Katia) Tavri</strong><br />
-        <span class="tagline-small">Sea Ice · Waves · Remote Sensing</span>
-      </div>
     </div>
+
+    <!-- Middle: nav links -->
     <nav class="nav-links">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="research.html">Current Research</a>
       <a href="teaching.html">Teaching</a>
       <a href="blog.html">Research Blog</a>
@@ -28,24 +27,27 @@
       <a href="cv.html">CV</a>
       <a href="poetry.html">Poetry</a>
     </nav>
+
+    <!-- Right: name + position -->
+    <div class="right-title">
+      <strong class="site-name">Aikaterini (Katia) Tavri</strong><br />
+      <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (one background image) -->
   <section id="home" class="hero-image">
     <div class="hero-blurb">
-      <h1>Hi! I am Aikaterini (Katia) Tavri</h1>
-      <h2 class="subtitle-hero">Postdoctoral Researcher, Brown University</h2>
-      <p>
-        As a scientist and educator, I am fascinated by the physical processes that shape the polar oceans –
-        especially the dynamic marginal ice zone where sea ice meets open water.
-        Satellite remote sensing and machine learning allow me to investigate how waves, ice, and the upper ocean interact across scales.
-        Through the lens of microwave sensors, I work to improve our understanding of sea-ice variability
-        and to advance the way these processes are represented in climate models.
+      <h1 class="hero-title">Sea Ice · Waves · Remote Sensing</h1>
+      <p class="hero-intro">
+        As a scientist and educator, I am fascinated by the physical processes that shape the polar oceans – 
+        especially the dynamic marginal ice zone where sea ice meets open water. My research focuses on sea-ice geophysics
+        and wave–ice interactions, using microwave remote sensing to improve how these processes are represented in climate models.
       </p>
     </div>
   </section>
 
-  <!-- Rotating Banner -->
+  <!-- Rotating Banner (unchanged) -->
   <section class="image-banner">
     <div class="banner-slider">
       <img src="20200609_134701.jpg" alt="Research Image 1" />
@@ -61,15 +63,11 @@
     <div>
       <h2>About Me</h2>
       <p>
-        I have always been drawn to understanding the physical processes of the ocean
-        and how they can be observed from space. My work bridges satellite remote sensing,
-        field campaigns, and coupled climate models to study the polar oceans, with a focus on
-        the marginal ice zone where sea ice meets waves and open water.
-        I aim to build connections between detailed physical processes and their
-        representation in climate models, using microwave sensors to reveal new insights into
-        sea-ice variability and wave–ice–ocean interactions.
-        Outside of research, I enjoy mentoring, teaching, and working across disciplines to
-        explore the complexity of the Earth system.
+        I have always been drawn to understanding the physical processes of the ocean and how they can be observed from space.
+        My work bridges satellite remote sensing, field campaigns, and coupled climate models to study the polar oceans, with a focus on
+        the marginal ice zone where sea ice meets waves and open water. I aim to build connections between detailed physical processes and their
+        representation in climate models, using microwave sensors to reveal new insights into sea-ice variability and wave–ice–ocean interactions.
+        Outside of research, I enjoy mentoring, teaching, and working across disciplines to explore the complexity of the Earth system.
       </p>
     </div>
   </section>
