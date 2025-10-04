@@ -10,141 +10,89 @@ body {
   background-color: #fff;
 }
 
-a {
-  color: #004080;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+a { color: #004080; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* -----------------------------
    Top Navigation Bar
 ----------------------------- */
-
 .top-banner {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.3rem 0.7rem;        /* tighter left/right padding */
+  padding: 0.35rem 0.8rem;          /* compact but readable */
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-start;       /* <<< no huge gap */
+  gap: 0;                            /* no extra gap between left/right */
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  flex-wrap: nowrap;
-  gap: 0.1rem;                   /* reduces spacing between left and right */
 }
 
+/* left block: avatar + name/affiliation on two lines */
 .left-title {
   display: flex;
   align-items: center;
-  gap: 0.3rem;                   /* smaller gap between photo & text */
+  gap: 0.4rem;
   flex-shrink: 0;
+  margin-right: 0.7rem;              /* small buffer before the nav */
 }
 
-.nav-links {
-  display: flex;
-  gap: 0.4rem;                   /* smaller gap between links */
-  margin-left: auto;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  max-width: 100%;
-}
-.nav-links a {
-  color: #003366;
-  font-weight: 500;
-  font-size: 0.88rem;            /* slightly smaller text */
-  padding: 0.2rem 0.35rem;       /* compact padding */
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap;
-}
-.nav-links a:hover {
-  background-color: #003366;
-  color: #fff;
-  text-decoration: none;
-}
-.nav-links a.active {
-  background-color: #004080;
-  color: #fff;
+.nav-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #004080;
 }
 
-/* Compact navigation links */
-.nav-links {
-  display: flex;
-  gap: 0.6rem;                   /* reduced gap between items */
-  margin-left: auto;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  max-width: 100%;
-}
-
-.nav-links a {
-  color: #003366;
-  font-weight: 500;
-  font-size: 0.9rem;             /* slightly smaller text */
-  padding: 0.25rem 0.4rem;       /* compact padding */
-  border-radius: 5px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap;           /* keep items on one line */
-}
-
-.nav-links a:hover {
-  background-color: #003366;
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-links a.active {
-  background-color: #004080;
-  color: #fff;
-}
-
-/* Responsive adjustment for smaller screens */
-@media (max-width: 950px) {
-  .nav-links {
-    gap: 0.4rem;
-  }
-  .nav-links a {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.3rem;
-  }
-}
-
-/* --- Left block: put affiliation under name --- */
-.left-title .left-text {
+.left-text {
   display: flex;
   flex-direction: column;
   line-height: 1.1;
 }
-.site-name { display: block; }
-.tagline-small { display: block; margin-top: 2px; }
 
-/* --- Right nav: allow wrapping + slightly tighter spacing --- */
+.site-name {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #003366;
+}
+
+.tagline-small {
+  font-size: 0.86rem;
+  color: #004080;
+  margin-top: 2px;
+}
+
+/* right block: nav links */
 .nav-links {
-  flex-wrap: wrap;                 /* if needed, use a 2nd line instead of hiding */
-  gap: 0.5rem;
+  margin-left: auto;                 /* push to right edge */
+  display: flex;
+  flex-wrap: nowrap;                 /* one line */
+  gap: 0.45rem;                      /* tighter spacing */
   justify-content: flex-end;
+  max-width: 100%;
 }
 
-@media (max-width: 1280px) {
-  .nav-links a {                   /* slightly smaller links on medium screens */
-    font-size: 0.88rem;
-    padding: 0.22rem 0.36rem;
-  }
-  .nav-links { gap: 0.4rem; }
+.nav-links a {
+  color: #003366;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.22rem 0.36rem;
+  border-radius: 5px;
+  transition: background-color .2s ease, color .2s ease;
+  white-space: nowrap;
 }
+.nav-links a:hover { background-color: #003366; color: #fff; text-decoration: none; }
+.nav-links a.active { background-color: #004080; color: #fff; }
 
-/* --- Hero: keep title on ONE line --- */
-.hero-blurb {
-  max-width: 1100px;               /* wider box so the line fits */
-}
-.hero-title {
-  white-space: nowrap;             /* force a single line */
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem); /* slightly smaller so it fits */
+/* medium screens: gently tighten; hide subtitle if needed */
+@media (max-width: 1200px) {
+  .tagline-small { display: none; }  /* frees width without hurting clarity */
+  .nav-links { gap: 0.38rem; }
+  .nav-links a { font-size: 0.88rem; padding: 0.2rem 0.32rem; }
 }
 
 /* -----------------------------
@@ -155,17 +103,16 @@ a:hover {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: 60px; /* offset for sticky nav */
+  margin-top: 60px;                  /* offset for sticky nav */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .hero-image::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
   z-index: 0;
 }
@@ -174,23 +121,19 @@ a:hover {
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 850px;
+  max-width: 1120px;                 /* wider so title fits one line */
   background: rgba(255,255,255,0.9);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-.hero-blurb h1 {
+.hero-blurb h1,
+.hero-title {
   margin: 0;
-  font-size: 2.4rem;
   color: #003366;
-}
-
-.hero-blurb h2.subtitle-hero {
-  font-size: 1.2rem;
-  color: #004080;
-  margin-top: 0.5rem;
+  white-space: nowrap;               /* force single line */
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
 .hero-blurb p {
@@ -211,66 +154,18 @@ a:hover {
   margin: 4rem auto;
   padding: 0 1.5rem;
 }
-
 .about-pic {
   width: 300px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+.about-flex h2 { margin-top: 0; color: #003366; }
+.about-flex p { line-height: 1.7; font-size: 1rem; color: #333; }
 
-.about-flex h2 {
-  margin-top: 0;
-  color: #003366;
-}
-
-.about-flex p {
-  line-height: 1.7;
-  font-size: 1rem;
-  color: #333;
-}
-
-/* Responsive layout for About section */
 @media (max-width: 768px) {
-  .about-flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about-pic {
-    width: 80%;
-    max-width: 400px;
-  }
-}
-/* ===== HEADER GAP FIX (put at END of style.css) ===== */
-header.top-banner {
-  /* remove the forced big gap */
-  justify-content: flex-start !important;
-  padding: 0.35rem 0.8rem !important;
-  gap: 0 !important;                    /* no extra gap between left & right */
-}
-
-header.top-banner .left-title {
-  gap: 0.4rem !important;               /* small space between photo and text */
-  margin-right: 0.6rem !important;      /* minimal space before the nav */
-}
-
-header.top-banner .nav-links {
-  margin-left: auto !important;         /* push links to the right edge */
-  gap: 0.4rem !important;               /* tighter space between links */
-  flex-wrap: nowrap !important;         /* keep single line */
-}
-
-header.top-banner .nav-links a {
-  font-size: 0.88rem !important;
-  padding: 0.18rem 0.34rem !important;
-  border-radius: 4px !important;
-  white-space: nowrap !important;
-}
-
-/* optional: if it STILL barely overflows on some laptops, hide subtitle <1280px */
-@media (max-width: 1280px) {
-  header.top-banner .tagline-small { display: none !important; }
+  .about-flex { flex-direction: column; align-items: center; text-align: center; }
+  .about-pic { width: 80%; max-width: 400px; }
 }
 
 /* -----------------------------
