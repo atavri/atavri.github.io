@@ -19,20 +19,47 @@ a:hover {
 }
 
 /* -----------------------------
-   Top Navigation Bar (transparent)
+   Top Navigation Bar
 ----------------------------- */
 .top-banner {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 0.6rem 1.5rem;
-  background-color: rgba(255, 255, 255, 0.8); /* 80% transparent */
-  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.left-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.nav-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #004080;
+}
+
+.site-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+.tagline-small {
+  font-size: 0.9rem;
+  color: #004080;
+  border-bottom: 2px solid #004080;
 }
 
 /* Nav links */
@@ -90,10 +117,10 @@ a:hover {
   z-index: 1;
   text-align: center;
   max-width: 850px;
-  background: rgba(255,255,255,0.8); /* 80% transparent */
+  background: rgba(255,255,255,0.9);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .hero-blurb h1 {
@@ -110,36 +137,37 @@ a:hover {
 }
 
 /* -----------------------------
-   Static Horizontal Banner (divider)
+   Rotating Banner
 ----------------------------- */
-section.image-banner {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 0;
+.image-banner {
+  width: 100%;
   overflow: hidden;
-
-  margin: 3rem 0;
-  border-top: 4px solid #f2f7ff;
-  border-bottom: 4px solid #f2f7ff;
+  background: #f7f7f7;
 }
 
-section.image-banner > img {
-  flex: 1 1 0;
-  max-width: 25%; /* 4 images in a row */
-  height: 260px;
+.banner-slider {
+  display: flex;
+  width: 400%; /* for 4 images */
+  animation: slide 20s infinite;
+}
+
+.banner-slider img {
+  width: 100%;
   object-fit: cover;
-  display: block;
+  flex: 1;
 }
 
-@media (max-width: 700px) {
-  section.image-banner {
-    overflow-x: auto;
-  }
-  section.image-banner > img {
-    min-width: 75vw;
-    max-width: none;
-  }
+/* Keyframes for sliding effect */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+  25%  { transform: translateX(-100%); }
+  45%  { transform: translateX(-100%); }
+  50%  { transform: translateX(-200%); }
+  70%  { transform: translateX(-200%); }
+  75%  { transform: translateX(-300%); }
+  95%  { transform: translateX(-300%); }
+  100% { transform: translateX(0%); }
 }
 
 /* -----------------------------
@@ -156,16 +184,9 @@ section.image-banner > img {
 
 .about-pic {
   width: 300px;
+  border-radius: 12px;
   object-fit: cover;
-  border: 6px solid #fff;                 /* white frame */
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  transform: rotate(-3deg);               /* playful tilt */
-  transition: transform 0.3s ease;
-}
-
-.about-pic:hover {
-  transform: rotate(0deg) scale(1.05);    /* straighten + zoom */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .about-flex h2 {
@@ -179,6 +200,7 @@ section.image-banner > img {
   color: #333;
 }
 
+/* Responsive: stack About section on mobile */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
@@ -188,27 +210,16 @@ section.image-banner > img {
   .about-pic {
     width: 80%;
     max-width: 400px;
-    transform: rotate(0deg);
   }
 }
 
 /* -----------------------------
-   Footer with socials
+   Footer
 ----------------------------- */
 footer {
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   padding: 2rem 1rem;
   background: #f7f7f7;
-  color: #444;
-}
-
-footer a {
-  color: #004080;
-  margin: 0 0.5rem;
-  font-weight: 500;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
+  color: #666;
 }
