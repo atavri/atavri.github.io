@@ -13,92 +13,56 @@ a:hover { text-decoration: underline; }
    Top Navigation Bar (Fixed & Compact)
 ----------------------------- */
 /* ======= Compact, single-line top nav ======= */
-.top-banner {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 0.15rem 0.7rem;          /* tighter */
-  background-color: rgba(255,255,255,0.95);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;                       /* tighter */
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+/* ===== ULTRA-COMPACT NAV OVERRIDE (put at end of style.css) ===== */
+
+header.top-banner {
+  padding: 0.25rem 0.6rem !important;
+  gap: 0.4rem !important;
+  flex-wrap: nowrap !important;
 }
 
-.left-title {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;                       /* tighter */
-  flex-shrink: 0;
-  min-width: 0;
+/* Left block: shrink everything */
+header.top-banner .left-title { gap: 0.3rem !important; min-width: 0 !important; }
+header.top-banner .nav-pic { width: 30px !important; height: 30px !important; border-width: 1px !important; }
+header.top-banner .site-name { font-size: 0.88rem !important; line-height: 1.05 !important; }
+
+/* Hide the affiliation earlier to free width */
+@media (max-width: 1500px) {
+  header.top-banner .tagline-small { display: none !important; }
 }
 
-.nav-pic {
-  width: 36px;                       /* smaller avatar */
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid #004080;
-  flex-shrink: 0;
+/* Right nav: slash gap, padding, font size */
+header.top-banner .nav-links {
+  display: flex !important;
+  flex-wrap: nowrap !important;          /* keep one line */
+  gap: 0.24rem !important;               /* tighter spacing */
+  margin-left: auto !important;
+  justify-content: flex-end !important;
+  max-width: 100% !important;
 }
 
-.site-name {
-  font-weight: 700;
-  font-size: 0.92rem;                /* smaller text */
-  color: #003366;
-  line-height: 1.05;
+header.top-banner .nav-links a {
+  font-size: 0.82rem !important;
+  padding: 0.12rem 0.22rem !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.1px !important;     /* tiny tighten */
 }
 
-.tagline-small {
-  font-size: 0.8rem;                 /* smaller subtitle */
-  color: #004080;
-  line-height: 1.05;
+/* If it’s STILL tight, hide the avatar on mid-size screens */
+@media (max-width: 1180px) {
+  header.top-banner .nav-pic { display: none !important; }
 }
 
-/* Right-side links: very compact */
-.nav-links {
-  display: flex;
-  flex-wrap: nowrap;                 /* keep on one line */
-  gap: 0.35rem;                      /* much tighter spacing */
-  margin-left: auto;
-  justify-content: flex-end;
-  max-width: 100%;
+/* And as a last resort, squeeze the link text further */
+@media (max-width: 1080px) {
+  header.top-banner .nav-links a {
+    font-size: 0.78rem !important;
+    padding: 0.1rem 0.18rem !important;
+  }
 }
-
-.nav-links a {
-  color: #003366;
-  font-weight: 500;
-  font-size: 0.86rem;                /* slightly smaller */
-  padding: 0.16rem 0.28rem;          /* compact pads */
-  border-radius: 4px;
-  transition: background-color .2s, color .2s;
-  white-space: nowrap;               /* prevent word wrap */
-}
-
-.nav-links a:hover { background: #003366; color: #fff; text-decoration: none; }
-.nav-links a.active { background: #004080; color: #fff; }
 
 /* --- Progressive tightening on narrower screens --- */
-@media (max-width: 1280px) {
-  .tagline-small { display: none; }           /* free lots of space */
-  .nav-links { gap: 0.3rem; }
-  .nav-links a { font-size: 0.84rem; padding: 0.14rem 0.26rem; }
-}
-
-@media (max-width: 1140px) {
-  .site-name { font-size: 0.9rem; }
-  .nav-pic { width: 34px; height: 34px; }
-  .nav-links { gap: 0.26rem; }
-  .nav-links a { font-size: 0.82rem; padding: 0.12rem 0.22rem; }
-}
-
-/* If you STILL run out of room, hide the avatar on narrow screens */
-@media (max-width: 1020px) {
-  .nav-pic { display: none; }
-}
 
 
 /* Hero (one background image) */
