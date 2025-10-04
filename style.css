@@ -1,201 +1,218 @@
-/* Global */
+/* -----------------------------
+   Global defaults
+----------------------------- */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
   color: #1a1a1a;
-  background: #fff;
+  background-color: #fff;
 }
-a { color: #004080; text-decoration: none; }
-a:hover { text-decoration: underline; }
-.content { max-width: 1000px; margin: 4rem auto; padding: 0 1.5rem; }
+
+a {
+  color: #004080;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 /* -----------------------------
-   Top Navigation Bar (Fixed & Compact)
+   Top Navigation Bar
 ----------------------------- */
-/* ===== Balanced Compact Header (OVERRIDE) ===== */
-header.top-banner {
-  padding: 0.45rem 0.9rem !important;   /* modest padding */
-  gap: 0.6rem !important;
-  flex-wrap: nowrap !important;
+.top-banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-header.top-banner .left-title {
-  gap: 0.5rem !important;
-  min-width: 0 !important;
-  align-items: center !important;
+.left-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
 }
 
-header.top-banner .nav-pic {
-  width: 36px !important;
-  height: 36px !important;
-  border-width: 1.5px !important;
+.nav-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #004080;
 }
 
-header.top-banner .site-name {
-  font-size: 0.95rem !important;
-  line-height: 1.1 !important;
-  font-weight: 700 !important;
-}
-header.top-banner .tagline-small {
-  font-size: 0.85rem !important;
-  line-height: 1.1 !important;
-  color: #004080 !important;
+.site-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #003366;
 }
 
-/* Right-side nav: moderately compact, still comfy to click */
-header.top-banner .nav-links {
-  display: flex !important;
-  flex-wrap: nowrap !important;         /* stay on one line */
-  gap: 0.55rem !important;              /* reasonable spacing */
-  margin-left: auto !important;
-  justify-content: flex-end !important;
-  max-width: 100% !important;
+.tagline-small {
+  font-size: 0.85rem;
+  color: #004080;
+  border-bottom: 2px solid #004080;
 }
 
-header.top-banner .nav-links a {
-  font-size: 0.9rem !important;
-  padding: 0.22rem 0.36rem !important;  /* not too tiny */
-  border-radius: 5px !important;
-  white-space: nowrap !important;
+/* Navigation links */
+.nav-links {
+  display: flex;
+  flex-wrap: nowrap;        /* keep all links in one line */
+  gap: 0.5rem;              /* moderate spacing between links */
+  margin-left: auto;
+  justify-content: flex-end;
+  max-width: 100%;
 }
 
-/* Only hide the subtitle on medium screens to free*
+.nav-links a {
+  color: #003366;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
 
-/* --- Progressive tightening on narrower screens --- */
+.nav-links a:hover {
+  background-color: #003366;
+  color: #fff;
+  text-decoration: none;
+}
 
+.nav-links a.active {
+  background-color: #004080;
+  color: #fff;
+}
 
-/* Hero (one background image) */
+/* Responsive layout tweaks */
+@media (max-width: 1200px) {
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.4rem;
+  }
+  .nav-links {
+    gap: 0.3rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .tagline-small {
+    display: none; /* hide subtitle if space is too tight */
+  }
+}
+
+/* -----------------------------
+   Hero Section
+----------------------------- */
 .hero-image {
   background-image: url('20200806_225625.jpg');
-  background-size: cover; background-position: center;
+  background-size: cover;
+  background-position: center;
   height: 100vh;
-  margin-top: 60px;   /* offset for sticky nav */
+  margin-top: 60px; /* offset for sticky nav */
   position: relative;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .hero-image::before {
-  content: ""; position: absolute; inset: 0;
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
   z-index: 0;
 }
+
 .hero-blurb {
-  position: relative; z-index: 1;
-  text-align: center; max-width: 850px;
-  background: rgba(255,255,255,0.88);
-  padding: 2rem; border-radius: 12px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 850px;
+  background: rgba(255,255,255,0.9);
+  padding: 2rem;
+  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
-.hero-title {
+
+.hero-blurb h1 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2.4rem;
   color: #003366;
 }
-.hero-intro {
-  margin-top: 0.9rem; line-height: 1.6; color: #333; font-size: 1rem;
-}
 
-/* About Me */
-.about-flex {
-  display: flex; gap: 2rem; align-items: flex-start;
-  max-width: 1000px; margin: 4rem auto; padding: 0 1.5rem;
-}
-.about-pic {
-  width: 250px; max-width: 250px; height: auto;
-  flex-shrink: 0; object-fit: cover;
-  border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-.about-flex h2 { margin-top: 0; color: #003366; }
-.about-flex p { line-height: 1.7; color: #333; }
-
-@media (max-width: 768px) {
-  .about-flex { flex-direction: column; align-items: center; text-align: center; }
-  .about-pic { width: 80%; max-width: 340px; }
-}
-
-
-
-/* Page header for research.html */
-.page-hero {
-  margin-top: 70px;              /* below the fixed nav */
-  padding: 3rem 1rem 1.5rem;
-  background: #f2f7ff;
-  border-bottom: 1px solid #e3ecff;
-}
-.page-hero-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  text-align: center;
-}
-.page-hero h1 {
-  margin: 0 0 0.5rem;
-  color: #003366;
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-}
-.page-hero .lede {
-  margin: 0 auto;
-  max-width: 820px;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Research grid/cards */
-.research-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-@media (max-width: 900px) {
-  .research-grid { grid-template-columns: 1fr; }
-}
-
-.research-card {
-  background: #fff;
-  border: 1px solid #e9eef8;
-  border-radius: 12px;
-  padding: 1.25rem 1.25rem 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.research-card h2 {
-  margin: 0 0 0.4rem;
+.hero-blurb h2.subtitle-hero {
+  font-size: 1.2rem;
   color: #004080;
-  font-size: 1.25rem;
+  margin-top: 0.5rem;
 }
 
-.research-card p {
-  margin: 0.5rem 0 0.8rem;
+.hero-blurb p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #333;
-  line-height: 1.65;
 }
 
-.key-points {
-  margin: 0.2rem 0 0;
-  padding-left: 1.1rem;
+/* -----------------------------
+   About Me Section
+----------------------------- */
+.about-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
 }
-.key-points li { margin: 0.25rem 0; }
 
-.research-figure {
-  max-width: 100%;
-  margin-top: 0.8rem;
-  border: 2px solid #d6deef;
-  border-radius: 8px;
+.about-pic {
+  width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Highlights section */
-.highlights h2 {
-  text-align: center;
+.about-flex h2 {
+  margin-top: 0;
   color: #003366;
-  margin-bottom: 1rem;
-}
-.highlights ul {
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.7;
 }
 
-/* Footer */
+.about-flex p {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive layout for About section */
+@media (max-width: 768px) {
+  .about-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-pic {
+    width: 80%;
+    max-width: 400px;
+  }
+}
+
+/* -----------------------------
+   Footer
+----------------------------- */
 footer {
-  text-align: center; font-size: 0.9rem;
-  padding: 2rem 1rem; background: #f7f7f7; color: #666;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  background: #f7f7f7;
+  color: #666;
 }
