@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Current Research | Aikaterini Tavri</title>
+  <link rel="stylesheet" href="style.css?v=10" />
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar (same layout as index) -->
+  <header class="top-banner">
+    <div class="left-title">
+      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
+      <div class="left-text">
+        <strong class="site-name">Aikaterini (Katia) Tavri</strong>
+        <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Current Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="blog.html">Research Blog</a>
+      <a href="fieldwork.html">Fieldwork</a>
+      <a href="cv.html">CV</a>
+      <a href="poetry.html">Poetry</a>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Current Research</h1>
+      <p class="lede">
+        I combine satellite remote sensing, process-level physics, and coupled models to understand
+        sea-ice variability across scales and improve how polar processes are represented in climate models.
+      </p>
+    </div>
+  </section>
+
+  <!-- Research Grid -->
+  <section class="content">
+    <div class="research-grid">
+
+      <!-- Card 1 -->
+      <article class="research-card" id="scales">
+        <h2>From Sea-Ice Floes to the Ice Pack</h2>
+        <p>
+          Sea ice regulates exchanges of heat, momentum, and freshwater between ocean and atmosphere.
+          I study variability from the floe scale (surface roughness, melt ponds, snow) to basin scale,
+          with emphasis on the marginal ice zone (MIZ) where breakup and waves drive lateral melt and mixing.
+          Understanding these multi-scale processes is essential for both retrieval accuracy and climate feedbacks.
+        </p>
+        <ul class="key-points">
+          <li>Link surface features (ponds, roughness, snow) to scattering and thermodynamics.</li>
+          <li>Contrast Arctic melt-season dynamics with Antarctic snow–ice and wind redistribution.</li>
+          <li>Translate small-scale physics into constraints for basin-scale climate records.</li>
+        </ul>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="research-card" id="melt-transitions">
+        <h2>Microwave Scattering Across Melt Transitions</h2>
+        <p>
+          Melt ponds complicate passive-microwave retrievals. I use polarimetric SAR (C- and L-band)
+          to separate surface and volume scattering through the melt season, extending the usable window
+          of remote-sensing climate records and clarifying ambiguous signatures.
+        </p>
+        <ul class="key-points">
+          <li>C-band tracks early pond onset via surface scattering; L-band captures volumetric contrasts during drainage.</li>
+          <li>Field validation (e.g., MOSAiC) links SAR polarimetry to observed pond evolution, albedo, and energy flux.</li>
+          <li>Future work: exploit higher-frequency missions (e.g., SWOT Ka-band) to quantify roughness and subsurface structure.</li>
+        </ul>
+        <!-- Optional figure -->
+        <!-- <img src="your_figure.png" alt="Polarimetric response across melt" class="research-figure"> -->
+      </article>
+
+      <!-- Card 3 -->
+      <article class="research-card" id="pm-bias">
+        <h2>Diagnosing Biases in Passive-Microwave SIC</h2>
+        <p>
+          Passive-microwave sea-ice concentration (SIC) products diverge most in the MIZ and melt season.
+          I’m developing a diagnostic framework that forward-emulates brightness temperatures (Tb) from model SIC
+          and compares them with AMSR2/SSMIS observations to identify regime-dependent algorithmic biases.
+        </p>
+        <ul class="key-points">
+          <li>Use SAR + ICESat-2 + wave hindcasts to locate wave-driven retrieval errors.</li>
+          <li>Targeted corrections improve physics fidelity of climate records and model initialization.</li>
+          <li>Part of a SCAR Fellowship plan and a funded NASA Cryospheric Sciences effort.</li>
+        </ul>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="research-card" id="osbl-turbulence">
+        <h2>Turbulence, Waves, and Ice–Ocean Coupling</h2>
+        <p>
+          Using neXtSIM–WaveWatch III and related tools, I assess how wind–wave misalignment and partial ice cover
+          shape vertical kinetic energy and mixing in the ocean surface boundary layer, including the role of
+          Langmuir turbulence under sea-ice cover.
+        </p>
+        <ul class="key-points">
+          <li>Quantify wave-driven mixing pathways and their imprint on upper-ocean dissipation.</li>
+          <li>Develop more physically consistent mixing parameterizations for climate models.</li>
+          <li>Bridge observations and models via forward-emulation of Tb from CMIP-class simulations.</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Highlights / Outcomes -->
+  <section class="content highlights">
+    <h2>Selected Outcomes & Directions</h2>
+    <ul>
+      <li>Physics-based interpretation of polarimetric SAR during melt; extended seasonal coverage of sea-ice records.</li>
+      <li>Diagnostic framework for SIC biases using observation-space Tb comparisons (AMSR2/SSMIS ↔ model).</li>
+      <li>Arctic-wide assessment of Langmuir-turbulence potential under wave–ice coupling.</li>
+      <li>Next steps: couple retrieval corrections with climate initialization to improve prediction skill.</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Aikaterini Tavri
+  </footer>
+
+</body>
+</html>
