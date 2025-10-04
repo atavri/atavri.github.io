@@ -18,6 +18,13 @@ a:hover {
   text-decoration: underline;
 }
 
+/* A generic content container width */
+.content {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
 /* -----------------------------
    Top Navigation Bar
 ----------------------------- */
@@ -63,23 +70,24 @@ a:hover {
 }
 
 /* Nav links */
-
 .nav-links {
   display: flex;
   flex-wrap: wrap;        /* allow wrapping instead of cutting off */
-  gap: 0.8rem;            /* smaller gaps so more links fit */
+  gap: 0.8rem;
   margin-left: auto;
   justify-content: flex-end;
-  max-width: 100%;        /* make sure nav can use full width */
+  max-width: 100%;
 }
 
 .nav-links a {
   color: #003366;
   font-weight: 500;
-  font-size: 0.95rem;     /* slightly smaller font to fit more */
+  font-size: 0.95rem;
   padding: 0.3rem 0.5rem;
-  border-radius: 6
-
+  border-radius: 6px;     /* <-- fixed */
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
 
 .nav-links a:hover {
   background-color: #003366;
@@ -110,7 +118,7 @@ a:hover {
 .hero-image::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
   z-index: 0;
 }
@@ -140,31 +148,40 @@ a:hover {
 }
 
 /* -----------------------------
-   Static Banner (grid of 4 images)
------------------------------ */
-/* -----------------------------
    Static Horizontal Banner
 ----------------------------- */
 .image-banner {
-  display: flex;                /* put images in a row */
-  justify-content: center;      /* center them horizontally */
-  align-items: center;
-  gap: 0;                       /* no space between images (set >0 for spacing) */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
   overflow: hidden;
+  margin: 3rem 0;                 /* separation from hero and about */
+  border-top: 4px solid #f2f7ff;
+  border-bottom: 4px solid #f2f7ff;
 }
 
 .image-banner img {
-  flex: 1;                      /* each image takes equal space */
-  width: 100%;                  /* responsive width */
-  height: 250px;                /* fixed banner height */
-  object-fit: cover;            /* crop nicely without distortion */
+  flex: 1 1 0;
+  max-width: 25%;                 /* 4 images across */
+  height: 250px;
+  object-fit: cover;
   display: block;
+}
+
+@media (max-width: 700px) {
+  .image-banner {
+    overflow-x: auto;
+  }
+  .image-banner img {
+    min-width: 75vw;
+    max-width: none;
+  }
 }
 
 /* -----------------------------
    About Me Section
 ----------------------------- */
-/* About Me Section */
 .about-flex {
   display: flex;
   gap: 2rem;
@@ -175,10 +192,10 @@ a:hover {
 }
 
 .about-pic {
-  width: 220px;        /* fixed size */
-  max-width: 220px;    /* never grow larger */
+  width: 220px;
+  max-width: 220px;
   height: auto;
-  flex-shrink: 0;      /* don’t let flexbox resize it */
+  flex-shrink: 0;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -195,7 +212,6 @@ a:hover {
   color: #333;
 }
 
-/* Responsive layout */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
@@ -207,8 +223,10 @@ a:hover {
     max-width: 300px;
   }
 }
-/* Research items */
-/* Current Research Section */
+
+/* -----------------------------
+   Research items
+----------------------------- */
 .research-item {
   margin-bottom: 3rem;
 }
@@ -236,7 +254,6 @@ a:hover {
   color: #666;
   margin-top: 0.4rem;
 }
-
 
 /* -----------------------------
    Footer
