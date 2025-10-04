@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Blog | Aikaterini Tavri</title>
+  <link rel="stylesheet" href="style.css?v=20" />
+</head>
+<body>
+  <header class="top-banner">
+    <div class="left-title">
+      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
+      <div class="left-text">
+        <strong class="site-name">Aikaterini (Katia) Tavri</strong>
+        <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Current Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="blog.html" class="active">Research Blog</a>
+      <a href="fieldwork.html">Fieldwork</a>
+      <a href="cv.html">CV</a>
+      <a href="poetry.html">Poetry</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Research Blog</h1>
+      <p class="lede">Notes from fieldwork, data stories, and insights on wave–ice–ocean interactions.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="research-grid">
+      <article class="research-card">
+        <h2><a href="#">Mapping Melt Ponds with Polarimetric SAR</a></h2>
+        <p>How C- and L-band signatures evolve through the melt season and what they reveal about surface hydrology.</p>
+      </article>
+      <article class="research-card">
+        <h2><a href="#">Wave–Ice Signals in Passive Microwave Records</a></h2>
+        <p>Diagnosing regime-dependent retrieval biases using forward-emulated Tb.</p>
+      </article>
+      <article class="research-card">
+        <h2><a href="#">Langmuir Turbulence Under Ice</a></h2>
+        <p>What coupled neXtSIM–WW3 experiments tell us about OSBL mixing pathways.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Aikaterini Tavri</footer>
+</body>
+</html>
