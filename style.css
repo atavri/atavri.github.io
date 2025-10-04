@@ -1,125 +1,142 @@
 /* -----------------------------
-   Global defaults
+   GLOBAL DEFAULTS
 ----------------------------- */
-:root{
-  --nav-bg: rgba(255,255,255,0.95);
-  --nav-text: #003366;
-  --accent: #004080;
-}
-
-html, body {
-  height: 100%;
-}
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
   color: #1a1a1a;
-  background: #fff;
+  background-color: #fff;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: #004080;
+  text-decoration: none;
+}
 
-/* Keep images sane by default (avatar has explicit size below) */
-img { max-width: 100%; height: auto; display: block; }
+a:hover {
+  text-decoration: underline;
+}
 
-/* Content wrapper for interior sections */
-.content { max-width: 1000px; margin: 4rem auto; padding: 0 1.5rem; }
+.content {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
 
 /* -----------------------------
-   Top Navigation Bar
+   HEADER: FIXED NAVIGATION BAR
 ----------------------------- */
 .top-banner {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  padding: 0.45rem 0.9rem;             /* compact, readable */
-  background-color: var(--nav-bg);
-  backdrop-filter: blur(6px);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;         /* avoid big empty gap */
-  gap: 0;                              
-  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
 }
 
-/* Left block: avatar + two-line text */
+/* LEFT TITLE AREA */
 .left-title {
   display: flex;
   align-items: center;
-  gap: 0.5rem;                         /* small space between photo & text */
+  gap: 0.5rem;
   flex-shrink: 0;
-  margin-right: 0.75rem;               /* small buffer before nav */
 }
 
 .nav-pic {
-  width: 40px;                         /* 🔒 lock avatar size */
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
-  flex: 0 0 auto;
+  border: 2px solid #004080;
 }
 
 .left-text {
   display: flex;
   flex-direction: column;
   line-height: 1.1;
-  min-width: 0;
 }
 
 .site-name {
-  font-size: 0.97rem;
-  font-weight: 700;
-  color: var(--nav-text);
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #003366;
 }
 
 .tagline-small {
-  font-size: 0.86rem;
-  color: var(--accent);
-  margin-top: 2px;
+  font-size: 0.85rem;
+  color: #004080;
 }
 
-/* Right block: nav links on one line, compact */
+/* NAVIGATION LINKS */
 .nav-links {
-  margin-left: auto;                   /* push to right edge */
   display: flex;
-  flex-wrap: nowrap;                   /* keep on one line */
-  gap: 0.5rem;                         /* moderate spacing between links */
   justify-content: flex-end;
-  align-items: center;
-  max-width: 100%;
+  flex-wrap: nowrap;
+  gap: 0.55rem;
+  margin-left: auto;
 }
 
 .nav-links a {
-  color: var(--nav-text);
+  color: #003366;
   font-weight: 500;
   font-size: 0.9rem;
-  padding: 0.24rem 0.38rem;
+  padding: 0.25rem 0.4rem;
   border-radius: 5px;
-  transition: background-color .2s ease, color .2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   white-space: nowrap;
 }
-.nav-links a:hover { background: var(--nav-text); color: #fff; text-decoration: none; }
-.nav-links a.active { background: var(--accent); color: #fff; }
 
-/* Gently free width on medium screens */
+.nav-links a:hover {
+  background-color: #003366;
+  color: #fff;
+}
+
+.nav-links a.active {
+  background-color: #004080;
+  color: #fff;
+}
+
+/* Compact layout for smaller screens */
 @media (max-width: 1200px) {
-  .tagline-small { display: none; }    /* frees space, avatar stays */
-  .nav-links { gap: 0.42rem; }
-  .nav-links a { font-size: 0.88rem; padding: 0.22rem 0.34rem; }
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.35rem;
+  }
+  .tagline-small {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .nav-pic {
+    display: none;
+  }
+  .nav-links {
+    gap: 0.4rem;
+  }
 }
 
 /* -----------------------------
-   Hero Section
+   HERO SECTION
 ----------------------------- */
 .hero-image {
   background-image: url('20200806_225625.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
-  margin-top: 62px;                    /* below the fixed nav */
+  margin-top: 60px; /* offset for sticky nav */
   position: relative;
   display: flex;
   justify-content: center;
@@ -138,7 +155,7 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 1120px;                   /* wide so title fits one line */
+  max-width: 850px;
   background: rgba(255,255,255,0.9);
   padding: 2rem;
   border-radius: 12px;
@@ -147,9 +164,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero-title {
   margin: 0;
-  color: var(--nav-text);
-  white-space: nowrap;                 /* keep single line */
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #003366;
+  white-space: nowrap;
 }
 
 .hero-intro {
@@ -160,7 +177,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* -----------------------------
-   About Me Section
+   ABOUT SECTION
 ----------------------------- */
 .about-flex {
   display: flex;
@@ -178,20 +195,61 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.about-flex h2 { margin-top: 0; color: var(--nav-text); }
-.about-flex p { line-height: 1.7; font-size: 1rem; color: #333; }
+.about-flex h2 {
+  margin-top: 0;
+  color: #003366;
+}
 
+.about-flex p {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Stack on smaller screens */
 @media (max-width: 768px) {
   .about-flex {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .about-pic { width: 80%; max-width: 400px; }
+  .about-pic {
+    width: 80%;
+    max-width: 400px;
+  }
 }
 
 /* -----------------------------
-   Footer
+   GENERIC PAGE HEADER (used in other tabs)
+----------------------------- */
+.page-hero {
+  margin-top: 70px;
+  padding: 3rem 1rem 2rem;
+  background: #f2f7ff;
+  border-bottom: 1px solid #e3ecff;
+}
+
+.page-hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-hero h1 {
+  margin: 0;
+  color: #003366;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.page-hero p {
+  margin: 0.8rem auto 0;
+  color: #333;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   FOOTER
 ----------------------------- */
 footer {
   text-align: center;
@@ -199,4 +257,12 @@ footer {
   padding: 2rem 1rem;
   background: #f7f7f7;
   color: #666;
+}
+
+footer a {
+  color: #004080;
+  margin: 0 0.5rem;
+}
+footer a:hover {
+  text-decoration: underline;
 }
