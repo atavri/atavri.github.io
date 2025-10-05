@@ -247,6 +247,43 @@ a:hover {
   max-width: 800px;
   line-height: 1.6;
 }
+/* Publications list */
+.publications h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.pub-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1rem;
+}
+
+.pub-list li {
+  margin: 0.6rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.55;
+}
+
+.pub-list li::before {
+  content: "•";
+  color: #004080;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pub-list a {
+  margin-left: 0.4rem;
+}
+
+.pub-note {
+  margin-top: 0.8rem;
+  color: #555;
+  text-align: center;
+}
 
 /* -----------------------------
    FOOTER
