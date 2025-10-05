@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research | Aikaterini Tavri</title>
-  <link rel="stylesheet" href="style.css?v=22" />
+  <link rel="stylesheet" href="style.css?v=24" />
 </head>
 <body>
 
@@ -19,7 +19,7 @@
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="research.html" class="active">Current Research</a>
+      <a href="research.html" class="active">Research</a>
       <a href="teaching.html">Teaching</a>
       <a href="blog.html">Research Blog</a>
       <a href="fieldwork.html">Fieldwork</a>
@@ -28,80 +28,119 @@
     </nav>
   </header>
 
-  <!-- Page Header -->
+  <!-- Research Page Hero -->
   <section class="page-hero">
     <div class="page-hero-inner">
-      <h1>Current Research</h1>
+      <h1>Research</h1>
       <p class="lede">
-        Combining satellite remote sensing, process-level physics, and coupled models to understand sea-ice variability
-        and improve climate representations.
+        I study how sea ice, waves, and the ocean interact across scales — from individual floes to the polar basins.
+        I combine multi-sensor satellite data, field campaigns, and coupled models to advance our understanding
+        of polar processes and their role in the climate system.
       </p>
     </div>
   </section>
 
-  <!-- Main Content -->
+  <!-- Main Research Grid -->
   <main class="content">
     <div class="research-grid">
 
       <article class="research-card">
-        <h2>From Floes to the </h2>
+        <h2>Waves in Sea Ice</h2>
         <p>
-          Variability from floe to basin scale with emphasis on the marginal ice zone (MIZ), where breakup and waves
-          drive lateral melt and mixing. I connect floe-scale physics—roughness, melt ponds, and snow—to basin-scale
-          constraints on heat, momentum, and freshwater exchange.
+          Waves are powerful agents in the marginal ice zone (MIZ): they break, drift, and disperse sea ice,
+          accelerating retreat and altering air–sea exchange. I use satellite radar and in situ observations to
+          quantify wave–ice coupling and connect observed patterns to process-aware ocean models.
         </p>
         <ul class="key-points">
-          <li>Link surface properties to scattering & thermodynamics.</li>
-          <li>Contrast Arctic and Antarctic melt-season processes.</li>
-          <li>Translate small-scale physics into climate constraints.</li>
+          <li>Wave-induced breakup and floe-size variability.</li>
+          <li>How wave–ice interactions modify surface roughness and drag.</li>
+          <li>Observed wave damping linked to model energy dissipation.</li>
         </ul>
       </article>
 
       <article class="research-card">
-        <h2>Microwave scattering across the melt season</h2>
+        <h2>Microwave Scattering Across Melt</h2>
         <p>
-          Polarimetric SAR (C and L band) separates surface and volume scattering through the melt season, extending
-          the usable window of remote-sensing climate records. Field validation (e.g., MOSAiC) relates SAR signatures
-          to albedo and energy-flux changes.
+          During melt, sea ice becomes a complex water–snow–ice mosaic. Multi-frequency (C & L band) SAR reveals
+          how scattering shifts from surface ponding to volume processes. These relationships extend reliable
+          retrievals deeper into the melt season and tie polarimetric features to albedo and energy-flux changes.
         </p>
         <ul class="key-points">
-          <li>C-band: pond onset; L-band: drainage & volume effects.</li>
-          <li>Process-level links between hydrology and backscatter.</li>
-          <li>Next: leverage higher-frequency missions for roughness/structure.</li>
+          <li>Field-validated links between melt ponds and polarimetric SAR.</li>
+          <li>Surface vs. volume scattering transitions through melt.</li>
+          <li>Pathways to season-robust geophysical retrievals.</li>
         </ul>
       </article>
 
       <article class="research-card">
-        <h2>Biases in Passive-Microwave SIC</h2>
+        <h2>Diagnosing Biases in Passive-Microwave SIC</h2>
         <p>
-          Forward-emulate brightness temperatures (Tb) from model SIC and compare with AMSR2/SSMIS to reveal
-          regime-dependent algorithmic biases. SAR, ICESat-2, and wave hindcasts help diagnose and correct
-          wave-driven errors in SIC retrievals.
+          Algorithmic differences in passive microwave (PM) sea-ice concentration (SIC) propagate into climate
+          records. I use an observation-space approach: forward-emulate brightness temperatures (T<sub>b</sub>) from
+          physics-informed SIC, then compare with AMSR2/SSMIS to localize regime-dependent biases and wave-driven errors.
         </p>
         <ul class="key-points">
-          <li>Observation-space diagnostics (Tb) instead of SIC-vs-SIC.</li>
-          <li>Targeted bias corrections for climate integrity.</li>
-          <li>Supports initialization of coupled models and reanalyses.</li>
+          <li>Diagnostics in T<sub>b</sub> space (not SIC-vs-SIC) to identify bias sources.</li>
+          <li>Use SAR, ICESat-2, and wave hindcasts to constrain retrieval errors.</li>
+          <li>Improved inputs for coupled climate models and reanalyses.</li>
         </ul>
       </article>
 
       <article class="research-card">
         <h2>Turbulence, Waves & the OSBL</h2>
         <p>
-          neXtSIM–WaveWatch III experiments quantify how wind–wave misalignment and partial ice cover shape vertical
-          kinetic energy, mixing, and Langmuir turbulence beneath sea ice—informing physically consistent mixing
-          parameterizations in climate models.
+          Coupled neXtSIM–WaveWatch III experiments quantify how wind–wave misalignment and partial ice cover
+          reshape mixing and Langmuir turbulence beneath sea ice. Results inform physically consistent
+          parameterizations of the ocean surface boundary layer (OSBL) in climate models.
         </p>
         <ul class="key-points">
-          <li>Quantify wave-driven mixing & Langmuir turbulence.</li>
-          <li>Relate remote-sensing observables to OSBL physics.</li>
-          <li>Forward-emulation of Tb from CMIP-class simulations.</li>
+          <li>Wave-driven mixing and Langmuir turbulence under ice.</li>
+          <li>Relate turbulence metrics to satellite observables.</li>
+          <li>Forward-emulation of PM T<sub>b</sub> from CMIP-class simulations.</li>
         </ul>
       </article>
 
     </div>
   </main>
 
-  <footer>&copy; 2025 Aikaterini Tavri</footer>
+  <!-- Publications -->
+  <section class="content publications">
+    <h2>Selected Publications</h2>
+
+    <!-- Tip: keep your name bold; use italics for journal; add links to DOI or publisher -->
+    <ul class="pub-list">
+      <!-- Replace these placeholders with your entries -->
+      <li>
+        <strong>Tavri, A.</strong>, et al. (2025).
+        Polarimetric SAR constraints on melt-season sea-ice scattering.
+        <em>Journal of Geophysical Research: Oceans</em>.
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+      </li>
+      <li>
+        <strong>Tavri, A.</strong>, Horvat, C., et al. (2025).
+        Diagnosing algorithmic biases in passive-microwave SIC using observation-space T<sub>b</sub> emulation.
+        <em>The Cryosphere</em>.
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+      </li>
+      <li>
+        <strong>Tavri, A.</strong>, Casey, J., et al. (2023).
+        Multi-frequency SAR indicators of melt-pond evolution and volume scattering.
+        <em>Remote Sensing of Environment</em>.
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+      </li>
+      <!-- Add more items as needed -->
+    </ul>
+
+    <p class="pub-note">
+      Full list available on <a href="https://www.researchgate.net/profile/Aikaterini-Tavri-3?ev=prf_overview" target="_blank" rel="noopener">ResearchGate</a>
+      and in my <a href="cv.html">CV</a>.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Aikaterini Tavri |
+    <a href="mailto:aikaterini_tavri@brown.edu">aikaterini_tavri@brown.edu</a>
+  </footer>
+
 </body>
 </html>
