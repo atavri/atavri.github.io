@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Current Research | Aikaterini Tavri</title>
-  <link rel="stylesheet" href="style.css?v=21" />
+  <link rel="stylesheet" href="style.css?v=22" />
 </head>
 <body>
+
   <!-- Top Navigation Bar -->
   <header class="top-banner">
     <div class="left-title">
@@ -31,41 +32,74 @@
   <section class="page-hero">
     <div class="page-hero-inner">
       <h1>Current Research</h1>
-      <p>Combining satellite remote sensing, process-level physics, and coupled models to understand sea-ice variability and improve climate representations.</p>
+      <p class="lede">
+        Combining satellite remote sensing, process-level physics, and coupled models to understand sea-ice variability
+        and improve climate representations.
+      </p>
     </div>
   </section>
 
   <!-- Main Content -->
   <main class="content">
-    <h2>Themes</h2>
+    <div class="research-grid">
 
-    <section>
-      <h3>From Sea-Ice Floes to the Ice Pack</h3>
-      <p>
-        Variability from floe to basin scale with emphasis on the marginal ice zone (MIZ) where breakup and waves drive lateral melt and mixing. I connect floe-scale physics—roughness, melt ponds, snow—to basin-scale constraints on heat, momentum, and freshwater exchange.
-      </p>
-    </section>
+      <article class="research-card">
+        <h2>From Floes to the Ice Pack</h2>
+        <p>
+          Variability from floe to basin scale with emphasis on the marginal ice zone (MIZ), where breakup and waves
+          drive lateral melt and mixing. I connect floe-scale physics—roughness, melt ponds, and snow—to basin-scale
+          constraints on heat, momentum, and freshwater exchange.
+        </p>
+        <ul class="key-points">
+          <li>Link surface properties to scattering & thermodynamics.</li>
+          <li>Contrast Arctic and Antarctic melt-season processes.</li>
+          <li>Translate small-scale physics into climate constraints.</li>
+        </ul>
+      </article>
 
-    <section>
-      <h3>Microwave Scattering Across Melt</h3>
-      <p>
-        Using polarimetric SAR (C and L band) to separate surface and volume scattering through the melt season, extending the usable window of remote-sensing climate records. Field validation (e.g., MOSAiC) ties SAR signatures to albedo and energy-flux changes.
-      </p>
-    </section>
+      <article class="research-card">
+        <h2>Microwave Scattering Across Melt</h2>
+        <p>
+          Polarimetric SAR (C and L band) separates surface and volume scattering through the melt season, extending
+          the usable window of remote-sensing climate records. Field validation (e.g., MOSAiC) relates SAR signatures
+          to albedo and energy-flux changes.
+        </p>
+        <ul class="key-points">
+          <li>C-band: pond onset; L-band: drainage & volume effects.</li>
+          <li>Process-level links between hydrology and backscatter.</li>
+          <li>Next: leverage higher-frequency missions for roughness/structure.</li>
+        </ul>
+      </article>
 
-    <section>
-      <h3>Biases in Passive-Microwave SIC</h3>
-      <p>
-        Forward-emulating brightness temperatures (Tb) from model SIC and comparing with AMSR2/SSMIS reveals regime-dependent algorithmic biases. Coupling SAR, ICESat-2, and wave hindcasts helps diagnose and correct wave-driven errors in SIC retrievals.
-      </p>
-    </section>
+      <article class="research-card">
+        <h2>Biases in Passive-Microwave SIC</h2>
+        <p>
+          Forward-emulate brightness temperatures (Tb) from model SIC and compare with AMSR2/SSMIS to reveal
+          regime-dependent algorithmic biases. SAR, ICESat-2, and wave hindcasts help diagnose and correct
+          wave-driven errors in SIC retrievals.
+        </p>
+        <ul class="key-points">
+          <li>Observation-space diagnostics (Tb) instead of SIC-vs-SIC.</li>
+          <li>Targeted bias corrections for climate integrity.</li>
+          <li>Supports initialization of coupled models and reanalyses.</li>
+        </ul>
+      </article>
 
-    <section>
-      <h3>Turbulence, Waves & the OSBL</h3>
-      <p>
-        neXtSIM–WaveWatch III experiments quantify how wind–wave misalignment and partial ice cover shape vertical kinetic energy, mixing, and Langmuir turbulence beneath sea ice—informing physically consistent mixing parameterizations in climate models.
-      </p>
-    </section>
+      <article class="research-card">
+        <h2>Turbulence, Waves & the OSBL</h2>
+        <p>
+          neXtSIM–WaveWatch III experiments quantify how wind–wave misalignment and partial ice cover shape vertical
+          kinetic energy, mixing, and Langmuir turbulence beneath sea ice—informing physically consistent mixing
+          parameterizations in climate models.
+        </p>
+        <ul class="key-points">
+          <li>Quantify wave-driven mixing & Langmuir turbulence.</li>
+          <li>Relate remote-sensing observables to OSBL physics.</li>
+          <li>Forward-emulation of Tb from CMIP-class simulations.</li>
+        </ul>
+      </article>
+
+    </div>
   </main>
 
   <footer>&copy; 2025 Aikaterini Tavri</footer>
