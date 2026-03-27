@@ -438,6 +438,35 @@ a:hover {
 }
 
 /* -----------------------------
+   POETRY
+----------------------------- */
+.poetry {
+  max-width: 700px;
+  margin: 3rem auto;
+}
+
+.poem {
+  text-align: left;
+}
+
+.poem-date {
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.poem h2 {
+  color: #003366;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.poem p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* -----------------------------
    FOOTER
 ----------------------------- */
 footer {
