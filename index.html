@@ -3,42 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aikaterini Tavri | Polar Research</title>
-  <link rel="stylesheet" href="style.css?v=20" />
+  <title>Aikaterini Tavri | Polar Researcher </title>
+
+  <link rel="stylesheet" href="style.css?v=21" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- =========================
+       HEADER
+  ========================== -->
   <header class="top-banner">
-    <!-- LEFT: profile pic + name + affiliation -->
+
     <div class="left-title">
-  <img src="Aikaterini_Tavri.jpg" class="nav-pic" />
-  <div class="left-text"> <!-- add this class -->
-    <strong class="site-name">Aikaterini (Katia) Tavri</strong>
-    <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
-  </div>
-</div>
+      <img src="Aikaterini_Tavri.jpg" class="nav-pic" />
+      <div class="left-text">
+        <strong class="site-name">Aikaterini (Katia) Tavri</strong>
+        <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
+      </div>
+    </div>
 
+    <!-- DROPDOWN MENU -->
+    <div class="menu-container">
+      <button class="menu-button">☰ Menu</button>
 
-    <!-- RIGHT: nav links -->
+      <div class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="blog.html">Research Blog</a>
+        <a href="fieldwork.html">Fieldwork</a>
+        <a href="cv.html">CV</a>
+        <a href="poetry.html">Poetry</a>
+      </div>
+    </div>
 
-  <div class="menu-container">
-  <button class="menu-button">☰ Menu</button>
+  </header> 
 
-  <div class="dropdown-menu">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="blog.html">Research Blog</a>
-    <a href="fieldwork.html">Fieldwork</a>
-    <a href="cv.html">CV</a>
-    <a href="poetry.html">Poetry</a>
-  </div>
-</div>
-
-  <!-- Hero Section (single background image) -->
+  <!-- =========================
+       HERO
+  ========================== -->
   <section id="home" class="hero-image">
     <div class="hero-blurb">
       <h1 class="hero-title">Sea Ice · Waves · Remote Sensing</h1>
@@ -51,26 +56,63 @@
     </div>
   </section>
 
-  <!-- About Me Section -->
+  <!-- =========================
+       IMAGE BANNER (NEW)
+  ========================== -->
+  <section class="image-banner">
+    <img id="banner-image" src="20200813_145312.jpg" alt="research images">
+  </section>
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
   <section id="about" class="content about-flex">
     <img src="meandLband.jpg" alt="Aikaterini Tavri fieldwork" class="about-pic" />
+
     <div>
       <h2>About Me</h2>
       <p>
         I have always been drawn to understanding the physical processes of the ocean surface and how they can be observed
         from space. My work bridges satellite remote sensing, field campaigns, and coupled climate models to study
-        the polar oceans, with a focus on the ice edge, where waves and open water alter sea ice dynamics. I aim to
-        build connections between detailed physical processes and their representation in climate models, using
-        microwave sensors to study sea ice variability and wave–ice–ocean interactions. Outside
-        of research, I enjoy mentoring, teaching, and working across disciplines to explore the complexity of our planet.
+        the polar oceans, with a focus on the ice edge, where waves and open water alter sea ice dynamics.
       </p>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
     &copy; 2025 Aikaterini Tavri
   </footer>
+
+  <!-- =========================
+       JS: DROPDOWN + ROTATING BANNER
+  ========================== -->
+  <script>
+    // Dropdown toggle
+    const button = document.querySelector(".menu-button");
+    const menu = document.querySelector(".dropdown-menu");
+
+    button.addEventListener("click", () => {
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!button.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+
+    // Rotating banner images
+    const images = ["banner1.jpg", "banner2.jpg", "banner3.jpg"];
+    let i = 0;
+
+    setInterval(() => {
+      i = (i + 1) % images.length;
+      document.getElementById("banner-image").src = images[i];
+    }, 4000);
+  </script>
 
 </body>
 </html>
