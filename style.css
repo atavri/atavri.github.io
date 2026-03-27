@@ -4,6 +4,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
+  line-height: 1.6;
   padding: 0;
   scroll-behavior: smooth;
   color: #1a1a1a;
@@ -21,7 +22,7 @@ a:hover {
 
 .content {
   max-width: 1000px;
-  margin: 4rem auto;
+  margin: 5rem auto;
   padding: 0 1.5rem;
 }
 
@@ -43,7 +44,8 @@ a:hover {
   align-items: center;
   padding: 0.4rem 0.9rem;
   gap: 0.5rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+}
 }
 
 /* LEFT TITLE AREA */
@@ -82,13 +84,14 @@ a:hover {
 /* NAVIGATION LINKS */
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
-  flex-wrap: nowrap;
   gap: 0.55rem;
   margin-left: auto;
 }
 
 .nav-links a {
+  transition: all 0.2s ease;
   color: #003366;
   font-weight: 500;
   font-size: 0.9rem;
@@ -135,7 +138,8 @@ a:hover {
   background-image: url('20200806_225625.jpg');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 90vh;
+  padding: 4rem 1rem;
   margin-top: 60px; /* offset for sticky nav */
   position: relative;
   display: flex;
@@ -155,17 +159,26 @@ a:hover {
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 850px;
+  max-width: 700px;
+  padding: 1.8rem;
   background: rgba(255,255,255,0.9);
-  padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.hero-blurb {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-title {
   margin: 0;
   font-size: clamp(2rem, 4vw, 2.6rem);
   color: #003366;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -182,7 +195,7 @@ a:hover {
 .about-flex {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
   max-width: 1000px;
   margin: 4rem auto;
   padding: 0 1.5rem;
