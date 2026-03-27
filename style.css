@@ -149,14 +149,6 @@ a:hover {
   position: relative;
 }
 
-/* lighter overlay */
-.hero-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.25);
-  z-index: 0;
-}
 
 .hero-blurb {
   position: relative;
