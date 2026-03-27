@@ -12,8 +12,12 @@ body {
   scroll-behavior: smooth;
   color: #1a1a1a;
   background-color: #fff;
-  padding-top: 70px;
+  padding-top: 70px; /* space for fixed header */
 }
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
@@ -26,9 +30,9 @@ a:hover {
 }
 
 .content {
-  max-width: 900px;        /* 🔥 slightly narrower = cleaner */
-  margin: 4rem auto;       /* centers horizontally */
-  padding: 0 2rem;         /* breathing space on sides */
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
 }
 
 /* -----------------------------
@@ -39,15 +43,16 @@ a:hover {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255,255,255,0.96);
+  background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   z-index: 1000;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
+  gap: 1rem;
 }
 
 /* LEFT TITLE AREA */
@@ -83,18 +88,17 @@ a:hover {
   color: #004080;
 }
 
-
 /* -----------------------------
-   NAVIGATION LINKS (FIXED)
+   NAVIGATION LINKS
 ----------------------------- */
 .nav-links {
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap;              /* prevents overlap */
+  flex-wrap: wrap;
   gap: 0.6rem;
   margin-left: auto;
-  margin-right: 1rem;           /* pushes slightly left */
-  max-width: 70%;               /* prevents cutoff */
+  margin-right: 1rem;
+  max-width: 70%;
 }
 
 .nav-links a {
@@ -108,19 +112,16 @@ a:hover {
   position: relative;
 }
 
-/* subtle hover */
 .nav-links a:hover {
   background-color: rgba(0, 64, 128, 0.1);
   color: #003366;
 }
 
-/* active tab */
 .nav-links a.active {
   background-color: #004080;
   color: #fff;
 }
 
-/* animated underline */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -137,25 +138,28 @@ a:hover {
 }
 
 /* -----------------------------
-   HERO SECTION
+   HERO SECTION (HOME PAGE)
 ----------------------------- */
 .hero-image {
-  background-image: url('The_beau_Arctic.jpg');
+  background-image: url("The_beau_Arctic.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
-  margin-top: 120px;
+  margin-top: 0;
+  position: relative;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-.page-hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15); /* lighter overlay */
+  z-index: 0;
 }
 
 .hero-blurb {
@@ -163,17 +167,17 @@ a:hover {
   z-index: 1;
   text-align: center;
   max-width: 800px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hero-title {
   margin: 0;
   font-size: clamp(2rem, 4vw, 2.6rem);
   color: #003366;
-  line-height: 1.2;   /* FIXED (removed nowrap bug) */
+  line-height: 1.2;
 }
 
 .hero-intro {
@@ -184,12 +188,13 @@ a:hover {
 }
 
 /* -----------------------------
-   IMAGE BAND
+   IMAGE BAND (HOME PAGE)
 ----------------------------- */
 .image-band {
   display: flex;
   width: 100%;
   height: 140px;
+  overflow: hidden;
 }
 
 .image-band img {
@@ -204,7 +209,7 @@ a:hover {
 .about-flex {
   display: flex;
   gap: 2rem;
-  align-items: center;   /* better balance */
+  align-items: center;
   max-width: 1000px;
   margin: 4rem auto;
   padding: 0 1.5rem;
@@ -216,7 +221,8 @@ a:hover {
   height: auto;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
 .about-flex h2 {
@@ -228,7 +234,88 @@ a:hover {
   line-height: 1.7;
   font-size: 1rem;
   color: #333;
+  margin-bottom: 1.2rem;
 }
+
+/* -----------------------------
+   GENERIC PAGE HERO
+----------------------------- */
+.page-hero {
+  background: #f2f7ff;
+  border-bottom: 1px solid #e3ecff;
+  padding: 2.5rem 0 2rem;
+}
+
+.page-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-hero h1 {
+  margin: 0 0 0.8rem 0;
+  color: #003366;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.page-hero p,
+.page-hero .lede {
+  margin: 0;
+  color: #333;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   RESEARCH / CARD LAYOUTS
+----------------------------- */
+.research-intro {
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.research-card {
+  background: #fff;
+  border: 1px solid #e6edf7;
+  border-radius: 12px;
+  padding: 1.4rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.research-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #003366;
+  font-size: 1.2rem;
+}
+
+.research-card p {
+  line-height: 1.7;
+  color: #333;
+}
+
+.key-points {
+  margin: 1rem 0 0 1.2rem;
+  padding: 0;
+}
+
+.key-points li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   BLOG
+----------------------------- */
 .blog-post {
   max-width: 750px;
   margin: 0 auto;
@@ -251,7 +338,7 @@ a:hover {
 }
 
 /* -----------------------------
-   FIELDWORK PHOTO STRIP
+   FIELDWORK
 ----------------------------- */
 .fieldwork-photos {
   display: flex;
@@ -262,17 +349,94 @@ a:hover {
 }
 
 .fieldwork-photos img {
-  width: 180px;         /* similar to About image */
+  width: 180px;
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.2s ease;
 }
 
-/* subtle hover */
 .fieldwork-photos img:hover {
   transform: scale(1.05);
 }
+
+.fieldwork-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.fieldwork-card {
+  background: #fff;
+}
+
+.fieldwork-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.fieldwork-card h2 {
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.fieldwork-card p {
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+/* -----------------------------
+   PUBLICATIONS
+----------------------------- */
+.publications h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.pub-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1rem;
+}
+
+.pub-list li {
+  margin: 0.8rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.pub-list li::before {
+  content: "•";
+  color: #004080;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pub-note {
+  margin-top: 0.8rem;
+  color: #555;
+  text-align: center;
+}
+
+/* -----------------------------
+   CV PAGE
+----------------------------- */
+.cv-container {
+  height: calc(100vh - 70px);
+}
+
+.cv-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* -----------------------------
    FOOTER
 ----------------------------- */
@@ -282,16 +446,37 @@ footer {
   padding: 2rem 1rem;
   background: #f7f7f7;
   color: #666;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #004080;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* -----------------------------
    RESPONSIVE
 ----------------------------- */
-@media (max-width: 900px) {
+@media (max-width: 950px) {
+  .nav-pic {
+    display: none;
+  }
+
+  .tagline-small {
+    display: none;
+  }
 
   .nav-links {
-    justify-content: center;
     max-width: 100%;
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
   }
 
   .about-flex {
@@ -305,13 +490,36 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .content,
+  .page-hero-inner {
+    padding: 0 1.2rem;
+  }
+
+  .top-banner {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.45rem;
+  }
+
+  .image-band {
+    flex-wrap: wrap;
+    height: auto;
+  }
 
   .image-band img {
-    width: 100%;
+    width: 50%;
     height: 120px;
   }
 
-  .tagline-small {
-    display: none;
+  .fieldwork-photos img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-blurb {
+    padding: 1.4rem;
   }
 }
