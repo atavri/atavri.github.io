@@ -4,9 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research Blog | Aikaterini Tavri</title>
-  <link rel="stylesheet" href="style.css?v=20" />
+
+  <link rel="stylesheet" href="style.css?v=90" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+  <!-- ================= HEADER ================= -->
   <header class="top-banner">
     <div class="left-title">
       <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
@@ -15,6 +20,7 @@
         <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
       </div>
     </div>
+
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html">Current Research</a>
@@ -26,30 +32,76 @@
     </nav>
   </header>
 
+  <!-- ================= HERO ================= -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <h1>Research Blog</h1>
-      <p class="lede">Notes from fieldwork, data stories, and insights on wave–ice–ocean interactions.</p>
+      <p class="lede">
+        Notes on satellite missions, fieldwork, and the evolving physics of the polar oceans.
+      </p>
     </div>
   </section>
 
+  <!-- ================= BLOG POST ================= -->
   <section class="content">
-    <div class="research-grid">
-      <article class="research-card">
-        <h2><a href="#">Mapping Melt Ponds with Polarimetric SAR</a></h2>
-        <p>How C- and L-band signatures evolve through the melt season and what they reveal about surface hydrology.</p>
-      </article>
-      <article class="research-card">
-        <h2><a href="#">Wave–Ice Signals in Passive Microwave Records</a></h2>
-        <p>Diagnosing regime-dependent retrieval biases using forward-emulated Tb.</p>
-      </article>
-      <article class="research-card">
-        <h2><a href="#">Langmuir Turbulence Under Ice</a></h2>
-        <p>What coupled neXtSIM–WW3 experiments tell us about OSBL mixing pathways.</p>
-      </article>
-    </div>
+
+    <article class="blog-post">
+
+      <h2>The NISAR Launch and a New Era for Antarctic Sea Ice Observation</h2>
+
+      <p class="post-meta">2025</p>
+
+      <p>
+        The launch of NASA–ISRO Synthetic Aperture Radar (NISAR) marks an exciting moment for the cryosphere community.
+        For those of us working on sea ice remote sensing, it represents more than just a new satellite—it opens a new
+        observational window into processes that have long been difficult to capture, particularly during the Antarctic
+        melt season.
+      </p>
+
+      <p>
+        NISAR’s L-band radar offers a unique capability: the ability to penetrate through wet snow and sample the upper
+        layers of sea ice even during periods when shorter wavelengths, such as C-band, become strongly attenuated.
+        This is especially important in the marginal ice zone, where surface conditions evolve rapidly and where melt,
+        wave activity, and upper-ocean interactions combine to reshape sea ice structure on short timescales.
+      </p>
+
+      <p>
+        In Antarctica, these processes are central to how we interpret satellite-derived sea ice concentration.
+        Passive microwave retrievals, which underpin decades of climate records, rely on assumptions that often break
+        down during melt or in highly heterogeneous ice conditions. With NISAR, we have the opportunity to observe
+        structural properties of the ice directly and to better understand how physical changes translate into
+        observable signals.
+      </p>
+
+      <p>
+        What is particularly exciting is the potential for combining NISAR observations with existing sensors such as
+        Sentinel-1, ICESat-2, and passive microwave radiometers. Together, these datasets can help bridge the gap
+        between physical processes—such as melt evolution, floe fragmentation, and wave-driven mixing—and the
+        large-scale patterns we see in climate records.
+      </p>
+
+      <p>
+        For Antarctic sea ice, where uncertainties remain high and trends are complex, this represents a significant
+        step forward. The ability to observe the system across multiple frequencies and scales will help us move toward
+        a more physically grounded interpretation of satellite data and, ultimately, improve how we monitor change in
+        the polar oceans.
+      </p>
+
+      <p>
+        As NISAR data become available, I am particularly interested in how L-band observations can be used to diagnose
+        melt-season processes and to identify regime-dependent biases in existing retrieval algorithms. The mission
+        offers a powerful opportunity to connect observation and theory in new ways, and to better understand the
+        evolving dynamics of the Antarctic ice cover.
+      </p>
+
+    </article>
+
   </section>
 
-  <footer>&copy; 2025 Aikaterini Tavri</footer>
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    &copy; 2025 Aikaterini Tavri
+  </footer>
+
 </body>
 </html>
