@@ -82,29 +82,8 @@ a:hover {
   font-size: 0.85rem;
   color: #004080;
 }
-.fieldwork-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
 
-.fieldwork-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
 
-.fieldwork-card h2 {
-  color: #003366;
-  margin-bottom: 0.5rem;
-}
-
-.fieldwork-card p {
-  line-height: 1.7;
-  margin-bottom: 0.8rem;
-}
 /* -----------------------------
    NAVIGATION LINKS (FIXED)
 ----------------------------- */
@@ -269,6 +248,30 @@ a:hover {
 .blog-post p {
   line-height: 1.7;
   margin-bottom: 1.2rem;
+}
+
+/* -----------------------------
+   FIELDWORK PHOTO STRIP
+----------------------------- */
+.fieldwork-photos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.fieldwork-photos img {
+  width: 180px;         /* similar to About image */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+/* subtle hover */
+.fieldwork-photos img:hover {
+  transform: scale(1.05);
 }
 /* -----------------------------
    FOOTER
