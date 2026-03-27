@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Research | Aikaterini Tavri</title>
-  <link rel="stylesheet" href="style.css?v=24" />
+
+  <link rel="stylesheet" href="style.css?v=70" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- ================= HEADER ================= -->
   <header class="top-banner">
+
     <div class="left-title">
       <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
+
       <div class="left-text">
         <strong class="site-name">Aikaterini (Katia) Tavri</strong>
         <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
       </div>
     </div>
+
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html" class="active">Research</a>
@@ -26,121 +33,148 @@
       <a href="cv.html">CV</a>
       <a href="poetry.html">Poetry</a>
     </nav>
+
   </header>
 
-  <!-- Research Page Hero -->
+  <!-- ================= HERO ================= -->
   <section class="page-hero">
     <div class="page-hero-inner">
       <h1>Research</h1>
+
       <p class="lede">
-        I study how sea ice, waves, and the ocean interact across scales — from individual floes to the polar basins.
-        I combine multi-sensor satellite data, field campaigns, and coupled models to advance our understanding
-        of polar processes and their role in the climate system.
+        My research focuses on understanding how physical processes in transitional sea ice regimes—such as melt,
+        freeze-up, and wave–ice interaction—reshape surface structure and influence satellite observations.
+        I combine multi-sensor satellite data, field campaigns, and coupled models to link physical processes
+        with their observable signatures across scales.
       </p>
     </div>
   </section>
 
-  <!-- Main Research Grid -->
+  <!-- ================= MAIN CONTENT ================= -->
   <main class="content">
+
+    <!-- ================= CORE IDEA ================= -->
+    <section class="research-intro">
+      <p>
+        A central theme of my work is that satellite retrieval biases are not simply limitations of observation,
+        but reflect real, regime-dependent changes in surface physics. By connecting thermodynamic evolution,
+        wave–ice interactions, and upper-ocean processes to satellite signal behavior, I aim to transform these
+        biases into physically interpretable diagnostics of a changing polar system.
+      </p>
+    </section>
+
+    <!-- ================= RESEARCH GRID ================= -->
     <div class="research-grid">
 
+      <!-- CARD 1 -->
       <article class="research-card">
-        <h2>Waves in Sea Ice</h2>
+        <h2>Melt-Season Microwave Signatures</h2>
+
         <p>
-          Waves are powerful agents in the marginal ice zone (MIZ): they break, drift, and disperse sea ice,
-          accelerating retreat and altering air–sea exchange. I use satellite radar and in situ observations to
-          quantify wave–ice coupling and connect observed patterns to process-aware ocean models.
+          During the melt season, sea ice undergoes rapid thermodynamic transitions—snow metamorphism, brine evolution,
+          and melt pond formation—that fundamentally alter surface roughness and dielectric properties. These changes
+          reshape how microwave signals interact with sea ice, reducing the validity of winter-based retrieval assumptions.
         </p>
+
         <ul class="key-points">
-          <li>Wave-induced breakup and floe-size variability.</li>
-          <li>How wave–ice interactions modify surface roughness and drag.</li>
-          <li>Observed wave damping linked to model energy dissipation.</li>
+          <li>Quantifying frequency-dependent scattering using C- and L-band SAR.</li>
+          <li>Linking melt processes to transitions between surface and volume scattering.</li>
+          <li>Tracking melt evolution using multi-sensor observations (Sentinel-1, SWOT).</li>
         </ul>
       </article>
 
+      <!-- CARD 2 -->
       <article class="research-card">
-        <h2>Microwave Scattering Across Melt</h2>
+        <h2>Wave–Ice Interactions in the MIZ</h2>
+
         <p>
-          During melt, sea ice becomes a complex water–snow–ice mosaic. Multi-frequency (C & L band) SAR reveals
-          how scattering shifts from surface ponding to volume processes. These relationships extend reliable
-          retrievals deeper into the melt season and tie polarimetric features to albedo and energy-flux changes.
+          In the marginal ice zone, ocean waves fragment sea ice and increase sub-footprint heterogeneity. These dynamic
+          processes modify surface roughness, floe size distribution, and upper-ocean mixing, directly impacting
+          satellite observables and retrieval consistency.
         </p>
+
         <ul class="key-points">
-          <li>Field-validated links between melt ponds and polarimetric SAR.</li>
-          <li>Surface vs. volume scattering transitions through melt.</li>
-          <li>Pathways to season-robust geophysical retrievals.</li>
+          <li>Relating wave-driven fragmentation to retrieval discrepancies near the ice edge.</li>
+          <li>Using SAR to quantify surface roughness and floe-scale variability.</li>
+          <li>Coupling observations with neXtSIM–WaveWatch III simulations.</li>
         </ul>
       </article>
 
+      <!-- CARD 3 -->
       <article class="research-card">
-        <h2>Diagnosing Biases in Passive-Microwave SIC</h2>
+        <h2>Diagnosing Retrieval Biases in Observation Space</h2>
+
         <p>
-          Algorithmic differences in passive microwave (PM) sea-ice concentration (SIC) propagate into climate
-          records. I use an observation-space approach: forward-emulate brightness temperatures (T<sub>b</sub>) from
-          physics-informed SIC, then compare with AMSR2/SSMIS to localize regime-dependent biases and wave-driven errors.
+          Passive microwave sea ice concentration is inferred from brightness temperatures rather than directly observed.
+          I develop physics-constrained forward models to evaluate retrieval biases in observation space, allowing
+          inconsistencies to be traced back to underlying surface conditions.
         </p>
+
         <ul class="key-points">
-          <li>Diagnostics in T<sub>b</sub> space (not SIC-vs-SIC) to identify bias sources.</li>
-          <li>Use SAR, ICESat-2, and wave hindcasts to constrain retrieval errors.</li>
-          <li>Improved inputs for coupled climate models and reanalyses.</li>
+          <li>Forward-emulating brightness temperatures from physical surface states.</li>
+          <li>Identifying regime-dependent biases during melt and in dynamic ice conditions.</li>
+          <li>Integrating SAR, ICESat-2, and wave models to constrain uncertainty.</li>
         </ul>
       </article>
 
+      <!-- CARD 4 -->
       <article class="research-card">
-        <h2>Turbulence, Waves & the OSBL</h2>
+        <h2>Linking Processes, Observations, and Models</h2>
+
         <p>
-          Coupled neXtSIM–WaveWatch III experiments quantify how wind–wave misalignment and partial ice cover
-          reshape mixing and Langmuir turbulence beneath sea ice. Results inform physically consistent
-          parameterizations of the ocean surface boundary layer (OSBL) in climate models.
+          Across these efforts, my work builds a unified framework that connects thermodynamic evolution, dynamic forcing,
+          and upper-ocean processes to satellite signal behavior. This approach enables retrieval biases to be understood
+          as predictable outcomes of changing surface conditions.
         </p>
+
         <ul class="key-points">
-          <li>Wave-driven mixing and Langmuir turbulence under ice.</li>
-          <li>Relate turbulence metrics to satellite observables.</li>
-          <li>Forward-emulation of PM T<sub>b</sub> from CMIP-class simulations.</li>
+          <li>Bridging scales from field observations to basin-scale satellite records.</li>
+          <li>Improving interpretation of remote sensing products in climate studies.</li>
+          <li>Supporting physically consistent model–data integration.</li>
         </ul>
       </article>
 
     </div>
+
   </main>
 
-  <!-- Publications -->
+  <!-- ================= PUBLICATIONS ================= -->
   <section class="content publications">
+
     <h2>Selected Publications</h2>
 
-    <!-- Tip: keep your name bold; use italics for journal; add links to DOI or publisher -->
     <ul class="pub-list">
-      <!-- Replace these placeholders with your entries -->
       <li>
-        <strong>Tavri, A.</strong>, et al. (2025).
-        Polarimetric SAR constraints on melt-season sea-ice scattering.
-        <em>Journal of Geophysical Research: Oceans</em>.
-        <a href="#" target="_blank" rel="noopener">DOI</a>
+        <strong>Tavri, A.</strong>, Scharien, R., & Geldsetzer, T. (2023).
+        Melt season Arctic sea ice type separability using fully and compact polarimetric C- and L-band SAR.
+        <em>Canadian Journal of Remote Sensing</em>.
       </li>
+
+      <li>
+        <strong>Macdonald, G. J.</strong>, Scharien, R. K., Duncan, K., Farrell, S. L., Rezania, P., & <strong>Tavri, A.</strong> (2024).
+        Arctic sea ice topography from RCM SAR backscatter.
+        <em>Geophysical Research Letters</em>.
+      </li>
+
       <li>
         <strong>Tavri, A.</strong>, Horvat, C., et al. (2025).
-        Diagnosing algorithmic biases in passive-microwave SIC using observation-space T<sub>b</sub> emulation.
-        <em>The Cryosphere</em>.
-        <a href="#" target="_blank" rel="noopener">DOI</a>
+        Langmuir turbulence in the Arctic Ocean: insights from a coupled sea ice–wave model.
+        <em>EGUsphere</em>.
       </li>
-      <li>
-        <strong>Tavri, A.</strong>, Casey, J., et al. (2023).
-        Multi-frequency SAR indicators of melt-pond evolution and volume scattering.
-        <em>Remote Sensing of Environment</em>.
-        <a href="#" target="_blank" rel="noopener">DOI</a>
-      </li>
-      <!-- Add more items as needed -->
     </ul>
 
     <p class="pub-note">
-      Full list available on <a href="https://www.researchgate.net/profile/Aikaterini-Tavri-3?ev=prf_overview" target="_blank" rel="noopener">ResearchGate</a>
-      and in my <a href="cv.html">CV</a>.
+      Full list available in my <a href="cv.html">CV</a>.
     </p>
+
   </section>
 
+  <!-- ================= FOOTER ================= -->
   <footer>
     &copy; 2025 Aikaterini Tavri |
-    <a href="mailto:aikaterini_tavri@brown.edu">aikaterini_tavri@brown.edu</a>
+    <a href="mailto:atavri@brown.edu">atavri@brown.edu</a>
   </footer>
 
 </body>
+
 </html>
