@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aikaterini Tavri | Polar Researcher </title>
+  <title>Aikaterini Tavri | Polar Research</title>
 
-  <link rel="stylesheet" href="style.css?v=21" />
+  <link rel="stylesheet" href="style.css?v=22" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+  <!-- ================= HEADER ================= -->
   <header class="top-banner">
 
     <div class="left-title">
@@ -24,7 +22,6 @@
       </div>
     </div>
 
-    <!-- DROPDOWN MENU -->
     <div class="menu-container">
       <button class="menu-button">☰ Menu</button>
 
@@ -39,11 +36,9 @@
       </div>
     </div>
 
-  </header> 
+  </header>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- ================= HERO ================= -->
   <section id="home" class="hero-image">
     <div class="hero-blurb">
       <h1 class="hero-title">Sea Ice · Waves · Remote Sensing</h1>
@@ -56,41 +51,38 @@
     </div>
   </section>
 
-  <!-- =========================
-       IMAGE BANNER (NEW)
-  ========================== -->
-  <section class="image-banner">
-    <img id="banner-image" src="20200813_145312.jpg" alt="research images">
-  </section>
+  <!-- ================= IMAGE STRIP (NEW) ================= -->
+  <div class="image-strip">
+    <img src="First_timeon_ice.jpg">
+    <img src="The_beau_Arctic.jpg">
+    <img src="All_regimesJune13th.jpg">
+    <img src="20200813_145312.jpg">
+  </div>
 
-  <!-- =========================
-       ABOUT
-  ========================== -->
+  <!-- ================= ABOUT ================= -->
   <section id="about" class="content about-flex">
-    <img src="meandLband.jpg" alt="Aikaterini Tavri fieldwork" class="about-pic" />
+
+    <img src="meandLband.jpg" alt="Aikaterini Tavri" class="about-pic" />
 
     <div>
       <h2>About Me</h2>
       <p>
         I have always been drawn to understanding the physical processes of the ocean surface and how they can be observed
         from space. My work bridges satellite remote sensing, field campaigns, and coupled climate models to study
-        the polar oceans, with a focus on the ice edge, where waves and open water alter sea ice dynamics.
+        the polar oceans, with a focus on the ice edge, where waves and open water alter sea ice dynamics. I aim to
+        build connections between detailed physical processes and their representation in climate models.
       </p>
     </div>
+
   </section>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- ================= FOOTER ================= -->
   <footer>
-    &copy; 2025 Aikaterini Tavri
+    &copy; 2026 Aikaterini Tavri
   </footer>
 
-  <!-- =========================
-       JS: DROPDOWN + ROTATING BANNER
-  ========================== -->
+  <!-- ================= JS ================= -->
   <script>
-    // Dropdown toggle
     const button = document.querySelector(".menu-button");
     const menu = document.querySelector(".dropdown-menu");
 
@@ -103,15 +95,6 @@
         menu.style.display = "none";
       }
     });
-
-    // Rotating banner images
-    const images = ["banner1.jpg", "banner2.jpg", "banner3.jpg"];
-    let i = 0;
-
-    setInterval(() => {
-      i = (i + 1) % images.length;
-      document.getElementById("banner-image").src = images[i];
-    }, 4000);
   </script>
 
 </body>
