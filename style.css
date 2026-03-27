@@ -12,6 +12,8 @@ body {
   scroll-behavior: smooth;
   color: #1a1a1a;
   background-color: #fff;
+  padding-top: 70px;
+}
 }
 
 a {
