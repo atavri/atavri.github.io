@@ -151,6 +151,11 @@ a:hover {
   position: relative;
 }
 
+.page-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
 .hero-blurb {
   position: relative;
