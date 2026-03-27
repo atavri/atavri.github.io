@@ -26,9 +26,9 @@ a:hover {
 }
 
 .content {
-  max-width: 1000px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+  max-width: 900px;        /* 🔥 slightly narrower = cleaner */
+  margin: 4rem auto;       /* centers horizontally */
+  padding: 0 2rem;         /* breathing space on sides */
 }
 
 /* -----------------------------
