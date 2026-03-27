@@ -4,18 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aikaterini Tavri | Polar Research</title>
-
-  <link rel="stylesheet" href="style.css?v=22" />
+  <link rel="stylesheet" href="style.css?v=30" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <!-- ================= HEADER ================= -->
   <header class="top-banner">
-
     <div class="left-title">
-      <img src="Aikaterini_Tavri.jpg" class="nav-pic" />
+      <img src="Aikaterini_Tavri.jpg" alt="Aikaterini Tavri" class="nav-pic" />
       <div class="left-text">
         <strong class="site-name">Aikaterini (Katia) Tavri</strong>
         <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
@@ -23,10 +19,9 @@
     </div>
 
     <div class="menu-container">
-      <button class="menu-button">☰ Menu</button>
-
+      <button class="menu-button" type="button" aria-label="Open menu">☰ Menu</button>
       <div class="dropdown-menu">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="research.html">Research</a>
         <a href="teaching.html">Teaching</a>
         <a href="blog.html">Research Blog</a>
@@ -35,15 +30,13 @@
         <a href="poetry.html">Poetry</a>
       </div>
     </div>
-
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section id="home" class="hero-image">
+  <section class="hero-image">
     <div class="hero-blurb">
       <h1 class="hero-title">Sea Ice · Waves · Remote Sensing</h1>
       <p class="hero-intro">
-        As a scientist and educator, I am fascinated by the physical processes that shape the polar oceans –
+        As a scientist and educator, I am fascinated by the physical processes that shape the polar oceans —
         especially the dynamic marginal ice zone where sea ice meets open water. My research focuses on sea ice
         geophysics and wave–ice interactions, using microwave remote sensing to improve how these processes are
         represented in climate models.
@@ -51,48 +44,45 @@
     </div>
   </section>
 
-  <!-- ================= IMAGE STRIP (NEW) ================= -->
   <div class="image-strip">
-    <img src="First_timeon_ice.jpg">
-    <img src="The_beau_Arctic.jpg">
-    <img src="All_regimesJune13th.jpg">
-    <img src="20200813_145312.jpg">
+    <img src="First_timeon_ice.jpg" alt="Fieldwork on sea ice">
+    <img src="The_beau_Arctic.jpg" alt="Arctic landscape">
+    <img src="All_regimesJune13th.jpg" alt="Sea ice regimes">
+    <img src="20200813_145312.jpg" alt="Polar research scene">
   </div>
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="content about-flex">
-
-    <img src="meandLband.jpg" alt="Aikaterini Tavri" class="about-pic" />
-
-    <div>
-      <h2>About Me</h2>
-      <p>
-        I have always been drawn to understanding the physical processes of the ocean surface and how they can be observed
-        from space. My work bridges satellite remote sensing, field campaigns, and coupled climate models to study
-        the polar oceans, with a focus on the ice edge, where waves and open water alter sea ice dynamics. I aim to
-        build connections between detailed physical processes and their representation in climate models.
-      </p>
+  <section class="about-section">
+    <div class="about-inner">
+      <img src="meandLband.jpg" alt="Aikaterini Tavri fieldwork" class="about-pic" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I have always been drawn to understanding the physical processes of the ocean surface and how they can be observed
+          from space. My work bridges satellite remote sensing, field campaigns, and coupled climate models to study
+          the polar oceans, with a focus on the ice edge, where waves and open water alter sea ice dynamics. I aim to
+          build connections between detailed physical processes and their representation in climate models, using
+          microwave sensors to study sea ice variability and wave–ice–ocean interactions. Outside of research, I enjoy
+          mentoring, teaching, and working across disciplines to explore the complexity of our planet.
+        </p>
+      </div>
     </div>
-
   </section>
 
-  <!-- ================= FOOTER ================= -->
   <footer>
     &copy; 2026 Aikaterini Tavri
   </footer>
 
-  <!-- ================= JS ================= -->
   <script>
     const button = document.querySelector(".menu-button");
     const menu = document.querySelector(".dropdown-menu");
 
     button.addEventListener("click", () => {
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
+      menu.classList.toggle("show");
     });
 
     document.addEventListener("click", (e) => {
       if (!button.contains(e.target) && !menu.contains(e.target)) {
-        menu.style.display = "none";
+        menu.classList.remove("show");
       }
     });
   </script>
