@@ -465,7 +465,29 @@ a:hover {
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
 }
+/* -----------------------------
+   TEACHING GALLERY
+----------------------------- */
+.teaching-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
 
+.teaching-gallery img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.teaching-gallery img:hover {
+  transform: scale(1.03);
+}
 /* -----------------------------
    FOOTER
 ----------------------------- */
