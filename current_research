@@ -3,128 +3,488 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Current Research | Aikaterini Tavri</title>
-  <link rel="stylesheet" href="style.css?v=10" />
+  <meta
+    name="description"
+    content="Current research by Aikaterini Tavri on sea ice remote sensing, wave-ice interactions, and polar upper-ocean dynamics."
+  />
+  <title>Research | Aikaterini Tavri</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css?v=2026-10" />
 </head>
 
 <body>
 
-  <!-- Top Navigation Bar (same layout as index) -->
-  <header class="top-banner">
-    <div class="left-title">
-      <img src="Aikaterini_Tavri.jpg" alt="Profile Photo" class="nav-pic" />
-      <div class="left-text">
-        <strong class="site-name">Aikaterini (Katia) Tavri</strong>
-        <span class="tagline-small">Postdoctoral Researcher, Brown University</span>
-      </div>
-    </div>
+<header class="top-banner">
+  <div class="shell nav-inner">
+
+    <a class="left-title" href="index.html">
+      <img
+        src="Aikaterini_Tavri.jpg"
+        class="nav-pic"
+        alt="Aikaterini Tavri"
+      />
+
+      <span class="left-text">
+        <strong class="site-name">
+          Aikaterini (Katia) Tavri
+        </strong>
+
+        <span class="tagline-small">
+          Postdoctoral Research Associate, Brown University
+        </span>
+      </span>
+    </a>
 
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="research.html" class="active">Current Research</a>
+      <a href="research.html" class="active">Research</a>
       <a href="teaching.html">Teaching</a>
-      <a href="blog.html">Research Blog</a>
       <a href="fieldwork.html">Fieldwork</a>
       <a href="cv.html">CV</a>
+      <a href="blog.html">Blog</a>
       <a href="poetry.html">Poetry</a>
     </nav>
-  </header>
 
-  <!-- Page Header -->
+  </div>
+</header>
+
+
+<main>
+
+  <!-- ================= PAGE HERO ================= -->
+
   <section class="page-hero">
-    <div class="page-hero-inner">
-      <h1>Current Research</h1>
-      <p class="lede">
-        I combine satellite remote sensing, process-level physics, and coupled models to understand
-        sea-ice variability across scales and improve how polar processes are represented in climate models.
+    <div class="shell">
+
+      <p class="eyebrow">
+        Current research
       </p>
-    </div>
-  </section>
 
-  <!-- Research Grid -->
-  <section class="content">
-    <div class="research-grid">
+      <h1>
+        Observing polar ocean change.
+      </h1>
 
-      <!-- Card 1 -->
-      <article class="research-card" id="scales">
-        <h2>From Sea-Ice Floes to the Ice Pack</h2>
-        <p>
-          Sea ice regulates exchanges of heat, momentum, and freshwater between ocean and atmosphere.
-          I study variability from the floe scale (surface roughness, melt ponds, snow) to basin scale,
-          with emphasis on the marginal ice zone (MIZ) where breakup and waves drive lateral melt and mixing.
-          Understanding these multi-scale processes is essential for both retrieval accuracy and climate feedbacks.
-        </p>
-        <ul class="key-points">
-          <li>Link surface features (ponds, roughness, snow) to scattering and thermodynamics.</li>
-          <li>Contrast Arctic melt-season dynamics with Antarctic snow–ice and wind redistribution.</li>
-          <li>Translate small-scale physics into constraints for basin-scale climate records.</li>
-        </ul>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="research-card" id="melt-transitions">
-        <h2>Microwave Scattering Across Melt Transitions</h2>
-        <p>
-          Melt ponds complicate passive-microwave retrievals. I use polarimetric SAR (C- and L-band)
-          to separate surface and volume scattering through the melt season, extending the usable window
-          of remote-sensing climate records and clarifying ambiguous signatures.
-        </p>
-        <ul class="key-points">
-          <li>C-band tracks early pond onset via surface scattering; L-band captures volumetric contrasts during drainage.</li>
-          <li>Field validation (e.g., MOSAiC) links SAR polarimetry to observed pond evolution, albedo, and energy flux.</li>
-          <li>Future work: exploit higher-frequency missions (e.g., SWOT Ka-band) to quantify roughness and subsurface structure.</li>
-        </ul>
-        <!-- Optional figure -->
-        <!-- <img src="your_figure.png" alt="Polarimetric response across melt" class="research-figure"> -->
-      </article>
-
-      <!-- Card 3 -->
-      <article class="research-card" id="pm-bias">
-        <h2>Diagnosing Biases in Passive-Microwave SIC</h2>
-        <p>
-          Passive-microwave sea-ice concentration (SIC) products diverge most in the MIZ and melt season.
-          I’m developing a diagnostic framework that forward-emulates brightness temperatures (Tb) from model SIC
-          and compares them with AMSR2/SSMIS observations to identify regime-dependent algorithmic biases.
-        </p>
-        <ul class="key-points">
-          <li>Use SAR + ICESat-2 + wave hindcasts to locate wave-driven retrieval errors.</li>
-          <li>Targeted corrections improve physics fidelity of climate records and model initialization.</li>
-          <li>Part of a SCAR Fellowship plan and a funded NASA Cryospheric Sciences effort.</li>
-        </ul>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="research-card" id="osbl-turbulence">
-        <h2>Turbulence, Waves, and Ice–Ocean Coupling</h2>
-        <p>
-          Using neXtSIM–WaveWatch III and related tools, I assess how wind–wave misalignment and partial ice cover
-          shape vertical kinetic energy and mixing in the ocean surface boundary layer, including the role of
-          Langmuir turbulence under sea-ice cover.
-        </p>
-        <ul class="key-points">
-          <li>Quantify wave-driven mixing pathways and their imprint on upper-ocean dissipation.</li>
-          <li>Develop more physically consistent mixing parameterizations for climate models.</li>
-          <li>Bridge observations and models via forward-emulation of Tb from CMIP-class simulations.</li>
-        </ul>
-      </article>
+      <p class="lede">
+        I use satellite remote sensing, field observations, and coupled
+        models to understand how the changing physical state of sea ice
+        affects waves, ocean-surface forcing, and upper-ocean dynamics.
+      </p>
 
     </div>
   </section>
 
-  <!-- Highlights / Outcomes -->
-  <section class="content highlights">
-    <h2>Selected Outcomes & Directions</h2>
-    <ul>
-      <li>Physics-based interpretation of polarimetric SAR during melt; extended seasonal coverage of sea-ice records.</li>
-      <li>Diagnostic framework for SIC biases using observation-space Tb comparisons (AMSR2/SSMIS ↔ model).</li>
-      <li>Arctic-wide assessment of Langmuir-turbulence potential under wave–ice coupling.</li>
-      <li>Next steps: couple retrieval corrections with climate initialization to improve prediction skill.</li>
-    </ul>
+
+  <!-- ================= RESEARCH STORIES ================= -->
+
+  <section class="section">
+
+    <div class="shell research-story">
+
+
+      <!-- =================================================
+           01 — SEA-ICE OBSERVATIONS
+           ================================================= -->
+
+      <article class="story-row" id="ice-state">
+
+        <div class="story-visual">
+
+          <!--
+          WHEN YOU HAVE THE FIGURE READY,
+          DELETE THE figure-placeholder DIV BELOW
+          AND USE SOMETHING LIKE:
+
+          <img
+            src="research_sar_melt.png"
+            alt="C- and L-band SAR response to melt-season sea ice"
+          >
+          -->
+
+          <div class="figure-placeholder">
+            <div>
+
+              <strong>
+                Add your C-/L-band SAR figure here
+              </strong>
+
+              Best choice: a figure from your 2023 SAR paper or
+              dissertation showing complementary C- and L-band
+              response across melt conditions.
+
+            </div>
+          </div>
+
+          <div class="figure-caption">
+            Suggested story figure: multifrequency SAR constraints
+            on melt-season sea-ice properties.
+          </div>
+
+        </div>
+
+
+        <div class="story-copy">
+
+          <p class="eyebrow">
+            Theme 01 · Sea-ice observations
+          </p>
+
+          <h2>
+            What can satellites tell us about the physical state
+            of melting sea ice?
+          </h2>
+
+          <p class="question">
+            The challenge:
+          </p>
+
+          <p>
+            During summer melt, the surface conditions that matter most
+            physically - melt ponds, wet snow, roughness, and evolving
+            ice structure - also alter the microwave signal used to
+            observe the ice.
+          </p>
+
+          <p>
+            My doctoral research used polarimetric C- and L-band SAR
+            to show that the two frequencies contain complementary
+            information about surface and volume scattering during
+            advanced melt. That gives us a path toward more physically
+            meaningful sea-ice interpretation when a single sensor
+            becomes ambiguous.
+          </p>
+
+          <div class="story-meta">
+            <span class="tag">SAR</span>
+            <span class="tag">C-band</span>
+            <span class="tag">L-band</span>
+            <span class="tag">Melt season</span>
+            <span class="tag">MOSAiC</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           02 — WAVES AND MIXING
+           ================================================= -->
+
+      <article class="story-row reverse" id="waves">
+
+        <div class="story-visual">
+
+          <!--
+          RECOMMENDED:
+          Export Figure 2 from your Tavri et al. 2026 paper
+          as an image named:
+
+          research_langmuir_fig2.png
+
+          Then replace the placeholder below with:
+
+          <img
+            src="research_langmuir_fig2.png"
+            alt="Seasonal spatial distribution of Langmuir number across the Arctic"
+          >
+          -->
+
+          <div class="figure-placeholder">
+
+            <div>
+
+              <strong>
+                Tavri et al. (2026), Figure 2
+              </strong>
+
+              Use the pan-Arctic Langmuir-number map here.
+              It visually shows where wave influence reaches
+              into seasonal ice cover and how the pattern changes
+              through the year.
+
+            </div>
+
+          </div>
+
+          <div class="figure-caption">
+            Recommended figure: spatial distribution and seasonal
+            medians of the turbulent Langmuir number,
+            Tavri et al. (2026), The Cryosphere.
+          </div>
+
+        </div>
+
+
+        <div class="story-copy">
+
+          <p class="eyebrow">
+            Theme 02 · Waves and upper-ocean mixing
+          </p>
+
+          <h2>
+            Where can waves still influence mixing beneath
+            Arctic sea ice?
+          </h2>
+
+          <p class="question">
+            The result:
+          </p>
+
+          <p>
+            Using coupled neXtSIM-WAVEWATCH III simulations from
+            2018-2022, I led the first pan-Arctic assessment of
+            Langmuir-turbulence mixing potential beneath sea ice.
+          </p>
+
+          <p>
+            The marginal ice zone emerges as a distinct and highly
+            intermittent forcing environment. Sea-ice concentration
+            shapes the mean balance between wave- and shear-driven
+            turbulence, but it does not uniquely determine local
+            mixing potential; wave conditions and ice structure
+            matter strongly.
+          </p>
+
+          <div class="story-meta">
+            <span class="tag">Wave-ice interaction</span>
+            <span class="tag">Langmuir turbulence</span>
+            <span class="tag">neXtSIM</span>
+            <span class="tag">WAVEWATCH III</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           03 — MARGINAL ICE ZONE
+           ================================================= -->
+
+      <article class="story-row" id="miz-regimes">
+
+        <div class="story-visual">
+
+          <!--
+          RECOMMENDED:
+          Export Figure 3 from Tavri et al. 2026
+          as:
+
+          research_langmuir_fig3.png
+
+          Then replace placeholder with:
+
+          <img
+            src="research_langmuir_fig3.png"
+            alt="Upper-ocean mixing regimes and transition frequency in the Arctic marginal ice zone"
+          >
+          -->
+
+          <div class="figure-placeholder">
+
+            <div>
+
+              <strong>
+                Tavri et al. (2026), Figure 3
+              </strong>
+
+              This is especially strong for a website because
+              the regime map and transition-frequency panels tell
+              a clear visual story about the marginal ice zone.
+
+            </div>
+
+          </div>
+
+          <div class="figure-caption">
+            Recommended figure: dominant mixing regimes,
+            MIZ instability, and transition frequency,
+            Tavri et al. (2026).
+          </div>
+
+        </div>
+
+
+        <div class="story-copy">
+
+          <p class="eyebrow">
+            Theme 03 · A dynamic marginal ice zone
+          </p>
+
+          <h2>
+            Why is the marginal ice zone more than a
+            concentration threshold?
+          </h2>
+
+          <p class="question">
+            The physical picture:
+          </p>
+
+          <p>
+            The ice edge is not simply a line between open water and
+            compact ice. It is a transition zone where wave forcing,
+            wind forcing, fragmentation, and changing ice cover create
+            repeated shifts between mixing regimes.
+          </p>
+
+          <p>
+            This motivates my broader work: identify which
+            satellite-observable properties of the ice and waves
+            explain those transitions, and then use those observations
+            to test how coupled models represent the ocean-ice interface.
+          </p>
+
+          <div class="story-meta">
+            <span class="tag">Marginal ice zone</span>
+            <span class="tag">Intermittency</span>
+            <span class="tag">Mixing regimes</span>
+            <span class="tag">Model evaluation</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           04 — NASA PROJECT / SIC BIAS
+           ================================================= -->
+
+      <article class="story-row reverse" id="retrieval-bias">
+
+        <div class="story-visual">
+
+          <!--
+          ADD YOUR CURRENT NASA PROJECT FIGURE HERE.
+
+          Suggested filename:
+
+          research_sic_bias.png
+
+          Example:
+
+          <img
+            src="research_sic_bias.png"
+            alt="Comparison of passive microwave sea ice concentration with satellite constraints"
+          >
+          -->
+
+          <div class="figure-placeholder">
+
+            <div>
+
+              <strong>
+                Add your passive-microwave bias figure here
+              </strong>
+
+              Best choice: a clean comparison that juxtaposes
+              passive-microwave SIC with SAR, ICESat-2, or wave
+              information and makes the retrieval-bias problem
+              immediately visible.
+
+            </div>
+
+          </div>
+
+          <div class="figure-caption">
+            Suggested current-project figure: observation-space
+            comparison of sea-ice concentration and independent
+            satellite constraints.
+          </div>
+
+        </div>
+
+
+        <div class="story-copy">
+
+          <p class="eyebrow">
+            Current NASA project · 2025-2028
+          </p>
+
+          <h2>
+            When do ocean waves make satellite sea-ice
+            concentration misleading?
+          </h2>
+
+          <p class="question">
+            The current question:
+          </p>
+
+          <p>
+            Passive-microwave sea-ice concentration products can
+            disagree strongly in the marginal ice zone and during melt.
+            I am investigating how wave and ice conditions affect these
+            retrievals and which physical mechanisms explain the
+            observed biases.
+          </p>
+
+          <p>
+            The project combines complementary satellite observations
+            with process understanding so that retrieval errors can be
+            diagnosed by regime rather than treated as a single uniform
+            uncertainty.
+          </p>
+
+          <div class="story-meta">
+            <span class="tag">NASA ROSES</span>
+            <span class="tag">Passive microwave</span>
+            <span class="tag">ICESat-2</span>
+            <span class="tag">SAR</span>
+            <span class="tag">SIC bias</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ================= LONG-TERM DIRECTION ================= -->
+
+      <div class="callout">
+
+        <h2>
+          Long-term direction
+        </h2>
+
+        <p>
+          I am building an observational pathway from satellite
+          measurements of sea-ice properties, to their influence on
+          wave propagation and ocean-surface forcing, to better
+          constrained representations of ocean-ice interactions
+          in coupled climate models.
+        </p>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <footer>
-    &copy; 2025 Aikaterini Tavri
-  </footer>
+</main>
+
+
+<footer>
+
+  <div class="shell footer-inner">
+
+    <span>
+      © 2026 Aikaterini Tavri
+    </span>
+
+    <span>
+      <a href="mailto:atavri@brown.edu">
+        atavri@brown.edu
+      </a>
+    </span>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
