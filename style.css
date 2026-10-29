@@ -1722,3 +1722,283 @@ footer a {
   }
 
 }
+/* =========================================================
+   FIELDWORK — FEATURE SECTIONS
+   ========================================================= */
+
+
+/* -----------------------------
+   MOSAIC FEATURE
+----------------------------- */
+
+.fieldwork-feature {
+  display: grid;
+
+  grid-template-columns:
+    0.95fr
+    1.05fr;
+
+  gap: 3rem;
+
+  align-items: start;
+}
+
+
+.fieldwork-feature-image {
+  position: sticky;
+
+  top: 110px;
+}
+
+
+.fieldwork-feature-image img {
+  width: 100%;
+
+  min-height: 520px;
+
+  max-height: 690px;
+
+  object-fit: cover;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+}
+
+
+.fieldwork-feature-copy {
+  max-width: 650px;
+}
+
+
+.fieldwork-feature-copy p {
+  color: #40525d;
+
+  line-height: 1.8;
+
+  margin:
+    0
+    0
+    1.4rem;
+}
+
+
+.fieldwork-feature-copy h3 {
+  margin:
+    2rem
+    0
+    0.55rem;
+
+  color: var(--navy);
+
+  font-size: 1rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* -----------------------------
+   FIRST TIME ON ICE
+----------------------------- */
+
+.fieldwork-memory {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
+  gap: 3.5rem;
+
+  align-items: center;
+}
+
+
+.fieldwork-memory-image img {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+}
+
+
+.fieldwork-memory-copy {
+  max-width: 680px;
+}
+
+
+.fieldwork-memory-copy h2 {
+  margin:
+    0
+    0
+    1rem;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  color: var(--navy);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+
+.fieldwork-memory-copy p {
+  color: #40525d;
+
+  line-height: 1.8;
+}
+
+
+/* -----------------------------
+   FULL WIDTH CLOSING PHOTO
+----------------------------- */
+
+.fieldwork-wide-photo {
+  position: relative;
+
+  height: 62vh;
+
+  min-height: 430px;
+
+  max-height: 720px;
+
+  overflow: hidden;
+}
+
+
+.fieldwork-wide-photo > img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.fieldwork-wide-photo::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 24, 39, 0.05),
+      rgba(4, 24, 39, 0.72)
+    );
+}
+
+
+.fieldwork-wide-overlay {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  padding:
+    3.5rem
+    0;
+}
+
+
+.fieldwork-wide-overlay p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #fff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      1.6rem,
+      4vw,
+      2.7rem
+    );
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   FIELDWORK RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 920px) {
+
+  .fieldwork-feature,
+  .fieldwork-memory {
+    grid-template-columns: 1fr;
+  }
+
+
+  .fieldwork-feature-image {
+    position: static;
+  }
+
+
+  .fieldwork-feature-image img {
+    min-height: 0;
+
+    max-height: 560px;
+  }
+
+
+  .fieldwork-memory-image img {
+    aspect-ratio: 16 / 10;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .fieldwork-feature,
+  .fieldwork-memory {
+    gap: 2rem;
+  }
+
+
+  .fieldwork-wide-photo {
+    height: 55vh;
+
+    min-height: 380px;
+  }
+
+
+  .fieldwork-wide-overlay {
+    padding:
+      2rem
+      0;
+  }
+
+}
