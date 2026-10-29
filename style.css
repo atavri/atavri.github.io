@@ -2375,3 +2375,58 @@ footer a:hover {
 
   transform: translateY(-2px);
 }
+/* =========================================================
+   FIELDWORK — PERSPECTIVE PHOTO
+   ========================================================= */
+
+.fieldwork-memory {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+
+.perspective-image {
+  width: 100%;
+  overflow: visible;
+}
+
+
+.perspective-image .perspective-photo {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-width: none;
+  max-height: none;
+
+  aspect-ratio: auto !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
+.fieldwork-memory-copy {
+  max-width: 650px;
+}
+
+
+@media (max-width: 920px) {
+
+  .fieldwork-memory {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .perspective-image .perspective-photo {
+    width: 100%;
+    height: auto;
+  }
+
+}
