@@ -1,48 +1,63 @@
 /* =========================================================
    AIKATERINI TAVRI
    Academic / Research Website
+   Clean consolidated stylesheet
    ========================================================= */
 
 
-/* -----------------------------
-   COLOR SYSTEM
------------------------------ */
+/* =========================================================
+   1. DESIGN SYSTEM
+   ========================================================= */
 
 :root {
   --navy: #092a42;
+  --navy-light: #123b5a;
+
   --blue: #1c668c;
   --ocean: #2d7c9d;
 
   --ice: #eaf4f7;
+  --ice-dark: #d9edf2;
   --mist: #f5f8f9;
+  --warm: #f7f5f1;
 
   --ink: #17242c;
+  --body: #344751;
   --muted: #596b76;
 
   --line: #dbe5e9;
+  --line-dark: #c8d9df;
 
   --white: #ffffff;
 
   --max: 1180px;
+  --reading: 730px;
 
   --radius: 18px;
 
   --shadow:
     0 14px 40px rgba(7, 31, 48, 0.10);
+
+  --shadow-light:
+    0 10px 28px rgba(7, 31, 48, 0.07);
 }
 
 
-/* -----------------------------
-   GLOBAL
------------------------------ */
+/* =========================================================
+   2. GLOBAL
+   ========================================================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
   margin: 0;
@@ -54,10 +69,11 @@ body {
     sans-serif;
 
   color: var(--ink);
-
   background: var(--white);
 
   line-height: 1.7;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 
@@ -70,10 +86,29 @@ img {
 a {
   color: var(--blue);
   text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 
 a:hover {
+  color: var(--navy);
+}
+
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(45, 124, 157, 0.35);
+  outline-offset: 3px;
+}
+
+
+::selection {
+  background: #cfe8ef;
   color: var(--navy);
 }
 
@@ -88,40 +123,33 @@ a:hover {
 }
 
 
-/* -----------------------------
-   SMALL SECTION LABEL
------------------------------ */
-
 .eyebrow {
   margin: 0 0 0.75rem;
 
-  font-size: 0.78rem;
+  color: var(--blue);
 
+  font-size: 0.78rem;
   font-weight: 700;
 
   letter-spacing: 0.13em;
-
   text-transform: uppercase;
-
-  color: var(--blue);
 }
 
 
 /* =========================================================
-   NAVIGATION
+   3. NAVIGATION
    ========================================================= */
 
 .top-banner {
   position: sticky;
-
   top: 0;
 
   z-index: 1000;
 
-  background:
-    rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.94);
 
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
   border-bottom:
     1px solid rgba(219, 229, 233, 0.9);
@@ -132,9 +160,7 @@ a:hover {
   min-height: 72px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   gap: 1.5rem;
@@ -142,12 +168,11 @@ a:hover {
 
 
 /* -----------------------------
-   NAME / PROFILE
+   Identity
 ----------------------------- */
 
 .left-title {
   display: flex;
-
   align-items: center;
 
   gap: 0.75rem;
@@ -158,7 +183,6 @@ a:hover {
 
 .nav-pic {
   width: 46px;
-
   height: 46px;
 
   border-radius: 50%;
@@ -174,7 +198,6 @@ a:hover {
 
 .left-text {
   display: flex;
-
   flex-direction: column;
 
   line-height: 1.25;
@@ -196,12 +219,11 @@ a:hover {
 
 
 /* -----------------------------
-   LINKS
+   Navigation links
 ----------------------------- */
 
 .nav-links {
   display: flex;
-
   align-items: center;
 
   gap: 0.15rem;
@@ -218,7 +240,6 @@ a:hover {
   color: var(--navy);
 
   font-size: 0.88rem;
-
   font-weight: 600;
 
   white-space: nowrap;
@@ -232,129 +253,17 @@ a:hover {
 
 .nav-links a.active {
   background: var(--navy);
-
-  color: #fff;
+  color: var(--white);
 }
 
 
 /* =========================================================
-   HOME HERO
-   ========================================================= */
-
-.hero-image {
-  min-height: 78vh;
-
-  position: relative;
-
-  display: grid;
-
-  align-items: end;
-
-  background:
-
-    linear-gradient(
-      90deg,
-      rgba(4, 24, 39, 0.72),
-      rgba(4, 24, 39, 0.15)
-    ),
-
-    url("The_beau_Arctic.jpg")
-    center / cover
-    no-repeat;
-}
-
-
-.hero-content {
-  padding:
-    7rem
-    0
-    5rem;
-
-  color: #fff;
-
-  max-width: 760px;
-}
-
-
-.hero-kicker {
-  font-size: 0.82rem;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.14em;
-
-  font-weight: 700;
-
-  opacity: 0.9;
-}
-
-
-.hero-title {
-  margin:
-    0.55rem
-    0
-    1rem;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      2.8rem,
-      7vw,
-      5.5rem
-    );
-
-  line-height: 0.98;
-
-  letter-spacing: -0.035em;
-
-  font-weight: 500;
-}
-
-
-.hero-intro {
-  font-size:
-    clamp(
-      1rem,
-      2vw,
-      1.22rem
-    );
-
-  max-width: 680px;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.92
-    );
-}
-
-
-.hero-actions {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 0.75rem;
-
-  margin-top: 1.7rem;
-}
-
-
-/* =========================================================
-   BUTTONS
+   4. BUTTONS
    ========================================================= */
 
 .btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   min-height: 44px;
@@ -363,20 +272,20 @@ a:hover {
     0.7rem
     1.05rem;
 
-  border-radius: 999px;
-
   border:
     1px solid transparent;
 
-  font-weight: 700;
+  border-radius: 999px;
 
   font-size: 0.9rem;
+  font-weight: 700;
+
+  cursor: pointer;
 }
 
 
 .btn-primary {
-  background: #fff;
-
+  background: var(--white);
   color: var(--navy);
 }
 
@@ -387,55 +296,48 @@ a:hover {
 
 
 .btn-ghost {
-  border-color:
-    rgba(
-      255,
-      255,
-      255,
-      0.65
-    );
+  border-color: rgba(255, 255, 255, 0.65);
 
-  color: #fff;
+  color: var(--white);
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.06
-    );
+  background: rgba(255, 255, 255, 0.06);
 }
 
 
 .btn-ghost:hover {
-  color: #fff;
+  color: var(--white);
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.14
-    );
+  background: rgba(255, 255, 255, 0.14);
 }
 
 
 .btn-dark {
   background: var(--navy);
-
-  color: #fff;
+  color: var(--white);
 }
 
 
 .btn-dark:hover {
-  color: #fff;
+  background: var(--navy-light);
+  color: var(--white);
+}
 
-  background: #123b5a;
+
+.btn-secondary {
+  border-color: var(--line);
+
+  background: var(--white);
+  color: var(--navy);
+}
+
+
+.btn-secondary:hover {
+  background: var(--ice);
 }
 
 
 /* =========================================================
-   GENERAL SECTIONS
+   5. SHARED SECTION STYLES
    ========================================================= */
 
 .section {
@@ -499,8 +401,165 @@ a:hover {
 
 
 /* =========================================================
-   ABOUT
+   6. GENERIC INNER-PAGE HERO
    ========================================================= */
+
+.page-hero {
+  padding:
+    5.5rem
+    0
+    4rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--ice),
+      var(--white)
+    );
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+
+.page-hero h1 {
+  margin:
+    0
+    0
+    1rem;
+
+  font-size:
+    clamp(
+      2.7rem,
+      6vw,
+      4.5rem
+    );
+
+  line-height: 1;
+}
+
+
+.page-hero .lede {
+  max-width: 820px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   7. HOME PAGE
+   ========================================================= */
+
+
+/* -----------------------------
+   Hero
+----------------------------- */
+
+.hero-image {
+  min-height: 78vh;
+
+  position: relative;
+
+  display: grid;
+  align-items: end;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(4, 24, 39, 0.74),
+      rgba(4, 24, 39, 0.14)
+    ),
+
+    url("The_beau_Arctic.jpg")
+    center / cover
+    no-repeat;
+}
+
+
+.hero-content {
+  max-width: 760px;
+
+  padding:
+    7rem
+    0
+    5rem;
+
+  color: var(--white);
+}
+
+
+.hero-kicker {
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  opacity: 0.9;
+}
+
+
+.hero-title {
+  margin:
+    0.55rem
+    0
+    1rem;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      2.8rem,
+      7vw,
+      5.5rem
+    );
+
+  font-weight: 500;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.035em;
+}
+
+
+.hero-intro {
+  max-width: 680px;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size:
+    clamp(
+      1rem,
+      2vw,
+      1.22rem
+    );
+
+  line-height: 1.7;
+}
+
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  margin-top: 1.7rem;
+}
+
+
+/* -----------------------------
+   About
+----------------------------- */
 
 .about-grid {
   display: grid;
@@ -516,15 +575,15 @@ a:hover {
 
 
 .about-pic {
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow);
-
   width: 100%;
 
   aspect-ratio: 4 / 5;
 
   object-fit: cover;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
 }
 
 
@@ -534,7 +593,7 @@ a:hover {
 
 
 /* =========================================================
-   RESEARCH SNAPSHOT
+   8. SHARED CARDS / RESEARCH SNAPSHOT
    ========================================================= */
 
 .research-snapshot {
@@ -548,6 +607,8 @@ a:hover {
 
 
 .snapshot-card {
+  min-height: 260px;
+
   padding: 1.6rem;
 
   border:
@@ -555,32 +616,31 @@ a:hover {
 
   border-radius: var(--radius);
 
-  background: #fff;
-
-  min-height: 260px;
+  background: var(--white);
 }
 
 
 .snapshot-number {
+  color: var(--blue);
+
   font-family:
     Georgia,
+    "Times New Roman",
     serif;
-
-  color: var(--blue);
 
   font-size: 2rem;
 }
 
 
 .snapshot-card h3 {
-  color: var(--navy);
-
-  line-height: 1.25;
-
   margin:
     0.55rem
     0
     0.75rem;
+
+  color: var(--navy);
+
+  line-height: 1.25;
 }
 
 
@@ -592,7 +652,7 @@ a:hover {
 
 
 /* =========================================================
-   CURRENT WORK
+   9. HIGHLIGHT CARDS
    ========================================================= */
 
 .highlight-grid {
@@ -613,7 +673,7 @@ a:hover {
 
   border-radius: var(--radius);
 
-  background: #fff;
+  background: var(--white);
 }
 
 
@@ -623,18 +683,25 @@ a:hover {
 
 
 .highlight-main h3 {
-  font-family:
-    Georgia,
-    serif;
-
-  font-size: 1.8rem;
-
-  color: var(--navy);
-
   margin:
     0.3rem
     0
     1rem;
+
+  color: var(--navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+
+.highlight-main p {
+  color: var(--body);
 }
 
 
@@ -672,55 +739,7 @@ a:hover {
 
 
 /* =========================================================
-   GENERIC PAGE HERO
-   ========================================================= */
-
-.page-hero {
-  padding:
-    5.5rem
-    0
-    4rem;
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--ice),
-      #fff
-    );
-
-  border-bottom:
-    1px solid var(--line);
-}
-
-
-.page-hero h1 {
-  margin:
-    0
-    0
-    1rem;
-
-  font-size:
-    clamp(
-      2.7rem,
-      6vw,
-      4.5rem
-    );
-
-  line-height: 1;
-}
-
-
-.page-hero .lede {
-  max-width: 820px;
-
-  color: var(--muted);
-
-  font-size: 1.15rem;
-}
-
-
-/* =========================================================
-   RESEARCH STORY PAGE
+   10. RESEARCH PAGE
    ========================================================= */
 
 .research-story {
@@ -759,13 +778,12 @@ a:hover {
     0
     0.9rem;
 
+  color: var(--navy);
+
   font-family:
     Georgia,
+    "Times New Roman",
     serif;
-
-  font-weight: 500;
-
-  color: var(--navy);
 
   font-size:
     clamp(
@@ -773,6 +791,8 @@ a:hover {
       3vw,
       2.6rem
     );
+
+  font-weight: 500;
 
   line-height: 1.15;
 }
@@ -792,7 +812,6 @@ a:hover {
 
 .story-meta {
   display: flex;
-
   flex-wrap: wrap;
 
   gap: 0.45rem;
@@ -802,43 +821,41 @@ a:hover {
 
 
 .tag {
-  background: var(--ice);
-
-  color: var(--navy);
-
-  border-radius: 999px;
-
   padding:
     0.35rem
     0.65rem;
 
-  font-size: 0.78rem;
+  border-radius: 999px;
 
+  background: var(--ice);
+
+  color: var(--navy);
+
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
 
 /* -----------------------------
-   FIGURES
+   Research figures
 ----------------------------- */
 
 .story-visual {
+  overflow: hidden;
+
   border:
     1px solid var(--line);
 
   border-radius: var(--radius);
 
-  background: #fff;
+  background: var(--white);
 
   box-shadow: var(--shadow);
-
-  overflow: hidden;
 }
 
 
 .story-visual img {
   width: 100%;
-
   height: auto;
 }
 
@@ -847,12 +864,13 @@ a:hover {
   min-height: 360px;
 
   display: grid;
-
   place-items: center;
 
   padding: 2rem;
 
   text-align: center;
+
+  color: var(--navy);
 
   background:
     linear-gradient(
@@ -860,21 +878,20 @@ a:hover {
       #eef7f9,
       #dcecf1
     );
-
-  color: var(--navy);
 }
 
 
 .figure-placeholder strong {
   display: block;
 
+  margin-bottom: 0.5rem;
+
   font-family:
     Georgia,
+    "Times New Roman",
     serif;
 
   font-size: 1.45rem;
-
-  margin-bottom: 0.5rem;
 }
 
 
@@ -891,7 +908,7 @@ a:hover {
 
 
 /* -----------------------------
-   RESEARCH CALLOUT
+   Shared callout
 ----------------------------- */
 
 .callout {
@@ -903,7 +920,12 @@ a:hover {
 
   background: var(--navy);
 
-  color: #fff;
+  color: var(--white);
+}
+
+
+.callout .eyebrow {
+  color: #a9d9e7;
 }
 
 
@@ -912,6 +934,7 @@ a:hover {
 
   font-family:
     Georgia,
+    "Times New Roman",
     serif;
 
   font-weight: 500;
@@ -919,152 +942,12 @@ a:hover {
 
 
 .callout p {
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.82
-    );
+  color: rgba(255, 255, 255, 0.84);
 }
 
 
 /* =========================================================
-   FIELDWORK
-   ========================================================= */
-
-.field-intro {
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    1fr;
-
-  gap: 2.5rem;
-
-  align-items: center;
-}
-
-
-.photo-collage {
-  display: grid;
-
-  grid-template-columns:
-    1.2fr
-    0.8fr;
-
-  grid-template-rows:
-    210px
-    210px;
-
-  gap: 0.65rem;
-}
-
-
-.photo-collage img {
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  border-radius: 14px;
-}
-
-
-.photo-collage img:first-child {
-  grid-row:
-    1 / 3;
-}
-
-
-/* -----------------------------
-   TIMELINE
------------------------------ */
-
-.timeline {
-  margin-top: 4rem;
-
-  border-left:
-    1px solid var(--line);
-}
-
-
-.timeline-item {
-  position: relative;
-
-  padding:
-    0
-    0
-    3rem
-    2rem;
-}
-
-
-.timeline-item::before {
-  content: "";
-
-  position: absolute;
-
-  left: -6px;
-
-  top: 0.35rem;
-
-  width: 11px;
-
-  height: 11px;
-
-  border-radius: 50%;
-
-  background: var(--blue);
-
-  box-shadow:
-    0
-    0
-    0
-    5px
-    var(--ice);
-}
-
-
-.timeline-item .year {
-  color: var(--blue);
-
-  font-weight: 700;
-
-  font-size: 0.82rem;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-}
-
-
-.timeline-item h2 {
-  margin:
-    0.25rem
-    0
-    0.65rem;
-
-  color: var(--navy);
-
-  font-family:
-    Georgia,
-    serif;
-
-  font-weight: 500;
-}
-
-
-.timeline-item p {
-  max-width: 780px;
-
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   TEACHING
+   11. TEACHING PAGE
    ========================================================= */
 
 .teaching-grid {
@@ -1078,23 +961,23 @@ a:hover {
 
 
 .teaching-card {
+  padding: 1.6rem;
+
   border:
     1px solid var(--line);
 
   border-radius: var(--radius);
 
-  padding: 1.6rem;
-
-  background: #fff;
+  background: var(--white);
 }
 
 
 .teaching-card h2 {
+  margin-top: 0;
+
   color: var(--navy);
 
   font-size: 1.2rem;
-
-  margin-top: 0;
 }
 
 
@@ -1104,274 +987,7 @@ a:hover {
 
 
 /* =========================================================
-   CV
-   ========================================================= */
-
-.cv-top {
-  display: grid;
-
-  grid-template-columns:
-    1.3fr
-    0.7fr;
-
-  gap: 1rem;
-
-  margin-bottom: 2rem;
-}
-
-
-.cv-summary,
-.cv-actions {
-  border:
-    1px solid var(--line);
-
-  border-radius: var(--radius);
-
-  padding: 1.6rem;
-
-  background: #fff;
-}
-
-
-.cv-summary h2,
-.cv-actions h2 {
-  margin-top: 0;
-
-  color: var(--navy);
-
-  font-family:
-    Georgia,
-    serif;
-
-  font-weight: 500;
-}
-
-
-.cv-actions {
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  gap: 0.75rem;
-}
-
-
-.cv-frame {
-  border:
-    1px solid var(--line);
-
-  border-radius: var(--radius);
-
-  overflow: hidden;
-
-  box-shadow: var(--shadow);
-
-  background: #fff;
-}
-
-
-.cv-frame iframe {
-  width: 100%;
-
-  height: 78vh;
-
-  min-height: 720px;
-
-  border: 0;
-
-  display: block;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  background: #071d2e;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.72
-    );
-
-  padding:
-    2.2rem
-    0;
-
-  margin-top: 5rem;
-
-  font-size: 0.88rem;
-}
-
-
-.footer-inner {
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 1rem;
-
-  flex-wrap: wrap;
-}
-
-
-footer a {
-  color: #fff;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 920px) {
-
-  .nav-inner {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    padding:
-      0.65rem
-      0
-      0.55rem;
-
-    gap: 0.45rem;
-  }
-
-
-  .nav-links {
-    width: 100%;
-
-    overflow-x: auto;
-
-    padding-bottom: 0.2rem;
-  }
-
-
-  .tagline-small {
-    display: none;
-  }
-
-
-  .research-snapshot,
-  .highlight-grid,
-  .about-grid,
-  .field-intro,
-  .cv-top {
-    grid-template-columns: 1fr;
-  }
-
-
-  .story-row {
-    grid-template-columns: 1fr;
-
-    gap: 1.7rem;
-  }
-
-
-  .story-row.reverse .story-visual,
-  .story-row.reverse .story-copy {
-    order: initial;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 650px) {
-
-  .shell {
-    width:
-      min(
-        100% - 1.5rem,
-        var(--max)
-      );
-  }
-
-
-  .nav-pic {
-    width: 38px;
-
-    height: 38px;
-  }
-
-
-  .site-name {
-    font-size: 0.9rem;
-  }
-
-
-  .nav-links a {
-    font-size: 0.8rem;
-
-    padding:
-      0.42rem
-      0.55rem;
-  }
-
-
-  .hero-image {
-    min-height: 72vh;
-  }
-
-
-  .hero-content {
-    padding:
-      5.5rem
-      0
-      3.5rem;
-  }
-
-
-  .section {
-    padding:
-      4rem
-      0;
-  }
-
-
-  .research-snapshot,
-  .teaching-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .photo-collage {
-    grid-template-columns:
-      1fr
-      1fr;
-
-    grid-template-rows:
-      180px
-      150px;
-  }
-
-
-  .photo-collage img:first-child {
-    grid-column:
-      1 / 3;
-
-    grid-row: auto;
-  }
-
-
-  .cv-frame iframe {
-    min-height: 600px;
-  }
-
-}
-/* =========================================================
-   RESEARCH BLOG
+   12. BLOG PAGE
    ========================================================= */
 
 .blog-shell {
@@ -1380,26 +996,25 @@ footer a {
 
 
 /* -----------------------------
-   ARTICLE HEADER
+   Article header
 ----------------------------- */
 
 .blog-article-header {
   max-width: 820px;
 
-  padding-bottom: 2rem;
-
   margin-bottom: 2.5rem;
 
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 2rem;
+
+  border-bottom:
+    1px solid var(--line);
 }
 
 
 .blog-meta {
   display: flex;
-
-  align-items: center;
-
   flex-wrap: wrap;
+  align-items: center;
 
   gap: 0.45rem;
 
@@ -1416,23 +1031,22 @@ footer a {
 
   font-weight: 700;
 
-  text-transform: uppercase;
-
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 
 .blog-article-header h2 {
+  max-width: 820px;
+
   margin: 0;
 
-  max-width: 820px;
+  color: var(--navy);
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
-  color: var(--navy);
 
   font-size:
     clamp(
@@ -1450,12 +1064,12 @@ footer a {
 
 
 .blog-deck {
+  max-width: 760px;
+
   margin:
     1.25rem
     0
     0;
-
-  max-width: 760px;
 
   color: var(--muted);
 
@@ -1466,11 +1080,11 @@ footer a {
 
 
 /* -----------------------------
-   BLOG BODY
+   Article body
 ----------------------------- */
 
 .blog-body {
-  max-width: 730px;
+  max-width: var(--reading);
 
   font-size: 1.02rem;
 }
@@ -1482,7 +1096,7 @@ footer a {
     0
     1.5rem;
 
-  color: #344751;
+  color: var(--body);
 
   line-height: 1.85;
 }
@@ -1503,6 +1117,8 @@ footer a {
     0
     1rem;
 
+  color: var(--navy);
+
   font-family:
     Georgia,
     "Times New Roman",
@@ -1517,17 +1133,17 @@ footer a {
 
   font-weight: 500;
 
-  color: var(--navy);
-
   line-height: 1.25;
 }
 
 
 /* -----------------------------
-   FEATURE FIGURE
+   Blog image
 ----------------------------- */
 
 .blog-feature-figure {
+  overflow: hidden;
+
   margin:
     0
     0
@@ -1538,9 +1154,7 @@ footer a {
 
   border-radius: var(--radius);
 
-  overflow: hidden;
-
-  background: #fff;
+  background: var(--white);
 
   box-shadow: var(--shadow);
 }
@@ -1568,7 +1182,7 @@ footer a {
 
 
 /* -----------------------------
-   CALLOUT
+   Blog callout
 ----------------------------- */
 
 .blog-callout {
@@ -1608,7 +1222,7 @@ footer a {
 
 
 /* -----------------------------
-   BIG RESEARCH QUESTION
+   Blog question
 ----------------------------- */
 
 .blog-question {
@@ -1625,12 +1239,12 @@ footer a {
   border-left:
     3px solid var(--blue);
 
+  color: var(--navy);
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
-  color: var(--navy);
 
   font-size:
     clamp(
@@ -1644,14 +1258,12 @@ footer a {
 
 
 /* -----------------------------
-   ARTICLE TAGS
+   Blog tags
 ----------------------------- */
 
 .blog-end {
   display: flex;
-
   flex-wrap: wrap;
-
   align-items: center;
 
   gap: 0.55rem;
@@ -1685,50 +1297,65 @@ footer a {
 
 
 .blog-end a:hover {
-  background: #d9edf2;
+  background: var(--ice-dark);
 }
 
 
-/* -----------------------------
-   MOBILE
------------------------------ */
-
-@media (max-width: 650px) {
-
-  .blog-article-header h2 {
-    font-size: 2.25rem;
-  }
-
-
-  .blog-deck {
-    font-size: 1rem;
-  }
-
-
-  .blog-body {
-    font-size: 0.97rem;
-  }
-
-
-  .blog-body .blog-lead {
-    font-size: 1.08rem;
-  }
-
-
-  .blog-callout {
-    padding:
-      1.25rem
-      1.2rem;
-  }
-
-}
 /* =========================================================
-   FIELDWORK — FEATURE SECTIONS
+   13. FIELDWORK PAGE
    ========================================================= */
 
 
 /* -----------------------------
-   MOSAIC FEATURE
+   Intro collage
+----------------------------- */
+
+.field-intro {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 2.5rem;
+
+  align-items: center;
+}
+
+
+.photo-collage {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    0.8fr;
+
+  grid-template-rows:
+    210px
+    210px;
+
+  gap: 0.65rem;
+}
+
+
+.photo-collage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+}
+
+
+.photo-collage img:first-child {
+  grid-row:
+    1 / 3;
+}
+
+
+/* -----------------------------
+   MOSAiC feature
 ----------------------------- */
 
 .fieldwork-feature {
@@ -1755,7 +1382,6 @@ footer a {
   width: 100%;
 
   min-height: 520px;
-
   max-height: 690px;
 
   object-fit: cover;
@@ -1772,14 +1398,14 @@ footer a {
 
 
 .fieldwork-feature-copy p {
-  color: #40525d;
-
-  line-height: 1.8;
-
   margin:
     0
     0
     1.4rem;
+
+  color: #40525d;
+
+  line-height: 1.8;
 }
 
 
@@ -1793,14 +1419,13 @@ footer a {
 
   font-size: 1rem;
 
-  text-transform: uppercase;
-
   letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 
 /* -----------------------------
-   FIRST TIME ON ICE
+   First-time-on-ice section
 ----------------------------- */
 
 .fieldwork-memory {
@@ -1840,6 +1465,8 @@ footer a {
     0
     1rem;
 
+  color: var(--navy);
+
   font-family:
     Georgia,
     "Times New Roman",
@@ -1851,8 +1478,6 @@ footer a {
       4vw,
       3rem
     );
-
-  color: var(--navy);
 
   font-weight: 500;
 
@@ -1868,7 +1493,7 @@ footer a {
 
 
 /* -----------------------------
-   FULL WIDTH CLOSING PHOTO
+   Closing full-width photo
 ----------------------------- */
 
 .fieldwork-wide-photo {
@@ -1877,7 +1502,6 @@ footer a {
   height: 62vh;
 
   min-height: 430px;
-
   max-height: 720px;
 
   overflow: hidden;
@@ -1886,7 +1510,6 @@ footer a {
 
 .fieldwork-wide-photo > img {
   width: 100%;
-
   height: 100%;
 
   object-fit: cover;
@@ -1915,9 +1538,7 @@ footer a {
   z-index: 2;
 
   left: 0;
-
   right: 0;
-
   bottom: 0;
 
   padding:
@@ -1931,7 +1552,7 @@ footer a {
 
   margin: 0;
 
-  color: #fff;
+  color: var(--white);
 
   font-family:
     Georgia,
@@ -1950,10 +1571,459 @@ footer a {
 
 
 /* =========================================================
-   FIELDWORK RESPONSIVE
+   14. CV PAGE
+   ========================================================= */
+
+.cv-top {
+  display: grid;
+
+  grid-template-columns:
+    1.3fr
+    0.7fr;
+
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+
+.cv-summary,
+.cv-actions {
+  padding: 1.6rem;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background: var(--white);
+}
+
+
+.cv-summary h2,
+.cv-actions h2 {
+  margin-top: 0;
+
+  color: var(--navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight: 500;
+}
+
+
+.cv-summary p {
+  color: var(--muted);
+}
+
+
+.cv-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 0.75rem;
+}
+
+
+/* -----------------------------
+   CV highlights
+----------------------------- */
+
+.cv-highlight-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+
+.cv-highlight {
+  padding: 1.4rem;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background: var(--white);
+}
+
+
+.cv-highlight-number {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--blue);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.45rem;
+}
+
+
+.cv-highlight h3 {
+  margin:
+    0
+    0
+    0.55rem;
+
+  color: var(--navy);
+
+  font-size: 1rem;
+}
+
+
+.cv-highlight p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.65;
+}
+
+
+/* -----------------------------
+   Embedded CV
+----------------------------- */
+
+.cv-frame {
+  overflow: hidden;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background: var(--white);
+
+  box-shadow: var(--shadow);
+}
+
+
+.cv-frame iframe {
+  display: block;
+
+  width: 100%;
+
+  height: 78vh;
+  min-height: 720px;
+
+  border: 0;
+}
+
+
+/* =========================================================
+   15. POETRY PAGE
+   ========================================================= */
+
+.poetry-hero {
+  padding:
+    7rem
+    0
+    5rem;
+
+  background: var(--warm);
+}
+
+
+.poetry-hero-inner {
+  max-width: 760px;
+}
+
+
+.poetry-hero h1 {
+  margin:
+    0
+    0
+    1rem;
+
+  color: var(--navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      3rem,
+      7vw,
+      5rem
+    );
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+}
+
+
+.poetry-hero p:last-child {
+  max-width: 620px;
+
+  color: var(--muted);
+
+  font-size: 1.08rem;
+
+  line-height: 1.75;
+}
+
+
+/* -----------------------------
+   Reading area
+----------------------------- */
+
+.poetry-section {
+  padding:
+    6rem
+    1.5rem;
+}
+
+
+.poetry-reading-column {
+  max-width: 680px;
+
+  margin: 0 auto;
+}
+
+
+/* -----------------------------
+   Individual poem
+----------------------------- */
+
+.poem-entry {
+  margin-bottom: 7rem;
+}
+
+
+.poem-header {
+  margin-bottom: 2.2rem;
+}
+
+
+.poem-date {
+  margin:
+    0
+    0
+    0.5rem;
+
+  color: var(--blue);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+
+.poem-header h2 {
+  margin: 0;
+
+  color: var(--navy);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  font-weight: 500;
+
+  line-height: 1.15;
+}
+
+
+.poem-text {
+  max-width: 580px;
+}
+
+
+.poem-text p {
+  margin:
+    0
+    0
+    2rem;
+
+  color: #303b40;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+}
+
+
+.poem-entry:not(:last-child)::after {
+  content: "";
+
+  display: block;
+
+  width: 50px;
+  height: 1px;
+
+  margin-top: 5rem;
+
+  background: var(--line);
+}
+
+
+/* =========================================================
+   16. SHARED CARD INTERACTIONS
+   ========================================================= */
+
+.snapshot-card,
+.teaching-card,
+.cv-highlight,
+.highlight-main,
+.highlight-stack > article {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.snapshot-card:hover,
+.teaching-card:hover,
+.cv-highlight:hover,
+.highlight-main:hover,
+.highlight-stack > article:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--line-dark);
+
+  box-shadow: var(--shadow-light);
+}
+
+
+/* =========================================================
+   17. FOOTER
+   ========================================================= */
+
+footer {
+  margin-top: 5rem;
+
+  padding:
+    2.2rem
+    0;
+
+  background: #071d2e;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 0.88rem;
+}
+
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+}
+
+
+footer a {
+  color: var(--white);
+}
+
+
+footer a:hover {
+  color: #cde5ed;
+}
+
+
+/* =========================================================
+   18. TABLET
    ========================================================= */
 
 @media (max-width: 920px) {
+
+  /* Navigation */
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.45rem;
+
+    padding:
+      0.65rem
+      0
+      0.55rem;
+  }
+
+
+  .nav-links {
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding-bottom: 0.2rem;
+
+    scrollbar-width: thin;
+  }
+
+
+  .tagline-small {
+    display: none;
+  }
+
+
+  /* Shared grids */
+
+  .research-snapshot,
+  .highlight-grid,
+  .about-grid,
+  .field-intro,
+  .cv-top {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Research */
+
+  .story-row {
+    grid-template-columns: 1fr;
+
+    gap: 1.7rem;
+  }
+
+
+  .story-row.reverse .story-visual,
+  .story-row.reverse .story-copy {
+    order: initial;
+  }
+
+
+  /* Fieldwork */
 
   .fieldwork-feature,
   .fieldwork-memory {
@@ -1968,7 +2038,6 @@ footer a {
 
   .fieldwork-feature-image img {
     min-height: 0;
-
     max-height: 560px;
   }
 
@@ -1977,10 +2046,174 @@ footer a {
     aspect-ratio: 16 / 10;
   }
 
+
+  /* CV */
+
+  .cv-highlight-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
 }
 
 
+/* =========================================================
+   19. MOBILE
+   ========================================================= */
+
 @media (max-width: 650px) {
+
+  .shell {
+    width:
+      min(
+        calc(100% - 1.5rem),
+        var(--max)
+      );
+  }
+
+
+  /* Navigation */
+
+  .nav-pic {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .site-name {
+    font-size: 0.9rem;
+  }
+
+
+  .nav-links a {
+    padding:
+      0.42rem
+      0.55rem;
+
+    font-size: 0.8rem;
+  }
+
+
+  /* Global sections */
+
+  .section {
+    padding:
+      4rem
+      0;
+  }
+
+
+  .page-hero {
+    padding:
+      4rem
+      0
+      3rem;
+  }
+
+
+  .page-hero h1 {
+    font-size:
+      clamp(
+        2.4rem,
+        11vw,
+        3.4rem
+      );
+  }
+
+
+  .page-hero .lede {
+    font-size: 1rem;
+  }
+
+
+  /* Homepage */
+
+  .hero-image {
+    min-height: 72vh;
+  }
+
+
+  .hero-content {
+    padding:
+      5.5rem
+      0
+      3.5rem;
+  }
+
+
+  .hero-title {
+    font-size:
+      clamp(
+        2.7rem,
+        13vw,
+        4.5rem
+      );
+  }
+
+
+  /* Card grids */
+
+  .research-snapshot,
+  .teaching-grid,
+  .cv-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .snapshot-card {
+    min-height: auto;
+  }
+
+
+  /* Blog */
+
+  .blog-article-header h2 {
+    font-size: 2.25rem;
+  }
+
+
+  .blog-deck {
+    font-size: 1rem;
+  }
+
+
+  .blog-body {
+    font-size: 0.97rem;
+  }
+
+
+  .blog-body .blog-lead {
+    font-size: 1.08rem;
+  }
+
+
+  .blog-callout {
+    padding:
+      1.25rem
+      1.2rem;
+  }
+
+
+  /* Fieldwork collage */
+
+  .photo-collage {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    grid-template-rows:
+      180px
+      150px;
+  }
+
+
+  .photo-collage img:first-child {
+    grid-column:
+      1 / 3;
+
+    grid-row: auto;
+  }
+
 
   .fieldwork-feature,
   .fieldwork-memory {
@@ -2001,215 +2234,15 @@ footer a {
       0;
   }
 
-}
-/* =========================================================
-   CV PAGE — EXTRA STYLING
-   ========================================================= */
 
-.cv-highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
-}
+  /* CV */
 
-.cv-highlight {
-  padding: 1.4rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: #fff;
-}
-
-.cv-highlight-number {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--blue);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.45rem;
-}
-
-.cv-highlight h3 {
-  margin: 0 0 0.55rem;
-  color: var(--navy);
-  font-size: 1rem;
-}
-
-.cv-highlight p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.65;
-}
-
-.btn-secondary {
-  border: 1px solid var(--line);
-  color: var(--navy);
-  background: #fff;
-}
-
-.btn-secondary:hover {
-  background: var(--ice);
-}
-
-@media (max-width: 920px) {
-  .cv-highlight-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .cv-frame iframe {
+    min-height: 600px;
   }
-}
-
-@media (max-width: 650px) {
-  .cv-highlight-grid {
-    grid-template-columns: 1fr;
-  }
-}
-/* =========================================================
-   POETRY
-   ========================================================= */
-
-.poetry-hero {
-  padding: 7rem 0 5rem;
-  background: #f7f5f1;
-}
-
-.poetry-hero-inner {
-  max-width: 760px;
-}
-
-.poetry-hero h1 {
-  margin: 0 0 1rem;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  color: var(--navy);
-
-  font-size:
-    clamp(
-      3rem,
-      7vw,
-      5rem
-    );
-
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing: -0.035em;
-}
-
-.poetry-hero p:last-child {
-  max-width: 620px;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.75;
-}
 
 
-/* -----------------------------
-   READING AREA
------------------------------ */
-
-.poetry-section {
-  padding: 6rem 1.5rem;
-}
-
-.poetry-reading-column {
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-
-/* -----------------------------
-   POEM
------------------------------ */
-
-.poem-entry {
-  margin-bottom: 7rem;
-}
-
-.poem-header {
-  margin-bottom: 2.2rem;
-}
-
-.poem-date {
-  margin: 0 0 0.5rem;
-
-  color: var(--blue);
-
-  font-size: 0.78rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-
-  text-transform: uppercase;
-}
-
-.poem-header h2 {
-  margin: 0;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  color: var(--navy);
-
-  font-size:
-    clamp(
-      2rem,
-      4vw,
-      3rem
-    );
-
-  font-weight: 500;
-
-  line-height: 1.15;
-}
-
-.poem-text {
-  max-width: 580px;
-}
-
-.poem-text p {
-  margin:
-    0
-    0
-    2rem;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  color: #303b40;
-
-  font-size: 1.08rem;
-
-  line-height: 1.9;
-}
-
-
-/* subtle divider between poems */
-
-.poem-entry:not(:last-child)::after {
-  content: "";
-
-  display: block;
-
-  width: 50px;
-
-  height: 1px;
-
-  margin-top: 5rem;
-
-  background: var(--line);
-}
-
-
-@media (max-width: 650px) {
+  /* Poetry */
 
   .poetry-hero {
     padding:
@@ -2233,6 +2266,35 @@ footer a {
 
   .poem-text p {
     font-size: 1rem;
+  }
+
+
+  /* Footer */
+
+  .footer-inner {
+    flex-direction: column;
+  }
+
+}
+
+
+/* =========================================================
+   20. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 
 }
