@@ -2002,3 +2002,63 @@ footer a {
   }
 
 }
+/* =========================================================
+   CV PAGE — EXTRA STYLING
+   ========================================================= */
+
+.cv-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cv-highlight {
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.cv-highlight-number {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--blue);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+}
+
+.cv-highlight h3 {
+  margin: 0 0 0.55rem;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.cv-highlight p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  color: var(--navy);
+  background: #fff;
+}
+
+.btn-secondary:hover {
+  background: var(--ice);
+}
+
+@media (max-width: 920px) {
+  .cv-highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .cv-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+}
