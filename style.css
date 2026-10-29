@@ -1455,12 +1455,16 @@ button:focus-visible {
    First-time-on-ice section
 ----------------------------- */
 
+/* -----------------------------
+   PERSPECTIVE / FIRST TIME ON ICE
+----------------------------- */
+
 .fieldwork-memory {
   display: grid;
 
   grid-template-columns:
-    0.9fr
-    1.1fr;
+    1.2fr
+    1fr;
 
   gap: 3.5rem;
 
@@ -1468,12 +1472,21 @@ button:focus-visible {
 }
 
 
+.fieldwork-memory-image {
+  width: 100%;
+}
+
+
 .fieldwork-memory-image img {
   width: 100%;
 
-  aspect-ratio: 4 / 5;
+  /* wider image instead of tall portrait crop */
+  aspect-ratio: 4 / 3;
 
   object-fit: cover;
+
+  /* adjust this if you are more left/right in the photo */
+  object-position: center center;
 
   border-radius: var(--radius);
 
@@ -1517,7 +1530,6 @@ button:focus-visible {
 
   line-height: 1.8;
 }
-
 
 /* -----------------------------
    Closing full-width photo
