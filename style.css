@@ -590,7 +590,34 @@ button:focus-visible {
 .about-copy h2 {
   margin-top: 0;
 }
+.about-lead {
+  margin-top: 1.4rem;
 
+  color: var(--navy);
+
+  font-size:
+    clamp(
+      1.18rem,
+      2vw,
+      1.42rem
+    );
+
+  line-height: 1.65;
+}
+
+
+.about-copy p {
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+
+.about-copy strong {
+  color: var(--navy);
+
+  font-weight: 700;
+}
 
 /* =========================================================
    8. SHARED CARDS / RESEARCH SNAPSHOT
