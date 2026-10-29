@@ -2325,3 +2325,41 @@ footer a:hover {
   }
 
 }
+/* =========================================================
+   RESEARCH PUBLICATION LINKS
+   ========================================================= */
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 1.4rem;
+
+  padding:
+    0.65rem
+    1rem;
+
+  border:
+    1px solid var(--blue);
+
+  border-radius: 999px;
+
+  color: var(--blue);
+
+  font-size: 0.88rem;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.publication-link:hover {
+  background: var(--blue);
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
