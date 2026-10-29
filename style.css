@@ -1486,7 +1486,7 @@ button:focus-visible {
   object-fit: cover;
 
   /* adjust this if you are more left/right in the photo */
-  object-position: center center;
+  object-position: 30% center;
 
   border-radius: var(--radius);
 
