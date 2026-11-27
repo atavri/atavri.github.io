@@ -2424,14 +2424,13 @@ footer a:hover {
 /* ================= VISITOR MAP ================= */
 
 .visitor-map-section {
-  padding: 1rem 0;
-  text-align: center;
+  padding: 1.25rem 0;
 }
 
 .visitor-map {
-  width: 520px;
+  width: 260px;
   max-width: 90%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .visitor-map iframe,
