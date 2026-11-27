@@ -2424,14 +2424,22 @@ footer a:hover {
 /* ================= VISITOR MAP ================= */
 
 .visitor-map-section {
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-align: center;
 }
 
 .visitor-map {
-  width: 160px;
+  width: 220px;
   max-width: 90%;
   margin: 0 auto;
+}
+
+.visitor-map iframe,
+.visitor-map img,
+.visitor-map svg,
+.visitor-map canvas {
+  width: 100% !important;
+  height: auto !important;
 }
 /* =========================================================
    20. REDUCED MOTION
