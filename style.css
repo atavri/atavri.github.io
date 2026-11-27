@@ -2421,7 +2421,18 @@ footer a:hover {
 
 }
 
+/* ================= VISITOR MAP ================= */
 
+.visitor-map-section {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.visitor-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* =========================================================
    20. REDUCED MOTION
    ========================================================= */
